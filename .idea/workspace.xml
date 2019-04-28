@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a177ffaf-0698-4c2a-b2af-b1f672d42378" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/18-GRPC/1_greet/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/18-GRPC/1_greet/generate.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/18-GRPC/1_greet/greet_client/client.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/18-GRPC/1_greet/greet_server/server.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/18-GRPC/1_greet/greetpb/greet.pb.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/18-GRPC/1_greet/greetpb/greet.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/9_function/11_defer/1_whyDefer/1_why defer.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/9_function/11_defer/2_UseDefer/2_useDefer.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/9_function/11_defer/3_onEntry onExit/onEntry.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/9_function/11_defer/4_deferAndResult/defer-result.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/9_function/11_defer/5_defer-for/defer-for.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/9_function/11_defer/6_defer-order/defer-order.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/9_function/11_defer/7_defer-emp/7_defer-emp.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,15 +13,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/14_file/6_Open and Close Files.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/18-GRPC/1_greet/greetpb/greet.pb.go">
           <provider selected="true" editor-type-id="text-editor" />
@@ -73,7 +51,7 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state>
@@ -83,12 +61,21 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/18-GRPC/1_greet/greet_server/server.go">
+        <entry file="file://$PROJECT_DIR$/fib.txt">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitattributes">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="17" selection-start-column="17" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/3_channel/8_Select/into.md">
+        <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
@@ -121,7 +108,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/15_goroutineAndChannel/3_channel/8_Select/3_countdown.go" />
         <option value="$PROJECT_DIR$/15_goroutineAndChannel/3_channel/8_Select/1_countdown/1_countdown.go" />
         <option value="$PROJECT_DIR$/15_goroutineAndChannel/3_channel/8_Select/1_countdown/2_countdown.go" />
         <option value="$PROJECT_DIR$/15_goroutineAndChannel/3_channel/8_Select/1_countdown/3_countdown.go" />
@@ -172,6 +158,7 @@
         <option value="$PROJECT_DIR$/18-GRPC/1_greet/generate.sh" />
         <option value="$PROJECT_DIR$/18-GRPC/1_greet/README.md" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/.gitattributes" />
       </list>
     </option>
   </component>
@@ -195,24 +182,6 @@
             <path>
               <item name="theWayToGolang" type="b2602c69:ProjectViewProjectNode" />
               <item name="theWayToGolang" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="theWayToGolang" type="b2602c69:ProjectViewProjectNode" />
-              <item name="theWayToGolang" type="462c0819:PsiDirectoryNode" />
-              <item name="18-GRPC" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="theWayToGolang" type="b2602c69:ProjectViewProjectNode" />
-              <item name="theWayToGolang" type="462c0819:PsiDirectoryNode" />
-              <item name="18-GRPC" type="462c0819:PsiDirectoryNode" />
-              <item name="1_greet" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="theWayToGolang" type="b2602c69:ProjectViewProjectNode" />
-              <item name="theWayToGolang" type="462c0819:PsiDirectoryNode" />
-              <item name="18-GRPC" type="462c0819:PsiDirectoryNode" />
-              <item name="1_greet" type="462c0819:PsiDirectoryNode" />
-              <item name="greet_client" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -394,15 +363,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/10_pointer/3_pointArray.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/10_pointer/4_Two-dimensional array.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11_struct/emp1_bitArray.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/11_struct/inntro.md" />
     <entry file="file:///usr/local/go/src/sort/sort.go">
       <provider selected="true" editor-type-id="text-editor">
@@ -627,10 +587,23 @@
     <entry file="file://$PROJECT_DIR$/18-GRPC/1_greet/greet_client/client.go">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="5" selection-start-column="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fib.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitattributes">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="17" selection-start-column="17" selection-end-column="17" />
         </state>
       </provider>
     </entry>
