@@ -2,8 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a177ffaf-0698-4c2a-b2af-b1f672d42378" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/16_test/1_unitTest/add.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/16_test/1_unitTest/into.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/16_test/2_tableDrivenTest/1_basic/split.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/16_test/3_pressureTest/add.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/16_test/3_pressureTest/add_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/16_test/3_pressureTest/pressure.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/16_test/4_coverTest/add.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/16_test/4_coverTest/add_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/16_test/4_coverTest/cover.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/16_test/5_benchmarkTest/1_fibonacci/fibonacci.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/16_test/5_benchmarkTest/1_fibonacci/fibonacci_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/16_test/6_prof/prof.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab-QQRecursive tree/2_improve/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/5_print/1_print.go" beforeDir="false" afterPath="$PROJECT_DIR$/5_print/1_print.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab-QQRecursive tree/allData/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/lab-QQRecursive tree/1_allData/main.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,68 +29,72 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/18-GRPC/1_greet/greetpb/greet.pb.go">
+        <entry file="file://$PROJECT_DIR$/3-agrs/2_agrs.go">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/18-GRPC/1_greet/greetpb/greet.proto">
+        <entry file="file://$PROJECT_DIR$/3-agrs/3_TupleAssignment.go">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/18-GRPC/1_greet/generate.sh">
+        <entry file="file://$PROJECT_DIR$/12_interface/4_emp_Temperature/4_emp_Temperature.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="12" selection-start-column="12" selection-end-column="12" />
+            <state relative-caret-position="162">
+              <caret line="12" column="2" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lab-QQRecursive tree/allData/main.go">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/18-GRPC/1_greet/README.md">
+        <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/5_emp_du/3_du_filesize/3_du.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="1026">
+              <caret line="65" column="13" selection-start-line="65" selection-start-column="8" selection-end-line="65" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/18-GRPC/1_greet/greet_client/client.go">
+        <entry file="file://$PROJECT_DIR$/lab-QQRecursive tree/main.go">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+        <entry file="file://$PROJECT_DIR$/lab-QQRecursive tree/search.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="5" selection-start-column="5" selection-end-column="5" />
+            <state relative-caret-position="288">
+              <caret line="20" selection-start-line="20" selection-end-line="20" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fib.txt">
+        <entry file="file://$PROJECT_DIR$/lab-QQRecursive tree/isExit.go">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitattributes">
+        <entry file="file://$PROJECT_DIR$/lab-QQRecursive tree/2_improve/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="17" selection-start-column="17" selection-end-column="17" />
+            <state relative-caret-position="126">
+              <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
+        <entry file="file://$PROJECT_DIR$/16_test/6_prof/prof.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="702">
+              <caret line="45" selection-start-line="45" selection-end-line="45" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/16_test/3_pressureTest/.coverage.txt">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
@@ -89,6 +108,10 @@
     </option>
   </component>
   <component name="FindInProjectRecents">
+    <findStrings>
+      <find>flag</find>
+      <find>vFlag</find>
+    </findStrings>
     <replaceStrings>
       <replace />
       <replace>//</replace>
@@ -99,6 +122,7 @@
       <dir>$PROJECT_DIR$/12_interface</dir>
       <dir>$PROJECT_DIR$/15_goroutineAndChannel/1_goroutine</dir>
       <dir>$PROJECT_DIR$/15_goroutineAndChannel</dir>
+      <dir>$PROJECT_DIR$</dir>
     </dirStrings>
   </component>
   <component name="GOROOT" path="/usr/local/go" />
@@ -108,21 +132,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/15_goroutineAndChannel/3_channel/8_Select/1_countdown/1_countdown.go" />
-        <option value="$PROJECT_DIR$/15_goroutineAndChannel/3_channel/8_Select/1_countdown/2_countdown.go" />
-        <option value="$PROJECT_DIR$/15_goroutineAndChannel/3_channel/8_Select/1_countdown/3_countdown.go" />
-        <option value="$PROJECT_DIR$/15_goroutineAndChannel/3_channel/8_Select/3_Timed channels operations/time.go" />
-        <option value="$PROJECT_DIR$/15_goroutineAndChannel/3_channel/8_Select/3_Timed channels operations/time.md" />
-        <option value="$PROJECT_DIR$/15_goroutineAndChannel/3_channel/7_channelWithBuffle.go" />
-        <option value="$PROJECT_DIR$/15_goroutineAndChannel/3_channel/8_Select/into.md" />
-        <option value="$PROJECT_DIR$/15_goroutineAndChannel/3_channel/8_Select/3_Timed channels operations/2_timeAndLock.go" />
-        <option value="$PROJECT_DIR$/15_goroutineAndChannel/3_channel/8_Select/2_emp_1.go" />
-        <option value="$PROJECT_DIR$/15_goroutineAndChannel/3_channel/8_Select/2_emp_time.go" />
-        <option value="$PROJECT_DIR$/15_goroutineAndChannel/3_channel/9_channelDeadLock/deadlock.go" />
-        <option value="$PROJECT_DIR$/15_goroutineAndChannel/3_channel/9_channelDeadLock/2_resolve.go" />
-        <option value="$PROJECT_DIR$/15_goroutineAndChannel/3_channel/9_channelDeadLock/3_resolve.go" />
-        <option value="$PROJECT_DIR$/15_goroutineAndChannel/3_channel/10_waitgroup/waitgroup.go" />
-        <option value="$PROJECT_DIR$/15_goroutineAndChannel/into.md" />
         <option value="$PROJECT_DIR$/15_goroutineAndChannel/4_emp/1_du_filesize/1_du.go" />
         <option value="$PROJECT_DIR$/15_goroutineAndChannel/4_emp/2_du_dize/2_du.go" />
         <option value="$PROJECT_DIR$/15_goroutineAndChannel/4_emp/3_du_filesize/3_du.go" />
@@ -157,16 +166,30 @@
         <option value="$PROJECT_DIR$/9_function/11_defer/7_defer-emp/7_defer-emp.go" />
         <option value="$PROJECT_DIR$/18-GRPC/1_greet/generate.sh" />
         <option value="$PROJECT_DIR$/18-GRPC/1_greet/README.md" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/.gitattributes" />
+        <option value="$PROJECT_DIR$/16_test/1_unitTest/add.go" />
+        <option value="$PROJECT_DIR$/16_test/1_unitTest/add_test.go" />
+        <option value="$PROJECT_DIR$/16_test/1_unitTest/into.md" />
+        <option value="$PROJECT_DIR$/16_test/2_tableDrivenTest/split.go" />
+        <option value="$PROJECT_DIR$/16_test/2_tableDrivenTest/1_basic/split.go" />
+        <option value="$PROJECT_DIR$/5_print/1_print.go" />
+        <option value="$PROJECT_DIR$/16_test/2_tableDrivenTest/1_basic/split_test.go" />
+        <option value="$PROJECT_DIR$/16_test/pressure Test/pressure.sh" />
+        <option value="$PROJECT_DIR$/16_test/3_pressureTest/pressure.sh" />
+        <option value="$PROJECT_DIR$/16_test/3_pressureTest/add_test.go" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/16_test/4_coverTest/add_test.go" />
+        <option value="$PROJECT_DIR$/16_test/4_coverTest/cover.sh" />
+        <option value="$PROJECT_DIR$/16_test/6_prof/prof.go" />
+        <option value="$PROJECT_DIR$/16_test/5_benchmarkTest/1_fibonacci/fibonacci_test.go" />
+        <option value="$PROJECT_DIR$/lab-QQRecursive tree/2_improve/main.go" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="455" />
     <option name="y" value="23" />
     <option name="width" value="1680" />
-    <option name="height" value="986" />
+    <option name="height" value="1027" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -176,6 +199,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -183,11 +207,21 @@
               <item name="theWayToGolang" type="b2602c69:ProjectViewProjectNode" />
               <item name="theWayToGolang" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="theWayToGolang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="theWayToGolang" type="462c0819:PsiDirectoryNode" />
+              <item name="lab-QQRecursive tree" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="theWayToGolang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="theWayToGolang" type="462c0819:PsiDirectoryNode" />
+              <item name="lab-QQRecursive tree" type="462c0819:PsiDirectoryNode" />
+              <item name="2_improve" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -200,26 +234,27 @@
     <property name="configurable.Project.GOPATH.is.expanded" value="true" />
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
     <property name="go.import.settings.migrated" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/18-GRPC" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/16_test/5_benchmarkTest" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="copyright" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/16_test/5_benchmarkTest" />
+      <recent name="$PROJECT_DIR$/16_test/4_coverTest" />
+      <recent name="$PROJECT_DIR$/16_test/pressure Test" />
+      <recent name="$PROJECT_DIR$/18-GRPC" />
+      <recent name="$PROJECT_DIR$/15_goroutineAndChannel" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/16_test/2_tableDrivenTest/1_basic" />
       <recent name="$PROJECT_DIR$/9_function/11_defer/7_defer-emp" />
       <recent name="$PROJECT_DIR$/9_function/11_defer/2_UseDefer" />
       <recent name="$PROJECT_DIR$/9_function/11_defer/1_whyUseDefer" />
       <recent name="$PROJECT_DIR$/15_goroutineAndChannel/4_emp_crawl/2_crawl" />
-      <recent name="$PROJECT_DIR$/15_goroutineAndChannel/4_emp_crawl/1_crawl" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/18-GRPC" />
-      <recent name="$PROJECT_DIR$/15_goroutineAndChannel" />
-      <recent name="$PROJECT_DIR$/lab-QQRecursive tree" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/9_function" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -234,95 +269,109 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Build.go build 7_defer-emp.go">
-    <configuration name="go build 1_pipeline.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Go Test.TestSplit9 in theWayToGolang/16_test/2_tableDrivenTest/1_basic">
+    <configuration name="TestSplit5 in theWayToGolang/16_test/2_tableDrivenTest/1_basic" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="theWayToGolang" />
-      <working_directory value="$PROJECT_DIR$/" />
-      <go_parameters value="-i" />
-      <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/5_Concurrent pipeline/1_pipeline.go" />
-      <package value="theWayToGolang" />
+      <working_directory value="$PROJECT_DIR$/16_test/2_tableDrivenTest/1_basic" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="theWayToGolang/16_test/2_tableDrivenTest/1_basic" />
       <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestSplit5$" />
       <method v="2" />
     </configuration>
-    <configuration name="go build 7_defer-emp.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="TestSplit6 in theWayToGolang/16_test/2_tableDrivenTest/1_basic" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="theWayToGolang" />
-      <working_directory value="$PROJECT_DIR$/" />
-      <go_parameters value="-i" />
-      <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/9_function/11_defer/7_defer-emp.go" />
-      <package value="theWayToGolang" />
+      <working_directory value="$PROJECT_DIR$/16_test/2_tableDrivenTest/1_basic" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="theWayToGolang/16_test/2_tableDrivenTest/1_basic" />
       <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestSplit6$" />
       <method v="2" />
     </configuration>
-    <configuration name="go build defer-order.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="TestSplit7 in theWayToGolang/16_test/2_tableDrivenTest/1_basic" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="theWayToGolang" />
-      <working_directory value="$PROJECT_DIR$/" />
-      <go_parameters value="-i" />
-      <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/9_function/11_defer/6_defer-order/defer-order.go" />
-      <package value="theWayToGolang" />
+      <working_directory value="$PROJECT_DIR$/16_test/2_tableDrivenTest/1_basic" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="theWayToGolang/16_test/2_tableDrivenTest/1_basic" />
       <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestSplit7$" />
       <method v="2" />
     </configuration>
-    <configuration name="go build defer-result.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="TestSplit8 in theWayToGolang/16_test/2_tableDrivenTest/1_basic" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="theWayToGolang" />
-      <working_directory value="$PROJECT_DIR$/" />
-      <go_parameters value="-i" />
-      <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/9_function/11_defer/4_deferAndResult/defer-result.go" />
-      <package value="theWayToGolang" />
+      <working_directory value="$PROJECT_DIR$/16_test/2_tableDrivenTest/1_basic" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="theWayToGolang/16_test/2_tableDrivenTest/1_basic" />
       <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestSplit8$" />
       <method v="2" />
     </configuration>
-    <configuration name="go build onEntry.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="TestSplit9 in theWayToGolang/16_test/2_tableDrivenTest/1_basic" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="theWayToGolang" />
-      <working_directory value="$PROJECT_DIR$/" />
-      <go_parameters value="-i" />
-      <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/9_function/11_defer/3_onEntry onExit/onEntry.go" />
-      <package value="theWayToGolang" />
+      <working_directory value="$PROJECT_DIR$/16_test/2_tableDrivenTest/1_basic" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="theWayToGolang/16_test/2_tableDrivenTest/1_basic" />
       <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestSplit9$" />
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Go Build.go build 1_pipeline.go" />
-      <item itemvalue="Go Build.go build onEntry.go" />
-      <item itemvalue="Go Build.go build defer-result.go" />
-      <item itemvalue="Go Build.go build defer-order.go" />
-      <item itemvalue="Go Build.go build 7_defer-emp.go" />
+      <item itemvalue="Go Test.TestSplit5 in theWayToGolang/16_test/2_tableDrivenTest/1_basic" />
+      <item itemvalue="Go Test.TestSplit6 in theWayToGolang/16_test/2_tableDrivenTest/1_basic" />
+      <item itemvalue="Go Test.TestSplit7 in theWayToGolang/16_test/2_tableDrivenTest/1_basic" />
+      <item itemvalue="Go Test.TestSplit8 in theWayToGolang/16_test/2_tableDrivenTest/1_basic" />
+      <item itemvalue="Go Test.TestSplit9 in theWayToGolang/16_test/2_tableDrivenTest/1_basic" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.go build 7_defer-emp.go" />
-        <item itemvalue="Go Build.go build defer-order.go" />
-        <item itemvalue="Go Build.go build defer-result.go" />
-        <item itemvalue="Go Build.go build onEntry.go" />
-        <item itemvalue="Go Build.go build 1_pipeline.go" />
+        <item itemvalue="Go Test.TestSplit9 in theWayToGolang/16_test/2_tableDrivenTest/1_basic" />
+        <item itemvalue="Go Test.TestSplit8 in theWayToGolang/16_test/2_tableDrivenTest/1_basic" />
+        <item itemvalue="Go Test.TestSplit7 in theWayToGolang/16_test/2_tableDrivenTest/1_basic" />
+        <item itemvalue="Go Test.TestSplit6 in theWayToGolang/16_test/2_tableDrivenTest/1_basic" />
+        <item itemvalue="Go Test.TestSplit5 in theWayToGolang/16_test/2_tableDrivenTest/1_basic" />
       </list>
     </recent_temporary>
   </component>
   <component name="TestHistory">
-    <history-entry file="TestBenchmark_in_theWayToGolang_lab-RPC - 2019.03.25 at 11h 12m 41s.xml">
-      <configuration name="TestBenchmark in theWayToGolang/lab-RPC" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestKilled_in_theWayToGolang_lab-RPC - 2019.03.25 at 11h 12m 49s.xml">
-      <configuration name="TestKilled in theWayToGolang/lab-RPC" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestRegression1_in_theWayToGolang_lab-RPC - 2019.03.25 at 11h 12m 53s.xml">
-      <configuration name="TestRegression1 in theWayToGolang/lab-RPC" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestConcurrentOne_in_theWayToGolang_lab-RPC - 2019.03.25 at 11h 12m 57s.xml">
-      <configuration name="TestConcurrentOne in theWayToGolang/lab-RPC" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestConcurrentMany_in_theWayToGolang_lab-RPC - 2019.03.25 at 11h 13m 04s.xml">
-      <configuration name="TestConcurrentMany in theWayToGolang/lab-RPC" configurationId="GoTestRunConfiguration" />
-    </history-entry>
     <history-entry file="TestTypes_in_theWayToGolang_lab-RPC - 2019.03.25 at 11h 13m 09s.xml">
       <configuration name="TestTypes in theWayToGolang/lab-RPC" configurationId="GoTestRunConfiguration" />
     </history-entry>
     <history-entry file="TestBasic_in_theWayToGolang_lab-RPC - 2019.03.25 at 11h 13m 14s.xml">
       <configuration name="TestBasic in theWayToGolang/lab-RPC" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestSplit4_in_theWayToGolang_16_test_2_tableDrivenTest_1_basic - 2019.05.11 at 23h 58m 34s.xml">
+      <configuration name="TestSplit4 in theWayToGolang/16_test/2_tableDrivenTest/1_basic" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestSplit5_in_theWayToGolang_16_test_2_tableDrivenTest_1_basic - 2019.05.11 at 23h 59m 30s.xml">
+      <configuration name="TestSplit5 in theWayToGolang/16_test/2_tableDrivenTest/1_basic" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestSplit5_in_theWayToGolang_16_test_2_tableDrivenTest_1_basic - 2019.05.12 at 09h 42m 02s.xml">
+      <configuration name="TestSplit5 in theWayToGolang/16_test/2_tableDrivenTest/1_basic" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestSplit6_in_theWayToGolang_16_test_2_tableDrivenTest_1_basic - 2019.05.12 at 09h 42m 09s.xml">
+      <configuration name="TestSplit6 in theWayToGolang/16_test/2_tableDrivenTest/1_basic" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestSplit7_in_theWayToGolang_16_test_2_tableDrivenTest_1_basic - 2019.05.12 at 09h 43m 09s.xml">
+      <configuration name="TestSplit7 in theWayToGolang/16_test/2_tableDrivenTest/1_basic" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestSplit8_in_theWayToGolang_16_test_2_tableDrivenTest_1_basic - 2019.05.12 at 09h 51m 06s.xml">
+      <configuration name="TestSplit8 in theWayToGolang/16_test/2_tableDrivenTest/1_basic" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestSplit8_in_theWayToGolang_16_test_2_tableDrivenTest_1_basic - 2019.05.12 at 09h 51m 19s.xml">
+      <configuration name="TestSplit8 in theWayToGolang/16_test/2_tableDrivenTest/1_basic" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestSplit9_in_theWayToGolang_16_test_2_tableDrivenTest_1_basic - 2019.05.12 at 10h 04m 49s.xml">
+      <configuration name="TestSplit9 in theWayToGolang/16_test/2_tableDrivenTest/1_basic" configurationId="GoTestRunConfiguration" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -335,23 +384,23 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="455" y="23" width="1680" height="986" extended-state="0" />
+    <frame x="0" y="23" width="1680" height="1027" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13186814" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23260073" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32932693" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3098434" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4993895" weight="0.32885906" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4993895" weight="0.3098434" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32997763" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32885906" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.496337" visible="true" weight="0.3144385" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.503663" side_tool="true" visible="true" weight="0.3144385" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -363,192 +412,17 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/11_struct/inntro.md" />
-    <entry file="file:///usr/local/go/src/sort/sort.go">
+    <entry file="file://$PROJECT_DIR$/14_file/13_Write Bytes to a File.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="141" column="18" selection-start-line="141" selection-start-column="18" selection-end-line="141" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/12_interface/into.md" />
-    <entry file="file://$PROJECT_DIR$/11_struct/11_method's anonymous Nesting.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/12_interface/5_emp_sortInterface/5_sort.interface.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="29" column="26" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/12_interface/5_emp_sortInterface/6_selfDefine.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1683">
-          <caret line="105" column="11" lean-forward="true" selection-start-line="105" selection-start-column="11" selection-end-line="105" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/12_interface/8_emp_sourceCode/1_read.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/12_interface/8_emp_sourceCode/2_ioCopy.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/12_interface/1_definition.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/12_interface/8_emp_sourceCode/3_customWrite.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="38" column="1" lean-forward="true" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/12_interface/6_error.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="2" lean-forward="true" selection-start-line="34" selection-start-column="2" selection-end-line="34" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/12_interface/3_transfomation.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-804" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/12_interface/2_emp.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-737" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/12_interface/7_Empty interface.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="252">
+          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
           <folding>
-            <element signature="e#142#159#0" expanded="true" />
+            <element signature="e#142#165#0" expanded="true" />
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/12_interface/4_emp_Temperature/4_emp_Temperature.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11_struct/10_Nil.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11_struct/9_pointMethod.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11_struct/5_structEqual.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11_struct/4_structAsParamAndreturn.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="25" selection-start-line="24" selection-start-column="2" selection-end-line="24" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11_struct/2_Anonymous structure.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11_struct/1_Declaration and definition.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11_struct/6_Anonymous field.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11_struct/7_Anonymous field2.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/11_struct/8_method.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1026" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/4_emp_crawl/1_crawl/1_crawl.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-992" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/4_emp_crawl/2_crawl/2_crawl.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/5_emp_du/1_du_filesize/1_du.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1139">
-          <caret line="73" column="5" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="5" />
-          <folding>
-            <element signature="e#142#203#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/9_function/9_quicksort/quicksort.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/5_emp_du/2_du_dize/2_du.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="100" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/5_emp_du/3_du_filesize/3_du.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="41" column="16" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
-          <folding>
-            <element signature="e#220#297#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/8_loop/9_binarysearch/binarySearch.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/14_file/1_Create Empty File.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/14_file/2_Truncate a File.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/14_file/7_Check if File Exists.go">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/14_file/8_Check Read and Write Permissions.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/5_emp_du/4_du_cancle/4_du.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="42" column="5" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
-          <folding>
-            <element signature="e#359#415#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/3_channel/8_Select/3_Timed channels operations/1_time.md">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/3_channel/8_Select/3_Timed channels operations/2_emp_time.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="9" selection-start-line="14" selection-end-line="76" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/3_channel/8_Select/into.md">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/14_file/6_Open and Close Files.go">
@@ -558,52 +432,243 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/18-GRPC/1_greet/greet_server/server.go">
+    <entry file="file://$PROJECT_DIR$/14_file/1_Create Empty File.go">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/18-GRPC/1_greet/greetpb/greet.pb.go">
+    <entry file="file://$PROJECT_DIR$/14_file/5_Delete a File.go">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/18-GRPC/1_greet/greetpb/greet.proto">
+    <entry file="file://$PROJECT_DIR$/14_file/3_Get File Info.go">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/18-GRPC/1_greet/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/14_file/4_Rename and Move a File.go">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/18-GRPC/1_greet/generate.sh">
+    <entry file="file://$PROJECT_DIR$/14_file/14_Quick Write to File.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14_file/9_Change Permissions, Ownership, and Timestamps.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14_file/16_Read up to n Bytes from File.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/12_interface/1_definition.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/12_interface/2_emp.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14_file/19_Read All Bytes of File.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14_file/15_Use Buffered Writer.go">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="12" selection-start-column="12" selection-end-column="12" />
+          <folding>
+            <element signature="e#649#681#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lab-QQRecursive tree/allData/main.go">
+    <entry file="file://$PROJECT_DIR$/14_file/17_Read Exactly n Bytes.go">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/18-GRPC/1_greet/greet_client/client.go">
+    <entry file="file://$PROJECT_DIR$/14_file/21_Use Buffered Reader.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#398#437#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14_file/18_Read At Least n Bytes.go">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
+    <entry file="file://$PROJECT_DIR$/14_file/12_Copy a File.go">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/14_file/10_Hard Links and Symlinks.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/12_interface/3_transfomation.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="56" column="1" selection-start-line="56" selection-start-column="1" selection-end-line="56" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/16_test/1_unitTest/add.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/16_test/1_unitTest/into.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="75" selection-start-line="13" selection-start-column="75" selection-end-line="13" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5_print/2_example.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-170" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5_print/3_example_up.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-728" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5_print/1_print.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="62" selection-start-line="62" selection-end-line="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/16_test/2_tableDrivenTest/1_basic/split.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/16_test/2_tableDrivenTest/1_basic/split_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3924">
+          <caret line="218" column="8" selection-start-line="218" selection-start-column="8" selection-end-line="218" selection-end-column="8" />
+          <folding>
+            <element signature="e#143#175#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/16_test/pressure Test/into.md" />
+    <entry file="file://$PROJECT_DIR$/16_test/1_unitTest/add_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+          <folding>
+            <element signature="e#146#204#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/16_test/3_pressureTest/pressure.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="5" selection-start-column="5" selection-end-column="5" />
+        <state relative-caret-position="36">
+          <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fib.txt">
+    <entry file="file://$PROJECT_DIR$/16_test/4_coverTest/add.go">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitattributes">
+    <entry file="file://$PROJECT_DIR$/16_test/4_coverTest/add_test.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="17" selection-start-column="17" selection-end-column="17" />
+        <state relative-caret-position="414">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/16_test/3_pressureTest/add.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/16_test/3_pressureTest/add_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/16_test/4_coverTest/cover.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/16_test/5_benchmarkTest/1_fibonacci/fibonacci.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/16_test/5_benchmarkTest/1_fibonacci/fibonacci_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/3_channel/8_Select/3_Timed channels operations/3_timeAndLock.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/3_channel/8_Select/3_Timed channels operations/2_emp_time.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/3-agrs/1_introduce.md">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/3-agrs/2_agrs.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/3-agrs/3_TupleAssignment.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/12_interface/4_emp_Temperature/4_emp_Temperature.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="12" column="2" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/5_emp_du/3_du_filesize/3_du.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1026">
+          <caret line="65" column="13" selection-start-line="65" selection-start-column="8" selection-end-line="65" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lab-QQRecursive tree/main.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/16_test/6_prof/prof.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/16_test/3_pressureTest/.coverage.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lab-QQRecursive tree/search.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lab-QQRecursive tree/isExit.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lab-QQRecursive tree/2_improve/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
         </state>
       </provider>
     </entry>
