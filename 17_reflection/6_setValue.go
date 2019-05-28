@@ -1,3 +1,9 @@
+/*
+ * Copyright (c) 2019  郑建勋(jonson)
+ * License: https://creativecommons.org/licenses/by-nc-sa/4.0/
+ * go语言交流3群：713385260
+ */
+
 package main
 
 import (
@@ -59,4 +65,55 @@ b不可取址，因为b中的值是a的拷贝的副本
 c不可取址，因为c中的值只是一个指针&x的拷贝
 
 d可取址，因为Elem()方法，可以获取变量对应的可取址地址的value
+*/
+
+/*
+example2:
+
+package main
+
+import "fmt"
+import "reflect"
+
+func main() {
+	n := 123
+	p := &n
+	vp := reflect.ValueOf(p)
+	fmt.Println(vp.CanSet(), vp.CanAddr()) // false false
+	vn := vp.Elem() // get the value referenced by vp
+	fmt.Println(vn.CanSet(), vn.CanAddr()) // true true
+	vn.Set(reflect.ValueOf(789)) // <=> vn.SetInt(789)
+	fmt.Println(n)               // 789
+}
+
+
+*/
+
+/*
+example3:
+package main
+
+import "fmt"
+import "reflect"
+
+func main() {
+	var s struct {
+		X interface{} // an exported field
+		y interface{} // a non-exported field
+	}
+	vp := reflect.ValueOf(&s)
+	// If vp represents a pointer. the following
+	// line is equivalent to "vs := vp.Elem()".
+	vs := reflect.Indirect(vp)
+	// vx and vy both represent interface values.
+	vx, vy := vs.Field(0), vs.Field(1)
+	fmt.Println(vx.CanSet(), vx.CanAddr()) // true true
+	// vy is addressable but not modifiable.
+	fmt.Println(vy.CanSet(), vy.CanAddr()) // false true
+	vb := reflect.ValueOf(123)
+	vx.Set(vb)     // okay, for vx is modifiable
+	// vy.Set(vb)  // will panic, for vy is unmodifiable
+	fmt.Println(s) // {123 <nil>}
+	fmt.Println(vx.IsNil(), vy.IsNil()) // false true
+}
 */

@@ -2,23 +2,39 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a177ffaf-0698-4c2a-b2af-b1f672d42378" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/16_test/1_unitTest/add.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/16_test/1_unitTest/into.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/16_test/2_tableDrivenTest/1_basic/split.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/16_test/3_pressureTest/add.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/16_test/3_pressureTest/add_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/16_test/3_pressureTest/pressure.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/16_test/4_coverTest/add.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/16_test/4_coverTest/add_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/16_test/4_coverTest/cover.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/16_test/5_benchmarkTest/1_fibonacci/fibonacci.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/16_test/5_benchmarkTest/1_fibonacci/fibonacci_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/16_test/6_prof/prof.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab-QQRecursive tree/2_improve/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/2_fin-in/2_fig-naive-prime-finder.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/2_fin-in/3_fig-fan-out-naive-prime-finder.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/5_Concurrent pipeline/1_fig-pipelines-func-stream-processing.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/5_Concurrent pipeline/2_fig-adding-additional-stage-to-pipeline.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/5_Concurrent pipeline/3_fig-pipelines-chan-stream-processing.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/5_Concurrent pipeline/4_some-handy-generators/1_fig-take-and-repeat-pipeline.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/5_Concurrent pipeline/4_some-handy-generators/2_fig-utilizing-string-stage.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/5_Concurrent pipeline/4_some-handy-generators/3_pipelines_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/6_or-channel/1_or-channel.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/7_bridge-channel/1_bridge-channel.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/8_buffering/1_buffering_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/9_context/1_greeter-with-done-chan.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/9_context/2_greeter-with-context.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/9_context/into.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/5_print/1_print.go" beforeDir="false" afterPath="$PROJECT_DIR$/5_print/1_print.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab-QQRecursive tree/allData/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/lab-QQRecursive tree/1_allData/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/5_Concurrent pipeline/1_pipeline.go" beforeDir="false" afterPath="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/5_Concurrent pipeline/4_pipeline.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/17_reflection/11_channel.go" beforeDir="false" afterPath="$PROJECT_DIR$/17_reflection/11_channel.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/17_reflection/11_map.go" beforeDir="false" afterPath="$PROJECT_DIR$/17_reflection/11_map.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/17_reflection/11_select.go" beforeDir="false" afterPath="$PROJECT_DIR$/17_reflection/11_select.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/17_reflection/12_makeFunc.go" beforeDir="false" afterPath="$PROJECT_DIR$/17_reflection/12_makeFunc.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/17_reflection/1_TypeAndValue.go" beforeDir="false" afterPath="$PROJECT_DIR$/17_reflection/1_TypeAndValue.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/17_reflection/2_value's interface.go" beforeDir="false" afterPath="$PROJECT_DIR$/17_reflection/2_value's interface.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/17_reflection/3_kind | type.go" beforeDir="false" afterPath="$PROJECT_DIR$/17_reflection/3_kind | type.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/17_reflection/4_intAndString.go" beforeDir="false" afterPath="$PROJECT_DIR$/17_reflection/4_intAndString.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/17_reflection/5_elem.go" beforeDir="false" afterPath="$PROJECT_DIR$/17_reflection/5_elem.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/17_reflection/5_elem_mapAndChannel.go" beforeDir="false" afterPath="$PROJECT_DIR$/17_reflection/5_elem_mapAndChannel.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/17_reflection/6_setValue.go" beforeDir="false" afterPath="$PROJECT_DIR$/17_reflection/6_setValue.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/17_reflection/6_setValue_struct.go" beforeDir="false" afterPath="$PROJECT_DIR$/17_reflection/6_setValue_struct.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/17_reflection/7_createTypeOf.go" beforeDir="false" afterPath="$PROJECT_DIR$/17_reflection/7_createTypeOf.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/17_reflection/8_StructFieldAndFunction.go" beforeDir="false" afterPath="$PROJECT_DIR$/17_reflection/8_StructFieldAndFunction.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/17_reflection/9_function.go" beforeDir="false" afterPath="$PROJECT_DIR$/17_reflection/9_function.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/17_reflection/9_function_return.go" beforeDir="false" afterPath="$PROJECT_DIR$/17_reflection/9_function_return.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/17_reflection/into.md" beforeDir="false" afterPath="$PROJECT_DIR$/17_reflection/into.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,72 +45,82 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/3-agrs/2_agrs.go">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/3-agrs/3_TupleAssignment.go">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/12_interface/4_emp_Temperature/4_emp_Temperature.go">
+        <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/8_buffering/1_buffering_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="12" column="2" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
+            <state relative-caret-position="18">
+              <caret line="33" selection-start-line="33" selection-end-line="33" />
+              <folding>
+                <element signature="e#142#204#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/5_emp_du/3_du_filesize/3_du.go">
+        <entry file="file://$PROJECT_DIR$/fib.txt">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1026">
-              <caret line="65" column="13" selection-start-line="65" selection-start-column="8" selection-end-line="65" selection-end-column="13" />
+            <state relative-caret-position="36">
+              <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lab-QQRecursive tree/main.go">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lab-QQRecursive tree/search.go">
+        <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/9_context/into.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
+            <state relative-caret-position="5227">
+              <caret line="388" column="5" selection-start-line="388" selection-start-column="5" selection-end-line="388" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lab-QQRecursive tree/isExit.go">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/9_context/1_greeter-with-done-chan.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1530">
+              <caret line="85" column="1" selection-start-line="85" selection-start-column="1" selection-end-line="85" selection-end-column="1" />
+              <folding>
+                <element signature="e#142#175#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lab-QQRecursive tree/2_improve/main.go">
+        <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/9_context/2_greeter-with-context.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+            <state relative-caret-position="108">
+              <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/16_test/6_prof/prof.go">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitattributes">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/1-introduction/introduce.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="702">
-              <caret line="45" selection-start-line="45" selection-end-line="45" />
+            <state relative-caret-position="216">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/16_test/3_pressureTest/.coverage.txt">
+        <entry file="file://$PROJECT_DIR$/2_helloworld/part2-helloworld.go">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
@@ -111,6 +137,7 @@
     <findStrings>
       <find>flag</find>
       <find>vFlag</find>
+      <find>new</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -123,6 +150,7 @@
       <dir>$PROJECT_DIR$/15_goroutineAndChannel/1_goroutine</dir>
       <dir>$PROJECT_DIR$/15_goroutineAndChannel</dir>
       <dir>$PROJECT_DIR$</dir>
+      <dir>$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/2_fin-in</dir>
     </dirStrings>
   </component>
   <component name="GOROOT" path="/usr/local/go" />
@@ -132,42 +160,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/15_goroutineAndChannel/4_emp/1_du_filesize/1_du.go" />
-        <option value="$PROJECT_DIR$/15_goroutineAndChannel/4_emp/2_du_dize/2_du.go" />
-        <option value="$PROJECT_DIR$/15_goroutineAndChannel/4_emp/3_du_filesize/3_du.go" />
-        <option value="$PROJECT_DIR$/15_goroutineAndChannel/4_emp/4_du_cancle/4_du.go" />
-        <option value="$PROJECT_DIR$/15_goroutineAndChannel/4_emp_crawl/1_crawl.go" />
-        <option value="$PROJECT_DIR$/15_goroutineAndChannel/4_emp_crawl/2_crawl.go" />
-        <option value="$PROJECT_DIR$/15_goroutineAndChannel/4_emp_crawl/1_crawl/1_crawl.go" />
-        <option value="$PROJECT_DIR$/15_goroutineAndChannel/4_emp_crawl/2_crawl/2_crawl.go" />
-        <option value="$PROJECT_DIR$/15_goroutineAndChannel/2_Goroutine-emp/3_race/3_race.go" />
-        <option value="$PROJECT_DIR$/15_goroutineAndChannel/4_emp_crawl/3_crawl/3_crawl.go" />
-        <option value="$PROJECT_DIR$/15_goroutineAndChannel/4_emp_crawl/4_crawl/4_crawl.go" />
-        <option value="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/1_pingpong/1_pingpong.go" />
-        <option value="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/2_fin-in/1_fin-in.go" />
-        <option value="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/3_fin-out/3_fin-out.go" />
-        <option value="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/3_fin-out/1_fin-out.go" />
-        <option value="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/3_fin-out/2_complex_fin-out.go" />
-        <option value="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/4_server/1_server.go" />
-        <option value="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/4_server/2_server+log.go" />
-        <option value="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/4_server/3_server+worker/1_server+worker.go" />
-        <option value="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/5_Concurrent pipeline/1_pipeline.go" />
-        <option value="$PROJECT_DIR$/2_helloworld/part2-helloworld.go" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/9_function/11_defer/1_why defer.go" />
-        <option value="$PROJECT_DIR$/9_function/11_defer/2_useDefer.go" />
-        <option value="$PROJECT_DIR$/9_function/11_defer/1_whyDefer/1_why defer.go" />
-        <option value="$PROJECT_DIR$/9_function/11_defer/2_UseDefer/2_useDefer.go" />
-        <option value="$PROJECT_DIR$/9_function/11_defer/3_onEntry onExit/onEntry.go" />
-        <option value="$PROJECT_DIR$/9_function/11_defer/4_deferAndResult/defer-result.go" />
-        <option value="$PROJECT_DIR$/9_function/11_defer/5_defer-for/defer-for.go" />
-        <option value="$PROJECT_DIR$/9_function/11_defer/7_defer-emp.go" />
-        <option value="$PROJECT_DIR$/9_function/11_defer/6_defer-order/defer-order.go" />
-        <option value="$PROJECT_DIR$/9_function/11_defer/7_defer-emp/7_defer-emp.go" />
-        <option value="$PROJECT_DIR$/18-GRPC/1_greet/generate.sh" />
-        <option value="$PROJECT_DIR$/18-GRPC/1_greet/README.md" />
-        <option value="$PROJECT_DIR$/.gitattributes" />
-        <option value="$PROJECT_DIR$/16_test/1_unitTest/add.go" />
         <option value="$PROJECT_DIR$/16_test/1_unitTest/add_test.go" />
         <option value="$PROJECT_DIR$/16_test/1_unitTest/into.md" />
         <option value="$PROJECT_DIR$/16_test/2_tableDrivenTest/split.go" />
@@ -183,10 +175,46 @@
         <option value="$PROJECT_DIR$/16_test/6_prof/prof.go" />
         <option value="$PROJECT_DIR$/16_test/5_benchmarkTest/1_fibonacci/fibonacci_test.go" />
         <option value="$PROJECT_DIR$/lab-QQRecursive tree/2_improve/main.go" />
+        <option value="$PROJECT_DIR$/17_reflection/into.md" />
+        <option value="$PROJECT_DIR$/17_reflection/1_TypeAndValue.go" />
+        <option value="$PROJECT_DIR$/17_reflection/2_value's interface.go" />
+        <option value="$PROJECT_DIR$/17_reflection/3_kind | type.go" />
+        <option value="$PROJECT_DIR$/17_reflection/4_intAndString.go" />
+        <option value="$PROJECT_DIR$/17_reflection/5_elem.go" />
+        <option value="$PROJECT_DIR$/17_reflection/7_createTypeOf.go" />
+        <option value="$PROJECT_DIR$/17_reflection/8_StructFieldAndFunction.go" />
+        <option value="$PROJECT_DIR$/17_reflection/5_elem_map.go" />
+        <option value="$PROJECT_DIR$/17_reflection/9_function.go" />
+        <option value="$PROJECT_DIR$/17_reflection/6_setValue.go" />
+        <option value="$PROJECT_DIR$/17_reflection/6_setValue_struct.go" />
+        <option value="$PROJECT_DIR$/17_reflection/9_function_2.go" />
+        <option value="$PROJECT_DIR$/17_reflection/9_function_return.go" />
+        <option value="$PROJECT_DIR$/17_reflection/11_map.go" />
+        <option value="$PROJECT_DIR$/17_reflection/11_channel.go" />
+        <option value="$PROJECT_DIR$/17_reflection/11_select.go" />
+        <option value="$PROJECT_DIR$/17_reflection/12_makeFunc.go" />
+        <option value="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/6_or-channel/1_or-channel.go" />
+        <option value="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/5_Concurrent pipeline/1_fig-pipelines-func-stream-processing.go" />
+        <option value="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/5_Concurrent pipeline/2_fig-adding-additional-stage-to-pipeline.go" />
+        <option value="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/5_Concurrent pipeline/3_fig-pipelines-chan-stream-processing.go" />
+        <option value="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/5_Concurrent pipeline/4_fig-take-and-repeat-pipeline.go" />
+        <option value="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/5_Concurrent pipeline/1_some-handy-generators/4_fig-take-and-repeat-pipeline.go" />
+        <option value="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/5_Concurrent pipeline/4_some-handy-generators/2_fig-utilizing-string-stage.go" />
+        <option value="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/5_Concurrent pipeline/4_some-handy-generators/1_fig-take-and-repeat-pipeline.go" />
+        <option value="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/5_Concurrent pipeline/4_some-handy-generators/3_pipelines_test.go" />
+        <option value="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/2_fin-in/1_fig-naive-prime-finder.go" />
+        <option value="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/2_fin-in/2_fig-naive-prime-finder.go" />
+        <option value="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/2_fin-in/3_fig-fan-out-naive-prime-finder.go" />
+        <option value="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/7_bridge-channel/1_bridge-channel.go" />
+        <option value="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/8_buffering/1_buffering.go" />
+        <option value="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/8_buffering/1_buffering_test.go" />
+        <option value="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/9_context/into.md" />
+        <option value="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/9_context/1_greeter-with-done-chan.go" />
+        <option value="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/9_context/2_greeter-with-context.go" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1680" />
     <option name="height" value="1027" />
@@ -210,13 +238,20 @@
             <path>
               <item name="theWayToGolang" type="b2602c69:ProjectViewProjectNode" />
               <item name="theWayToGolang" type="462c0819:PsiDirectoryNode" />
-              <item name="lab-QQRecursive tree" type="462c0819:PsiDirectoryNode" />
+              <item name="15_goroutineAndChannel" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="theWayToGolang" type="b2602c69:ProjectViewProjectNode" />
               <item name="theWayToGolang" type="462c0819:PsiDirectoryNode" />
-              <item name="lab-QQRecursive tree" type="462c0819:PsiDirectoryNode" />
-              <item name="2_improve" type="462c0819:PsiDirectoryNode" />
+              <item name="15_goroutineAndChannel" type="462c0819:PsiDirectoryNode" />
+              <item name="6_Concurrent model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="theWayToGolang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="theWayToGolang" type="462c0819:PsiDirectoryNode" />
+              <item name="15_goroutineAndChannel" type="462c0819:PsiDirectoryNode" />
+              <item name="6_Concurrent model" type="462c0819:PsiDirectoryNode" />
+              <item name="9_context" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -234,27 +269,27 @@
     <property name="configurable.Project.GOPATH.is.expanded" value="true" />
     <property name="go.gopath.indexing.explicitly.defined" value="true" />
     <property name="go.import.settings.migrated" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/16_test/5_benchmarkTest" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/17_reflection" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/17_reflection" />
       <recent name="$PROJECT_DIR$/16_test/5_benchmarkTest" />
       <recent name="$PROJECT_DIR$/16_test/4_coverTest" />
       <recent name="$PROJECT_DIR$/16_test/pressure Test" />
       <recent name="$PROJECT_DIR$/18-GRPC" />
-      <recent name="$PROJECT_DIR$/15_goroutineAndChannel" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/5_Concurrent pipeline/4_some-handy-generators" />
+      <recent name="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/5_Concurrent pipeline/1_some-handy-generators" />
       <recent name="$PROJECT_DIR$/16_test/2_tableDrivenTest/1_basic" />
       <recent name="$PROJECT_DIR$/9_function/11_defer/7_defer-emp" />
       <recent name="$PROJECT_DIR$/9_function/11_defer/2_UseDefer" />
-      <recent name="$PROJECT_DIR$/9_function/11_defer/1_whyUseDefer" />
-      <recent name="$PROJECT_DIR$/15_goroutineAndChannel/4_emp_crawl/2_crawl" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -269,76 +304,68 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Test.TestSplit9 in theWayToGolang/16_test/2_tableDrivenTest/1_basic">
-    <configuration name="TestSplit5 in theWayToGolang/16_test/2_tableDrivenTest/1_basic" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Go Build.go build 1_greeter-with-done-chan.go">
+    <configuration name="go build 1_bridge-channel.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="theWayToGolang" />
-      <working_directory value="$PROJECT_DIR$/16_test/2_tableDrivenTest/1_basic" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="theWayToGolang/16_test/2_tableDrivenTest/1_basic" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/7_bridge-channel/1_bridge-channel.go" />
+      <package value="theWayToGolang" />
       <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestSplit5$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestSplit6 in theWayToGolang/16_test/2_tableDrivenTest/1_basic" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="go build 1_greeter-with-done-chan.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="theWayToGolang" />
-      <working_directory value="$PROJECT_DIR$/16_test/2_tableDrivenTest/1_basic" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="theWayToGolang/16_test/2_tableDrivenTest/1_basic" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/9_context/1_greeter-with-done-chan.go" />
+      <package value="theWayToGolang" />
       <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestSplit6$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestSplit7 in theWayToGolang/16_test/2_tableDrivenTest/1_basic" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="go build 2_fig-naive-prime-finder.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="theWayToGolang" />
-      <working_directory value="$PROJECT_DIR$/16_test/2_tableDrivenTest/1_basic" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="theWayToGolang/16_test/2_tableDrivenTest/1_basic" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/2_fin-in/2_fig-naive-prime-finder.go" />
+      <package value="theWayToGolang" />
       <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestSplit7$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestSplit8 in theWayToGolang/16_test/2_tableDrivenTest/1_basic" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="go build 3_fig-fan-out-naive-prime-finder.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="theWayToGolang" />
-      <working_directory value="$PROJECT_DIR$/16_test/2_tableDrivenTest/1_basic" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="theWayToGolang/16_test/2_tableDrivenTest/1_basic" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/2_fin-in/3_fig-fan-out-naive-prime-finder.go" />
+      <package value="theWayToGolang" />
       <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestSplit8$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestSplit9 in theWayToGolang/16_test/2_tableDrivenTest/1_basic" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="BenchmarkGeneric in theWayToGolang/15_goroutineAndChannel/6_Concurrent model/5_Concurrent pipeline/4_some-handy-generators" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="theWayToGolang" />
-      <working_directory value="$PROJECT_DIR$/16_test/2_tableDrivenTest/1_basic" />
-      <framework value="gotest" />
+      <working_directory value="$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/5_Concurrent pipeline/4_some-handy-generators" />
+      <framework value="gobench" />
       <kind value="PACKAGE" />
-      <package value="theWayToGolang/16_test/2_tableDrivenTest/1_basic" />
+      <package value="theWayToGolang/15_goroutineAndChannel/6_Concurrent model/5_Concurrent pipeline/4_some-handy-generators" />
       <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestSplit9$" />
+      <pattern value="^BenchmarkGeneric$" />
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Go Test.TestSplit5 in theWayToGolang/16_test/2_tableDrivenTest/1_basic" />
-      <item itemvalue="Go Test.TestSplit6 in theWayToGolang/16_test/2_tableDrivenTest/1_basic" />
-      <item itemvalue="Go Test.TestSplit7 in theWayToGolang/16_test/2_tableDrivenTest/1_basic" />
-      <item itemvalue="Go Test.TestSplit8 in theWayToGolang/16_test/2_tableDrivenTest/1_basic" />
-      <item itemvalue="Go Test.TestSplit9 in theWayToGolang/16_test/2_tableDrivenTest/1_basic" />
+      <item itemvalue="Go Build.go build 2_fig-naive-prime-finder.go" />
+      <item itemvalue="Go Build.go build 3_fig-fan-out-naive-prime-finder.go" />
+      <item itemvalue="Go Build.go build 1_bridge-channel.go" />
+      <item itemvalue="Go Test.BenchmarkGeneric in theWayToGolang/15_goroutineAndChannel/6_Concurrent model/5_Concurrent pipeline/4_some-handy-generators" />
+      <item itemvalue="Go Build.go build 1_greeter-with-done-chan.go" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Test.TestSplit9 in theWayToGolang/16_test/2_tableDrivenTest/1_basic" />
-        <item itemvalue="Go Test.TestSplit8 in theWayToGolang/16_test/2_tableDrivenTest/1_basic" />
-        <item itemvalue="Go Test.TestSplit7 in theWayToGolang/16_test/2_tableDrivenTest/1_basic" />
-        <item itemvalue="Go Test.TestSplit6 in theWayToGolang/16_test/2_tableDrivenTest/1_basic" />
-        <item itemvalue="Go Test.TestSplit5 in theWayToGolang/16_test/2_tableDrivenTest/1_basic" />
+        <item itemvalue="Go Build.go build 1_greeter-with-done-chan.go" />
+        <item itemvalue="Go Build.go build 1_bridge-channel.go" />
+        <item itemvalue="Go Build.go build 3_fig-fan-out-naive-prime-finder.go" />
+        <item itemvalue="Go Build.go build 2_fig-naive-prime-finder.go" />
+        <item itemvalue="Go Test.BenchmarkGeneric in theWayToGolang/15_goroutineAndChannel/6_Concurrent model/5_Concurrent pipeline/4_some-handy-generators" />
       </list>
     </recent_temporary>
   </component>
@@ -384,23 +411,23 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="1027" extended-state="0" />
+    <frame x="0" y="23" width="1680" height="1027" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23260073" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23992674" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4993895" weight="0.32885906" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4993895" weight="0.3098434" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4957265" visible="true" weight="0.3090909" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32997763" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.496337" visible="true" weight="0.3144385" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.503663" side_tool="true" visible="true" weight="0.3144385" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.8028083" weight="0.3144385" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50427353" side_tool="true" visible="true" weight="0.3090909" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -412,263 +439,300 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/14_file/13_Write Bytes to a File.go">
+    <entry file="file://$PROJECT_DIR$/../github.com/simplesteph/grpc-go-course/greet/greetpb/greet.pb.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+        <state relative-caret-position="11142">
+          <caret line="626" column="5" selection-start-line="626" selection-start-column="5" selection-end-line="626" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/18-GRPC/1_greet/greet_server/server.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
           <folding>
-            <element signature="e#142#165#0" expanded="true" />
+            <element signature="e#142#396#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/14_file/8_Check Read and Write Permissions.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/14_file/6_Open and Close Files.go">
+    <entry file="file://$PROJECT_DIR$/../google.golang.org/grpc/server.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+        <state relative-caret-position="8676">
+          <caret line="513" column="17" selection-start-line="513" selection-start-column="17" selection-end-line="513" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/14_file/1_Create Empty File.go">
+    <entry file="file://$PROJECT_DIR$/18-GRPC/1_greet/generate.sh">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/14_file/5_Delete a File.go">
+    <entry file="file://$PROJECT_DIR$/18-GRPC/1_greet/README.md">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/14_file/3_Get File Info.go">
+    <entry file="file://$PROJECT_DIR$/18-GRPC/1_greet/greetpb/greet.proto">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/14_file/4_Rename and Move a File.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/14_file/14_Quick Write to File.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/14_file/9_Change Permissions, Ownership, and Timestamps.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/14_file/16_Read up to n Bytes from File.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/12_interface/1_definition.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/12_interface/2_emp.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/14_file/19_Read All Bytes of File.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/14_file/15_Use Buffered Writer.go">
+    <entry file="file://$PROJECT_DIR$/18-GRPC/1_greet/greetpb/greet.pb.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="8748">
+          <caret line="493" column="8" selection-start-line="493" selection-start-column="5" selection-end-line="493" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../github.com/simplesteph/grpc-go-course/greet/greet_client/client.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="52" column="14" selection-start-line="52" selection-start-column="14" selection-end-line="52" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/5_Concurrent pipeline/2_fig-adding-additional-stage-to-pipeline.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="31" column="1" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
           <folding>
-            <element signature="e#649#681#0" expanded="true" />
+            <element signature="e#142#159#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/14_file/17_Read Exactly n Bytes.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/14_file/21_Use Buffered Reader.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#398#437#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/14_file/18_Read At Least n Bytes.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/14_file/12_Copy a File.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/14_file/10_Hard Links and Symlinks.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/12_interface/3_transfomation.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="56" column="1" selection-start-line="56" selection-start-column="1" selection-end-line="56" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/16_test/1_unitTest/add.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/16_test/1_unitTest/into.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="75" selection-start-line="13" selection-start-column="75" selection-end-line="13" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/5_print/2_example.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-170" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/5_print/3_example_up.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-728" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/5_print/1_print.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="62" selection-start-line="62" selection-end-line="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/16_test/2_tableDrivenTest/1_basic/split.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/16_test/2_tableDrivenTest/1_basic/split_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3924">
-          <caret line="218" column="8" selection-start-line="218" selection-start-column="8" selection-end-line="218" selection-end-column="8" />
-          <folding>
-            <element signature="e#143#175#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/16_test/pressure Test/into.md" />
-    <entry file="file://$PROJECT_DIR$/16_test/1_unitTest/add_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
-          <folding>
-            <element signature="e#146#204#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/16_test/3_pressureTest/pressure.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/16_test/4_coverTest/add.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/16_test/4_coverTest/add_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/16_test/3_pressureTest/add.go">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/16_test/3_pressureTest/add_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/16_test/4_coverTest/cover.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/16_test/5_benchmarkTest/1_fibonacci/fibonacci.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/16_test/5_benchmarkTest/1_fibonacci/fibonacci_test.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+        <state relative-caret-position="300">
+          <caret line="65" column="21" selection-start-line="65" selection-start-column="21" selection-end-line="65" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/3_channel/8_Select/3_Timed channels operations/3_timeAndLock.go">
+    <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/5_Concurrent pipeline/4_some-handy-generators/1_fig-take-and-repeat-pipeline.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-417">
+          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+          <folding>
+            <element signature="e#142#159#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/5_Concurrent pipeline/4_some-handy-generators/2_fig-utilizing-string-stage.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-777">
+          <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+          <folding>
+            <element signature="e#141#158#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/3_fin-out/2_complex_fin-out.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-151" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/2_fin-in/1_fin-in.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-70" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/2_fin-in/2_fig-naive-prime-finder.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="21" lean-forward="true" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+          <folding>
+            <element signature="e#142#180#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/3_channel/9_channelDeadLock/1_deadlock.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-628" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/3_channel/9_channelDeadLock/2_resolve.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/3_channel/9_channelDeadLock/3_resolve.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/2_Goroutine-emp/1_multiGoroutine.go">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/3_channel/8_Select/3_Timed channels operations/2_emp_time.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-808" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/3_channel/8_Select/3_Timed channels operations/3_timeAndLock.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-772" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/3_channel/10_waitgroup/waitgroup.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-556" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/3_channel/1_NoBuffleChannel.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="40" column="12" lean-forward="true" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/3_channel/2_channelAsParam-return.go">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/3_channel/3_Pipeline.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/3_channel/4_close.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-538" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/3_channel/8_Select/3_Timed channels operations/1_time.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1993" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/6_or-channel/1_or-channel.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="554">
+          <caret line="57" column="19" selection-start-line="57" selection-start-column="19" selection-end-line="57" selection-end-column="19" />
+          <folding>
+            <element signature="e#620#645#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/5_Concurrent pipeline/4_pipeline.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/5_Concurrent pipeline/3_fig-pipelines-chan-stream-processing.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
+          <folding>
+            <element signature="e#142#159#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/5_Concurrent pipeline/1_fig-pipelines-func-stream-processing.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+          <folding>
+            <element signature="e#142#159#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/2_fin-in/3_fig-fan-out-naive-prime-finder.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2628">
+          <caret line="146" column="1" selection-start-line="146" selection-start-column="1" selection-end-line="146" selection-end-column="1" />
+          <folding>
+            <element signature="e#142#199#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/5_Concurrent pipeline/4_some-handy-generators/3_pipelines_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="58" column="32" selection-start-line="58" selection-start-column="32" selection-end-line="58" selection-end-column="32" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/3-agrs/1_introduce.md">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3-agrs/2_agrs.go">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/3-agrs/3_TupleAssignment.go">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/12_interface/4_emp_Temperature/4_emp_Temperature.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="12" column="2" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/5_emp_du/3_du_filesize/3_du.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1026">
-          <caret line="65" column="13" selection-start-line="65" selection-start-column="8" selection-end-line="65" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lab-QQRecursive tree/main.go">
+    <entry file="file://$PROJECT_DIR$/3-agrs/5_const.go">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/16_test/6_prof/prof.go">
+    <entry file="file://$PROJECT_DIR$/3-agrs/6_iota.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/3-agrs/7_Cmd line arg.go">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/7_bridge-channel/1_bridge-channel.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="45" selection-start-line="45" selection-end-line="45" />
+        <state relative-caret-position="1188">
+          <caret line="68" column="27" selection-start-line="68" selection-start-column="27" selection-end-line="68" selection-end-column="27" />
+          <folding>
+            <element signature="e#142#159#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/16_test/3_pressureTest/.coverage.txt">
+    <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/into.md">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/lab-QQRecursive tree/search.go">
+    <entry file="file://$PROJECT_DIR$/1-introduction/introduce.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        <state relative-caret-position="216">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lab-QQRecursive tree/isExit.go">
+    <entry file="file://$PROJECT_DIR$/2_helloworld/part2-helloworld.go">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/lab-QQRecursive tree/2_improve/main.go">
+    <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/8_buffering/1_buffering_test.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+        <state relative-caret-position="18">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+          <folding>
+            <element signature="e#142#204#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitattributes">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fib.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/9_context/into.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5227">
+          <caret line="388" column="5" selection-start-line="388" selection-start-column="5" selection-end-line="388" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/9_context/1_greeter-with-done-chan.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1530">
+          <caret line="85" column="1" selection-start-line="85" selection-start-column="1" selection-end-line="85" selection-end-column="1" />
+          <folding>
+            <element signature="e#142#175#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/15_goroutineAndChannel/6_Concurrent model/9_context/2_greeter-with-context.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
         </state>
       </provider>
     </entry>

@@ -1,9 +1,12 @@
 
 
-//反射转换到接口
+/*
+ * Copyright (c) 2019  郑建勋(jonson)
+ * License: https://creativecommons.org/licenses/by-nc-sa/4.0/
+ * go语言交流3群：713385260
+ */
 
-
-//inerface可以直接放入fmt中打印
+//ValueOf can change to  interface{}
 package main
 
 import (
@@ -19,8 +22,6 @@ func main() {
 
 	fmt.Println(pointer.Interface())
 	fmt.Println(value.Interface())
-
-
 
 	convertPointer := pointer.Interface().(*float64)
 	convertValue := value.Interface().(float64)

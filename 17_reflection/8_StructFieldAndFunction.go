@@ -1,3 +1,9 @@
+/*
+ * Copyright (c) 2019  郑建勋(jonson)
+ * License: https://creativecommons.org/licenses/by-nc-sa/4.0/
+ * go语言交流3群：713385260
+ */
+
 package main
 
 import (
@@ -16,11 +22,8 @@ func (u User) ReflectCallFunc() {
 }
 
 func main() {
-
 	user := User{1, "Allen.Wu", 25}
-
 	DoFiledAndMethod(user)
-
 }
 
 // 通过接口来获取任意参数，然后一一揭晓
@@ -36,6 +39,8 @@ func DoFiledAndMethod(input interface{}) {
 	// 1. 先获取interface的reflect.Type，然后通过NumField进行遍历
 	// 2. 再通过reflect.Type的Field获取其Field
 	// 3. 最后通过Field的Interface()得到对应的value
+
+	//the same to getValue.NumField()
 	for i := 0; i < getType.NumField(); i++ {
 		field := getType.Field(i)
 		value := getValue.Field(i).Interface()
@@ -49,30 +54,3 @@ func DoFiledAndMethod(input interface{}) {
 		fmt.Printf("%s: %v\n", m.Name, m.Type)
 	}
 }
-/*
-		运行结果：
-		get Type is : User
-		get all Fields is: {1 Allen.Wu 25}
-		Id: int = 1
-		Name: string = Allen.Wu
-		Age: int = 25
-		ReflectCallFunc: func(main.User)
-
-
-		通过运行结果可以得知获取未知类型的interface的具体变量及其类型的步骤为：
-
-		先获取interface的reflect.Type，然后通过NumField进行遍历
-		再通过reflect.Type的Field获取其Field
-		最后通过Field的Interface()得到对应的value
-
-		通过运行结果可以得知获取未知类型的interface的所属方法（函数）的步骤为：
-
-		先获取interface的reflect.Type，然后通过NumMethod进行遍历
-		再分别通过reflect.Type的Method获取对应的真实的方法（函数）
-		最后对结果取其Name和Type得知具体的方法名
-		也就是说反射可以将“反射类型对象”再重新转换为“接口类型变量”
-		struct 或者 struct 的嵌套都是一样的判断处理方式
-
-
-*/
-

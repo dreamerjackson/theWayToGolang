@@ -33,3 +33,6 @@ func main() {
 		vt.FieldByName("A"), // panic on changing to "b"
 	})[0].Int()) // -5
 }
+
+//Please note that, non-exported fields shouldn't be used as arguments of reflection calls.
+// If the line vt.FieldByName("A") in the above example is replaced with vt.FieldByName("b"), a panic will occur.
