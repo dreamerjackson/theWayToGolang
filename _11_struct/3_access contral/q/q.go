@@ -6,7 +6,7 @@
 
 package main
 
-import "theWayToGolang/11_struct/3_access contral/p"
+import "theWayToGolang/_11_struct/3_access contral/p"
 
 
 //通过大些字母进行权限控制
