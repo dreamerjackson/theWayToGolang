@@ -11,7 +11,7 @@ import (
 	"os"
 	"runtime/pprof"
 	"strconv"
-	fib "theWayToGolang/16_test/5_benchmarkTest/1_fibonacci"
+	fib "theWayToGolang/_16_test/5_benchmarkTest/1_fibonacci"
 )
 
 /*
