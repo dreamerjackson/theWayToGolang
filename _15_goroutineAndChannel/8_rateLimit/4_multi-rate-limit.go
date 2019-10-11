@@ -53,8 +53,8 @@ func Per(eventCount int, duration time.Duration) rate.Limit {
 	return rate.Every(duration / time.Duration(eventCount))
 }
 func Open() *APIConnection {
-	//1分钟补充2个
-	secondLimit := rate.NewLimiter(Per(2, time.Second), 1)   // <1>
+	//1秒钟补充2个
+	secondLimit := rate.NewLimiter(Per(2, time.Second), 2)   // <1>
 	//1分钟补充10个
 	minuteLimit := rate.NewLimiter(Per(10, time.Minute), 10) // <2>
 	return &APIConnection{
