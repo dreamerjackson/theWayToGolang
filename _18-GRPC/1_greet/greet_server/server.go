@@ -13,13 +13,12 @@ import (
 	"log"
 	"net"
 	"strconv"
+	"theWayToGolang/_18-GRPC/1_greet/greetpb"
 	"time"
 
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/credentials"
 	"google.golang.org/grpc/status"
-
-	"github.com/simplesteph/grpc-go-course/greet/greetpb"
 
 	"google.golang.org/grpc"
 )
@@ -87,12 +86,12 @@ func (*server) GreetEveryone(stream greetpb.GreetService_GreetEveryoneServer) er
 
 		sendErr := stream.Send(&greetpb.GreetEveryoneResponse{
 			Result: result,
-		})
-		if sendErr != nil {
-			log.Fatalf("Error while sending data to client: %v", sendErr)
-			return sendErr
-		}
+	})
+	if sendErr != nil {
+		log.Fatalf("Error while sending data to client: %v", sendErr)
+		return sendErr
 	}
+}
 
 }
 

@@ -48,9 +48,18 @@ func main() {
 	fmt.Println(format.Any(d))                  // "1"
 	fmt.Println(format.Any([]int64{x}))         // "[]int64 0x8202b87b0"
 	fmt.Println(format.Any([]time.Duration{d})) // "[]time.Duration 0x8202b87e0"
-
+	fmt.Println(format.Any([]time.Duration{d}))
+	fmt.Println(format.Any(aaa{}))
 }
 
+type aaa struct {
+	Account string
+	Brokerid int
+}
+
+func (a*aaa) string()  {
+	fmt.Println("ppp")
+}
 /*
 到目前为止, 我们的函数将每个值视作一个不可分割没有内部结构的物品, 因此它叫 formatAtom.
 对于聚合类型(结构体和数组)和接口，只是打印值的类型,
