@@ -1,8 +1,4 @@
-## 项目简介
-* 这是一套帮助初学者从0到1学习go语言的项目，致力于打造最完整、最强悍、最有深度的Go语言学习体系
-* 我希望这套课程能够涵盖Go语言的所有体系、并致力于用大量的案例来诠释其用法
-* 鉴于作者水平有限，真诚地希望能够集所有人的智慧，完善此项目。
-
+# go语言导论
 ## 简介
 * Go（又称Golang）是Google开发的一种静态强类型、编译型、并发型，并具有垃圾回收功能的编程语言。
 * 罗伯特·格瑞史莫(Robert Griesemer)，罗勃·派克（Rob Pike）及肯·汤普逊(Ken Thompson)于2007年9月开始设计Go
@@ -118,9 +114,3 @@ Go语言有一个吉祥物，在会议、文档页面和博文中，大多会包
 [优秀的Go语言项目](https://github.com/avelino/awesome-go)
 [Bell Labs and CSP Threads](https://swtch.com/~rsc/thread/)
 [Go语言简介](http://c.biancheng.net/view/1.html)
-
-
-```
-go语言qq交流3群：713385260
-emial:zhuimengshaonian04@gmail.com
-```

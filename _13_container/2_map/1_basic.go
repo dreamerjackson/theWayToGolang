@@ -48,3 +48,6 @@ func main() {
 
 	fmt.Println(countryMap)
 }
+
+// map 的key是可以为interface的，只要是可比较的。
+// https://forum.golangbridge.org/t/using-interface-types-as-map-keys/706

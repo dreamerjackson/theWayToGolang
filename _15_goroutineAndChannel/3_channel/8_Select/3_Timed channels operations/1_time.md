@@ -35,7 +35,7 @@ Since performance is not really relevant here (after all we are waiting) the onl
 
 Beware that re-using timers is tricky, so keep in mind that it might not be worth the risk to just save 10 allocs/op.
 
-First come first served
+## First come first served
 Sometimes you want to write the same message to many channels, writing to whichever is available first, but never writing the same message twice on the same channel.
 
 To do this there are two ways: you can mask the channels with local variables, and disable the select cases accordingly, or use goroutines and waits.
@@ -137,3 +137,6 @@ func ToChansTimedContextGoroutines(ctx context.Context, d time.Duration, message
 }
 
 ```
+
+## 参考
+https://blogtitle.github.io/go-advanced-concurrency-patterns-part-2-timers/

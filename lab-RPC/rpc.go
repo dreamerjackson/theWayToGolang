@@ -26,8 +26,8 @@ type replyMsg struct {
 
 //请求信息
 type reqMsg struct {
-	endname  interface{} //服务器的名字
-	svcMeth  string      //"Raft.AppendEntries"
+	endname  interface{} // name of sending ClientEnd
+	svcMeth  string      // e.g. "Raft.AppendEntries"
 	argsType reflect.Type
 	args     []byte
 	replych  chan replyMsg
@@ -43,6 +43,9 @@ type ClientEnd struct {
 //@svcMeth "Raft.AppendEntries"
 //args参数的序列化
 //reply 回复
+// send an RPC, wait for the reply.
+// the return value indicates success; false means that
+// no reply was received from the server.
 func (e *ClientEnd) Call(svcMeth string, args interface{}, reply interface{}) bool {
 	req := reqMsg{}
 	req.endname = e.endname
@@ -204,7 +207,7 @@ func MakeService(rcvr interface{}) *Service {
 		mtype := method.Type //方法的类型
 		mname := method.Name //方法的名字
 
-		if method.PkgPath != "" || //大些？
+		if method.PkgPath != "" || //大写？
 			mtype.NumIn() != 3 || //3个参数
 			mtype.In(2).Kind() != reflect.Ptr || //最后一个参数是否是指针
 			mtype.NumOut() != 0 {
@@ -394,7 +397,6 @@ func (rn *Network) IsServerDead(endname interface{}, servername interface{}, ser
 	defer rn.mu.Unlock()
 
 	if rn.enabled[endname] == false || rn.servers[servername] != server {
-
 		return true
 	}
 
@@ -410,7 +412,8 @@ func (rn *Network) GetCOunt(servername interface{}) int {
 	return svr.GetCount()
 }
 
-func (rn *Network) ReadEndnameInfo(endname interface{}) (enable bool, servername interface{}, server *Server, reliable bool, longreordering bool) {
+func (rn *Network) ReadEndnameInfo(endname interface{}) (enable bool,
+	servername interface{}, server *Server, reliable bool, longreordering bool) {
 	rn.mu.Lock()
 	defer rn.mu.Unlock()
 

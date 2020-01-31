@@ -65,3 +65,43 @@ fmt.Printf("%T %[1]v\n", noDelay)     // "time.Duration 0"
 fmt.Printf("%T %[1]v\n", timeout)     // "time.Duration 5m0s"
 fmt.Printf("%T %[1]v\n", time.Minute) // "time.Duration 1m0s"
 */
+
+
+// think?
+/*
+
+package main
+
+import (
+    "fmt"
+)
+
+func main() {
+    const (
+        a = 0.1
+        b = 0.2
+        c = 0.3
+    )
+    fmt.Println(a+b == c)
+}
+
+___________________
+
+package main
+
+import (
+    "fmt"
+)
+
+func main() {
+    const (
+        A = 0.1
+        B = 0.2
+    )
+    a, b := A, B
+    fmt.Println(A+B==a+b)
+}
+
+*/
+// 参考：https://blog.golang.org/constants
+// https://www.ardanlabs.com/blog/2014/04/introduction-to-numeric-constants-in-go.html
