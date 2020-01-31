@@ -112,12 +112,13 @@ Go语言项目总负责人，贝尔实验室 Unix 团队成员，除帮助设计
 
 ## Go语言吉祥物
 Go语言有一个吉祥物，在会议、文档页面和博文中，大多会包含下图所示的 Go Gopher，这是才华横溢的插画家 Renee French 设计的，她也是 Go 设计者之一 Rob Pike 的妻子。
+
 ![image](image/1.jpg)
 
 ## 参考资料
-[优秀的Go语言项目](https://github.com/avelino/awesome-go)
-[Bell Labs and CSP Threads](https://swtch.com/~rsc/thread/)
-[Go语言简介](http://c.biancheng.net/view/1.html)
+* [优秀的Go语言项目](https://github.com/avelino/awesome-go)
+* [Bell Labs and CSP Threads](https://swtch.com/~rsc/thread/)
+* [Go语言简介](http://c.biancheng.net/view/1.html)
 
 
 ```
