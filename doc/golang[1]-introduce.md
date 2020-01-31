@@ -1,4 +1,4 @@
-# go语言导论
+# golang学习之路[1]-go语言导论
 ## 简介
 * Go（又称Golang）是Google开发的一种静态强类型、编译型、并发型，并具有垃圾回收功能的编程语言。
 * 罗伯特·格瑞史莫(Robert Griesemer)，罗勃·派克（Rob Pike）及肯·汤普逊(Ken Thompson)于2007年9月开始设计Go，稍后Ian Lance Taylor、Russ Cox加入项目。
