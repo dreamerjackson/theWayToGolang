@@ -151,7 +151,7 @@
 * 配置中心
 
 ## 参考资料
-[维基百科：微服务](https://zh.wikipedia.org/wiki/%E5%BE%AE%E6%9C%8D%E5%8B%99)
-[什么是微服务架构？](https://www.zhihu.com/question/65502802)
-[What Is Microservices – Introduction To Microservice Architecture](https://www.edureka.co/blog/what-is-microservices/)
-[微服务介绍](https://wumansgy.github.io/2018/12/22/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E4%BB%8B%E7%BB%8D/)
+* [维基百科：微服务](https://zh.wikipedia.org/wiki/%E5%BE%AE%E6%9C%8D%E5%8B%99)
+* [什么是微服务架构？](https://www.zhihu.com/question/65502802)
+* [What Is Microservices – Introduction To Microservice Architecture](https://www.edureka.co/blog/what-is-microservices/)
+* [微服务介绍](https://wumansgy.github.io/2018/12/22/%E5%BE%AE%E6%9C%8D%E5%8A%A1%E4%BB%8B%E7%BB%8D/)
