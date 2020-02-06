@@ -13,7 +13,7 @@
 * 没有图形化界面时，我们需要在命令行中操作
 * 第一步：下载开发包
 ```
-wget https://dl.google.com/go/go1.13.7.linux-amd64.tar.gz
+>> wget https://dl.google.com/go/go1.13.7.linux-amd64.tar.gz
 --2020-02-06 14:18:58--  https://dl.google.com/go/go1.13.7.linux-amd64.tar.gz
 Resolving dl.google.com (dl.google.com)... 203.208.50.168, 203.208.50.166, 203.208.50.163, ...
 Connecting to dl.google.com (dl.google.com)|203.208.50.168|:443... connected.
@@ -64,7 +64,8 @@ AUTHORS  CONTRIBUTING.md  CONTRIBUTORS  LICENSE  PATENTS  README.md  SECURITY.md
 export GOROOT=/usr/local/go
 export PATH=$PATH:$GOROOT/bin
 ```
-* 在任意目录下使用终端执行 go env 命令，输出如下结果说明Go语言开发包已经安装成功
+* 环境变量设置好后，可以通过在命令行输入go env 命令来进行测试。
+
 ```
 >> go env
 GO111MODULE=""

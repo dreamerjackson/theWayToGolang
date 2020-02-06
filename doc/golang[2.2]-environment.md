@@ -1,7 +1,8 @@
-# golang快速入门[2.2]-go语言开发环境配置-macos
+# golang快速入门[2.2]-go语言开发环境配置-macOS
 ## macos安装Go语言开发包
 * 配置go语言的开发环境的第一步是要在[go官网下载页面](https://golang.google.cn/dl/)下载开发包
-* macos需要下载pkg后缀文件，苹果公司制造的macOS和iOS操作系统Apple软件包使用.pkg扩展名,在内部使用Xar格式
+* macOS需要下载pkg后缀文件
+* macOS和iOS操作系统Apple软件包使用.pkg扩展名,在内部使用Xar格式
 
 ![image](../image/17.png)
 * Mac OS 的Go语言开发包是 .pkg 格式的，双击我们下载的安装包即可开始安装,一路点击“继续”即可.
@@ -52,6 +53,7 @@ export GOROOT=/usr/local/go
 然后保存并退出编辑器，运行 `source ~/.bash_profile` 命令即可。
 
 * 环境变量设置好后，可以通过在命令行输入go env 命令来进行测试。
+
 ```
 » go env                                                                                                                                                                              jackson@192
 GO111MODULE=""
