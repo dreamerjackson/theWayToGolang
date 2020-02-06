@@ -1,6 +1,6 @@
 # golang快速入门[2.2]-go语言开发环境配置-macos
 ## macos安装Go语言开发包
-* 配置go语言的开发环境的第一步是要在[go官网下载页面](https://golang.google.cn/dl/)
+* 配置go语言的开发环境的第一步是要在[go官网下载页面](https://golang.google.cn/dl/)下载开发包
 * macos需要下载pkg后缀文件，苹果公司制造的macOS和iOS操作系统Apple软件包使用.pkg扩展名,在内部使用Xar格式
 
 ![image](../image/17.png)
@@ -21,7 +21,7 @@
 | doc    | 英文版的 Go 文档                                                      |
 | lib    | 引用的一些库文件                                                      |
 | misc   | 杂项用途的文件，例如 Android 平台的编译、git 的提交钩子等             |
-| pkg    | Windows 平台编译好的中间文件                                          |
+| pkg    | macos 平台编译好的中间文件                                          |
 | src    | 标准库的源码                                                          |
 | test   | 测试用例                                                              |
 

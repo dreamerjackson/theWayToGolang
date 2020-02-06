@@ -2,7 +2,7 @@
 * 接下来，我们将讲解在windows、linux、macos三大平台上配置go语言的开发环境。
 
 ## windows安装Go语言开发包
-* 配置go语言的开发环境的第一步是要在[go官网下载页面](https://golang.google.cn/dl/)
+* 配置go语言的开发环境的第一步是要在[go官网下载页面](https://golang.google.cn/dl/)下载开发包
 * windows需要下载msi后缀文件，msi是windows下的安装包文件格式,用于安装，存储和删除程序
 
 ![image](../image/8.png)
