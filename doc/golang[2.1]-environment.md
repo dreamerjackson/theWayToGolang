@@ -70,3 +70,5 @@ set GOPROXY=https://proxy.golang.org,direct
 set GOROOT=c:\go
 ...
 ```
+## 参考资料
+* [在Windows上安装Go语言开发包](http://c.biancheng.net/view/3992.html)
