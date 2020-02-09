@@ -1,8 +1,8 @@
 # golang快速入门[3]-go语言helloworld
 * 在之前,我们介绍了如何在windows、macos以及linux平台构建go语言的开发环境
-    + [golang快速入门[2.1]-go语言开发环境配置-windows]()
-    + [golang快速入门[2.2]-go语言开发环境配置-macOS]()
-    + [golang快速入门[2.3]-go语言开发环境配置-linux]()
+    + [golang快速入门[2.1]-go语言开发环境配置-windows](https://zhuanlan.zhihu.com/p/105462515)
+    + [golang快速入门[2.2]-go语言开发环境配置-macOS](https://zhuanlan.zhihu.com/p/105551487)
+    + [golang快速入门[2.3]-go语言开发环境配置-linux](https://zhuanlan.zhihu.com/p/105556890)
 * 本文将介绍如何书写、编译、并运行第一个go语言程序
 * 同时详细介绍其内部机制
 
@@ -26,10 +26,12 @@ func main() {
 * package有两种类型，一种是声明为main的package，此package可以产生可以执行的文件。
 * 其他名字的package不能产生可以执行的文件，其作为一种依赖包，有特定的功能，可以重复使用（例如数学计算）
 
+
 * 第二行`import "fmt"` 代表程序导入了外部叫做fmt的package
 * 这里的fmt是go语言标准库中的代码，go语言内置了种类繁多的标准库。参见：[golang标准库文档](https://golang.org/pkg/)
 * fmt是重要的标准库，内置了许多输入输出功能，更可以用来进行代码调试
 * go语言标准库中的代码存储于GOROOT环境变量中,
+
 
 * 第三行func main 定义了一个名字为main的函数，函数是对于执行代码的封装
 
