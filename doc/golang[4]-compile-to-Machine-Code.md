@@ -247,7 +247,8 @@ $ GOSSAFUNC=main GOOS=linux GOARCH=amd64 go build -gcflags "-S" simple.go
 ```
 GOSSAFUNC=main GOOS=linux GOARCH=amd64 go tool compile main.go
 ```
-* 当打开ssa.html时，将显示许多代码片段。
+* 当打开ssa.html时，将显示许多代码片段，其中一些片段是隐藏的
+![image](../image/golang[4]-2.png)
 * Start片段是从AST生成的SSA。genssa片段是最终生成的Plan9汇编代码
 * Start片段如下
 ```
@@ -323,7 +324,7 @@ name fmt..autotmp_4[error]: v25 v40
 ## 代码优化
 * 生成SSA之后，Go编译器还会进行一系列简单的优化，例如无效和无用代码的删除
 * 我们将用同样的ssa.html文件，比较lower 和 lowered deadcode片段
-![image](../image/golang[4]-2.png)
+![image](../image/golang[4]-3.png)
 * 在HTML文件中，某些行显示为灰色，这意味着它们将在下一阶段之一中被删除或更改
 * 例如`v15 = MOVQconst <int> [1]`为灰色，因为其在后面根本没有被使用。MOVQconst与我们之前看到的指令Const64相同，仅适用于amd64平台
 
