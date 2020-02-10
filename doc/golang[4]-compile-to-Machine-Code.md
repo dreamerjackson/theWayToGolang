@@ -4,7 +4,7 @@
 * [golang快速入门[2.1]-go语言开发环境配置-windows](https://zhuanlan.zhihu.com/p/105462515)
 * [golang快速入门[2.2]-go语言开发环境配置-macOS](https://zhuanlan.zhihu.com/p/105551487)
 * [golang快速入门[2.3]-go语言开发环境配置-linux](https://zhuanlan.zhihu.com/p/105556890)
-* [golang快速入门[3]-go语言helloworld]()
+* [golang快速入门[3]-go语言helloworld](https://zhuanlan.zhihu.com/p/105776462)
 
 * 在上文中,我们详细介绍了第一个helloworld程序
 ```go
@@ -27,13 +27,15 @@ func Main(archInit func(*Arch)) {
 
     lines := parseFiles(flag.Args())
 ```
+* 接下来我们将对各个阶段做深入介绍
 ## 词法分析
 * 所有的编译过程都是从解析代码的源文件开始的
-* 词法分析的作用就是解析源代码文件，它将文件中的字符串序列转换成 Token 序列，方便后面的处理和解析
+* 词法分析的作用就是解析源代码文件，它将文件中的字符串序列转换成`Token`序列，方便后面的处理和解析
 * 我们一般会把执行词法分析的程序称为词法解析器（lexer）
-* Token可以是关键字，字符串，变量名，函数名
-* 有效程序的"单词"都由Token表示，具体来说，这意味着"package"，"main"，"func" 等单词都为Token
+* `Token`可以是关键字，字符串，变量名，函数名
+* 有效程序的"单词"都由`Token`表示，具体来说，这意味着"package"，"main"，"func" 等单词都为`Token`
 * Go语言允许我们使用go/scanner和go/token包在Go程序中执行解析程序，从而可以看到类似被编译器解析后的结构
+* 如果在语法解析的过程中发生了任何语法错误，都会被语法解析器发现并将消息打印到标准输出上，整个编译过程也会随着错误的出现而被中止
 * helloworld程序解析后如下所示
 ```
 1:1   package "package"
@@ -68,7 +70,10 @@ SourceFile = PackageClause ";" { ImportDecl ";" } { TopLevelDecl ";" }
 ```
 
 * 标准的 Golang 语法解析器使用的就是 LALR(1) 的文法，语法解析的结果生成了抽象语法树（Abstract Syntax Tree，AST）
-* AST是源代码的结构化表示。在AST中，我们能够看到程序结构，例如函数和常量声明
+* 抽象语法树（Abstract Syntax Tree，AST），或简称语法树（Syntax tree），是源代码语法结构的一种抽象表示。它以树状的形式表现编程语言的语法结构，树上的每个节点都表示源代码中的一种结构。
+* 之所以说语法是“抽象”的，是因为这里的语法并不会表示出真实语法中出现的每个细节。比如，嵌套括号被隐含在树的结构中，并没有以节点的形式呈现；而类似于 if-condition-then 这样的条件跳转语句，可以使用带有三个分支的节点来表示。
+* 与AST相对应的是CST(Concrete Syntax Trees),读者可以在参考资料中拓展阅读二者的差别
+* 在AST中，我们能够看到程序结构，例如函数和常量声明
 * Go为我们提供了用于解析程序和查看AST的软件包：go/parser 和 go/ast
 * helloworld程序生成的AST如下所示
 ```
@@ -189,9 +194,21 @@ SourceFile = PackageClause ";" { ImportDecl ";" } { TopLevelDecl ";" }
 
 ## 生成中间代码
 * 在上面的步骤完成之后，可以明确代码是正确有效的
-* 接着将AST转换为程序的低级表示形式，即静态单一赋值形式（Static Single Assignment Form，SSA）形式
+* 接着将AST转换为程序的低级表示形式，即静态单一赋值形式（Static Single Assignment Form，SSA）形式，核心代码位于`gc/ssa.go`
 * SSA不是程序的最终状态
-* SSA可以更轻松地应用优化，其中最重要的是始终在使用变量之前定义变量，并且每个变量只分配一次。
+* SSA可以更轻松地应用优化，其中最重要的是始终在使用变量之前定义变量，并且每个变量只分配一次
+* 例如下面的代码我们可以看到第一个x的赋值没有必要的
+```
+x = 1
+x = 2
+y = 7
+```
+* 编辑器会将上面的代码变为如下，从而会删除x_1
+```
+x_1 = 1
+x_2 = 2
+y_1 = 7
+```
 * 生成SSA的初始版本后，将应用许多优化过程。这些优化应用于某些代码段，这些代码段可以使处理器执行起来更简单或更快速。
 * 例如下面的代码是永远不会执行的，因此可以被消除。
 ```
@@ -200,6 +217,20 @@ SourceFile = PackageClause ";" { ImportDecl ";" } { TopLevelDecl ";" }
  }
 ```
 * 优化的另一个示例是可以删除某些nil检查，因为编译器可以证明这些检查永远不会出错
+* 在对SSA进行优化的过程中使用了S表达式(S-expressions)进行描述,  [S-expressions](https://en.wikipedia.org/wiki/S-expression) 是嵌套列表（树形结构）数据的一种表示法，由编程语言Lisp发明并普及，该语言将其用于源代码和数据
+* SSA优化过程中对于S表达式的应用如下所示，将8位的常量乘法组合起来
+```
+(Mul8 (Const8 [c]) (Const8 [d])) -> (Const8 [int64(int8(c*d))])
+```
+* 具体的优化包括
+    + 常数传播（constant propagation）
+    + 值域传播（value range propagation）
+    + 稀疏有条件的常数传播（sparse conditional constant propagation）
+    + 消除无用的程式码（dead code elimination）
+    + 全域数值编号（global value numbering）
+    + 消除部分的冗余（partial redundancy elimination）
+    + 强度折减（strength reduction）
+    + 寄存器分配（register allocation）
 * 我们可以用下面的简单代码来查看SSA及其优化过程
 ```
 package main
@@ -214,6 +245,7 @@ func main() {
 * 我们需要在命令行运行如下指令来查看SSA
 * GOSSAFUNC环境变量代表我们需要查看SSA的函数
 * GOOS、GOARCH代表编译为在Linux 64-bit平台运行的代码
+* go build用-ldflags给go编译器传入参数
 * -S 标识将打印汇编代码并创建ssa.html文件
 
 ```
@@ -309,3 +341,21 @@ name fmt..autotmp_4[error]: v25 v40
 * Go语言源代码的 cmd/compile/internal 目录中包含了非常多机器码生成相关的包
 * 不同类型的 CPU 分别使用了不同的包进行生成 amd64、arm、arm64、mips、mips64、ppc64、s390x、x86 和 wasm
 * Go语言能够在几乎全部常见的 CPU 指令集类型上运行。
+
+## 问：go的编译速度相对于java为什么更快
+* 快速编译是go的设计目标之一
+* go语法紧凑且规则因此更容易解析
+* go具有严格的依赖管理，没有循环依赖问题，计算依赖树非常高效
+* 语言的设计易于分析，无需符号表即可进行解析
+* Go语言本身比Java简单得多，编辑器本身做的事不多
+* Go编译器较新，其中的无用代码更少
+## 参考资料
+* [作者知乎](https://www.zhihu.com/people/ke-ai-de-xiao-tu-ji-71)
+* [blog](https://dreamerjonson.com/)
+* [抽象语法树](https://en.wikipedia.org/wiki/Abstract_syntax_tree)
+* [静态单赋值](https://en.wikipedia.org/wiki/Static_single_assignment_form)︎
+* [Abstract vs. Concrete Syntax Trees](https://eli.thegreenplace.net/2009/02/16/abstract-vs-concrete-syntax-trees)︎
+* [Go compiler internals: adding a new statement to Go](https://eli.thegreenplace.net/2019/go-compiler-internals-adding-a-new-statement-to-go-part-1/)
+* [Go compiler: SSA optimization rules description language](https://quasilyte.dev/blog/post/go_ssa_rules/)
+* [STEAM How a Go Program Compiles down to Machine Code](http://c.biancheng.net/view/3992.html)
+* [Go 编译原理](https://draveness.me/golang/docs/part1-prerequisite/ch02-compile/summary/)
