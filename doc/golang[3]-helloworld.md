@@ -50,3 +50,6 @@ func main() {
 * 执行`main.exe` 在命令行输出：`Hello, world`
 
 ![image](../image/golang[2.3]-3.png)
+
+## 总结
+在本文中，我们详细介绍了如何书写、编译并运行第一个go语言helloworld程序，并详细说明了每一行的意义

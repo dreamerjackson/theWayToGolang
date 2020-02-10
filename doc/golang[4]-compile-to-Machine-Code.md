@@ -234,10 +234,10 @@ func main() {
 ```
 
 * 我们需要在命令行运行如下指令来查看SSA
-* GOSSAFUNC环境变量代表我们需要查看SSA的函数
+* GOSSAFUNC环境变量代表我们需要查看SSA的函数并创建ssa.html文件
 * GOOS、GOARCH代表编译为在Linux 64-bit平台运行的代码
 * go build用-ldflags给go编译器传入参数
-* -S 标识将打印汇编代码并创建ssa.html文件
+* -S 标识将打印汇编代码
 
 ```
 $ GOSSAFUNC=main GOOS=linux GOARCH=amd64 go build -gcflags "-S" simple.go
@@ -248,7 +248,7 @@ $ GOSSAFUNC=main GOOS=linux GOARCH=amd64 go build -gcflags "-S" simple.go
 GOSSAFUNC=main GOOS=linux GOARCH=amd64 go tool compile main.go
 ```
 * 当打开ssa.html时，将显示许多代码片段。
-* Start片段是从AST生成的SSA。genssa是最终生成的Plan9汇编代码
+* Start片段是从AST生成的SSA。genssa片段是最终生成的Plan9汇编代码
 * Start片段如下
 ```
 start
@@ -340,6 +340,12 @@ name fmt..autotmp_4[error]: v25 v40
 * 语言的设计易于分析，无需符号表即可进行解析
 * Go语言本身比Java简单得多，编辑器本身做的事不多
 * Go编译器较新，其中的无用代码更少
+
+## 总结
+*  在本文中详细介绍了go语言从源代码编译为机器码的过程
+*  涉及了词法分析、语法分析、类型检查、SSA生成与代码优化、生成机器码等过程
+*  以期帮助读者全面深入的了解go语言的编译过程
+
 ## 参考资料
 * [作者知乎](https://www.zhihu.com/people/ke-ai-de-xiao-tu-ji-71)
 * [blog](https://dreamerjonson.com/)
