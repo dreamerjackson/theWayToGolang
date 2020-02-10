@@ -184,8 +184,7 @@ SourceFile = PackageClause ";" { ImportDecl ";" } { TopLevelDecl ";" }
 ## 生成中间代码
 * 在上面的步骤完成之后，可以明确代码是正确有效的
 * 接着将AST转换为程序的低级表示形式，即静态单一赋值形式（Static Single Assignment Form，SSA）形式，核心代码位于`gc/ssa.go`
-* SSA不是程序的最终状态
-* SSA可以更轻松地应用优化，其中最重要的是始终在使用变量之前定义变量，并且每个变量只分配一次
+* SSA不是程序的最终状态,其可以更轻松地应用优化，其中最重要的是始终在使用变量之前定义变量，并且每个变量只分配一次
 * 例如下面的代码我们可以看到第一个x的赋值没有必要的
 ```
 x = 1
@@ -206,7 +205,7 @@ y_1 = 7
  }
 ```
 * 优化的另一个示例是可以删除某些nil检查，因为编译器可以证明这些检查永远不会出错
-* 在对SSA进行优化的过程中使用了S表达式(S-expressions)进行描述,  [S-expressions](https://en.wikipedia.org/wiki/S-expression) 是嵌套列表（树形结构）数据的一种表示法，由编程语言Lisp发明并普及，该语言将其用于源代码和数据
+* 在对SSA进行优化的过程中使用了S表达式(S-expressions)进行描述,  [S-expressions](https://en.wikipedia.org/wiki/S-expression) 是嵌套列表（树形结构）数据的一种表示法，由编程语言Lisp发明并普及
 * SSA优化过程中对于S表达式的应用如下所示，将8位的常量乘法组合起来
 ```
 (Mul8 (Const8 [c]) (Const8 [d])) -> (Const8 [int64(int8(c*d))])
@@ -220,7 +219,10 @@ y_1 = 7
     + 消除部分的冗余（partial redundancy elimination）
     + 强度折减（strength reduction）
     + 寄存器分配（register allocation）
+
+## SSA优化
 * 我们可以用下面的简单代码来查看SSA及其优化过程
+* 对于如下程序
 ```
 package main
 
