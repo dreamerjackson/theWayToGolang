@@ -1,4 +1,4 @@
-# golang快速入门[5]-go语言是如何运行的-谈链接器与内存分配
+# golang快速入门[5.1]-go语言是如何运行的-链接器
 
 ## 前文
 * [golang快速入门[2.1]-go语言开发环境配置-windows](https://zhuanlan.zhihu.com/p/105462515)
@@ -195,12 +195,19 @@ EOF
 mv $WORK/b001/exe/a.out main
 rm -r $WORK/b001/
 ```
+
+## 总结
+* 在本文中，我们介绍了go程序从源代码到运行需要经历的重要一环——链接，并介绍了静态链接与动态链接
+* 在本文中，我们用一个例子介绍了编译与链接的具体过程
+* 在下文中，我们将介绍go语言的内存分配
+
 ## 参考资料
 * [作者知乎](https://www.zhihu.com/people/ke-ai-de-xiao-tu-ji-71)
 * [blog](https://dreamerjonson.com/)
 * [wiki obj code](https://en.wikipedia.org/wiki/Object_code)
 * [golang Command compile](https://golang.org/cmd/compile/)
 * [golang Command Link](https://golang.org/cmd/link/)
+* [初探 Go 的编译命令执行过程](https://halfrost.com/go_command/)
 * [How does the go build command work ?](https://dave.cheney.net/2013/10/15/how-does-the-go-build-command-work)
 * [Golang编译器漫谈（1）编译器和连接器](https://hao.io/2020/01/golang%e7%bc%96%e8%af%91%e5%99%a8%e6%bc%ab%e8%b0%88%ef%bc%881%ef%bc%89%e7%bc%96%e8%af%91%e5%99%a8%e5%92%8c%e8%bf%9e%e6%8e%a5%e5%99%a8/)
 * [What are the differences between static and dynamic (shared) library linking?](http://cs-fundamentals.com/tech-interview/c/difference-between-static-and-dynamic-linking.php)
