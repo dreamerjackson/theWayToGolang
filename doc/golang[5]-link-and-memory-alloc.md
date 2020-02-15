@@ -10,7 +10,7 @@
 ## 前言
 * 在上一篇文章中,我们详细介绍了go语言编译为机器码经历的：词法分析 => 语法分析 => 类型检查 => 中间代码 => 代码优化 => 生成机器码
 * 但是在源代码生成执行程序的过程中，其实还经历了链接等过程。总的来说一个程序的生命周期可以概括为: 编写代码 => 编译 => 链接 => 加载到内存 => 执行
-* 下面我们将对其进行逐一解释
+* 在第5章我们将对其进行逐一解释
 
 ## 链接(link)
 * 我们编写的程序可能会使用其他程序或程序库( library ) 正如我们在helloworld程序中使用的fmt package
@@ -38,8 +38,7 @@
 * 有时会看到一些比较老的文章说go语言是静态链接的，但这种说法是不准确的
 * 现在的go语言不仅支持静态链接也支持动态编译
 * 总的来说，go语言在一般默认情况下是静态链接的，但是一些特殊的情况，例如使用了CGO（即引用了C代码）的地方，则会使用操作系统的动态链接库。例如go语言的`net/http`包在默认情况下会应用`libpthread`与 `libc` 的动态链接库，这种情况会导致go语言程序虚拟内存的增加（下一文介绍）
-* go语言也支持在编译时传递参数来指定要生成的链接库的方式。
-我们可以使用`go help build`命令查看
+* go语言也支持在`go build`编译时传递参数来指定要生成的链接库的方式,我们可以使用`go help build`命令查看
 ```
 » go help buildmode                                                                                                                                                             jackson@192
 	-buildmode=archive
@@ -82,10 +81,10 @@
 		import, into a Go plugin. Packages not named main are ignored.
 ```
 * archive:   将非 main package构建为 .a 文件. main 包将被忽略。
-* c-archive: 将 main package构建为及其导入的所有软件包构建到 C 归档文件中
+* c-archive: 将 main package构建为及其导入的所有package构建为构建到 C 归档文件中
 * c-shared:  将mainpackage构建为，以及它们导入的所有package构建到C 动态库中。
 * shared:    将所有非 main package合并到一个动态库中，当使用-linkshared参数后，能够使用此动态库
-* exe:       构建mainpackage构建为和其导入的package构建为成为可执行文件
+* exe:       将main package和其导入的package构建为成为可执行文件
 * 本文不再介绍go如何手动使用动态库这一高级功能，读者只需现在知道go可以实现这一功能即可
 
 
@@ -121,7 +120,7 @@ cd .
 mv $WORK/b001/exe/a.out main
 rm -r $WORK/b001/
 ```
-
+* 下面我们对输出进行逐行分析
 * 创建了一个临时目录，用于存放临时文件。默认情况下命令结束时自动删除此目录，如果需要保留添加`-work`参数。
 ```
 WORK=/var/folders/g2/0l4g444904vbn8wxnrw0j_980000gn/T/go-build757876739
@@ -202,6 +201,7 @@ rm -r $WORK/b001/
 * 在下文中，我们将介绍go语言的内存分配
 
 ## 参考资料
+* [项目链接](https://github.com/dreamerjackson/theWayToGolang)
 * [作者知乎](https://www.zhihu.com/people/ke-ai-de-xiao-tu-ji-71)
 * [blog](https://dreamerjonson.com/)
 * [wiki obj code](https://en.wikipedia.org/wiki/Object_code)
