@@ -53,7 +53,7 @@
 * TCMalloc解决了多线程时内存分配的锁竞争问题
 * TCMalloc对于小对象的分配非常高效
 * TCMalloc的核心思想是将内存划分为多个级别，以减少锁的粒度。在TCMalloc内部，内存管理分为两部分：小对象内存（thread memory）和大对象内存（page heap）。
-* 小对象内存管理将内存页分成多个固定大小的可分配的free列表。因此，每个线程都会有一个无锁的小对象缓存，这使得在并行程序下分配小对象（<= 32k）非常有效。
+* 小对象内存管理将内存页分成多个固定大小的可分配的free列表。因此，每个线程都会有一个无锁的小对象缓存，这使得在并行程序下分配小对象（<= 32k）非常有效。下图的对象代表的是字节。
 
 ![image](../image/golang[5.3]-1.png)
 
@@ -78,7 +78,9 @@
 
 ## go内存分配
 * Go allocator与TCMalloc类似，内存的管理由一系列`页`（spans/mspan对象）组成，使用（线程/协程）本地缓存并根据内存大小进行划分。
-* 在go语言中，Spans是8K或更大的连续内存区域。可以在`runtime/mheap.go`中看到span结构
+
+#### mspan
+* 在go语言中，Spans是8K或更大的连续内存区域。可以在`runtime/mheap.go`中对应的mspan结构
 ```
 type mspan struct {
 	next *mspan     // next span in list, or nil if none
@@ -108,10 +110,44 @@ type mspan struct {
 }
 
 ```
+
+* 简而言之，mspan是一个双向链接列表对象，其中包含页面的起始地址，它具有的页的数量以及其大小。
+![image](../image/golang[5.3]-5.png)
+
 * Spans有三种类型，分别是：
     + idle：没有对象，可以释放回操作系统；或重新用于堆内存；或重新用于栈内存
     + in use：至少具有一个堆对象，并且可能有更多空间
     + stack：用于协程栈。可以存在于栈中，也可以存在于堆中，但不能同时存在于两者中。
+#### mcache
+* Go 像 TCMalloc 一样为每一个 逻辑处理器（P）（Logical Processors） 提供一个本地线程缓存（Local Thread Cache）称作 mcache，所以如果 Goroutine 需要内存可以直接从 mcache 中获取，由于在同一时间只有一个 Goroutine 运行在 逻辑处理器（P）（Logical Processors） 上，所以中间不需要任何锁的参与。mcache 包含所有大小规格的 mspan 作为缓存。
+* 对于每一种大小规格都有两个类型：
+    + scan -- 包含指针的对象。
+    + noscan -- 不包含指针的对象。
+* 采用这种方法的好处之一就是进行垃圾回收时 noscan 对象无需进一步扫描是否引用其他活跃的对象。
+
+#### mcentral
+* mcentral是被所有逻辑处理器共享的
+* mcentral 对象收集所有给定规格大小的 span。每一个 mcentral 都包含两个 mspan 的列表：
+    + empty mspanList -- 没有空闲对象或 span 已经被 mcache 缓存的 span 列表
+    + nonempty mspanList -- 有空闲对象的 span 列表
+* 每一个 mcentral 结构体都维护在 mheap 结构体内。
+
+#### mheap
+* Go 使用 mheap 对象管理堆，只有一个全局变量。持有虚拟地址空间。
+* 就上我们从上图看到的：mheap 存储了 mcentral 的数组。这个数组包含了各个的 span 的 mcentral。
+```
+central [numSpanClasses]struct {
+    mcentral mcentral
+        pad      [unsafe.Sizeof(mcentral{})%sys.CacheLineSize]byte
+}
+```
+* 由于我们有各个规格的 span 的 mcentral，当一个 mcache 从 mcentral 申请 mspan 时，只需要在独立的 mcentral 级别中使用锁，所以其它任何 mcache 在同一时间申请不同大小规格的 mspan 将互不受影响可以正常申请。
+* pad为格外增加的字节。对齐填充（Pad）用于确保 mcentrals 以 CacheLineSize 个字节数分隔，所以每一个 MCentral.lock 都可以获取自己的缓存行（cache line），以避免伪共享（false sharing）问题。
+
+
+* 图中对应的`free[_MaxMHeapList]mSpanList：一个 spanList 数组。每一个 spanList 中的 mspan 包含 1 ~ 127（_MaxMHeapList - 1）个页。例如，free[3] 是一个包含 3 个页的 mspan 链表。free 表示 free list，表示未分配。对应 busy list。
+* freelarge mSpanList：一个 mspan 的列表，每一个元素(mspan)的页数大于 127，通过 mtreap 结构体管理。busylarge与之相对应。
+
 
 * 在进行内存分配时，go按照大小分成3种对象类
     + 小于16个字节的对象Tiny类
@@ -135,7 +171,7 @@ type mspan struct {
     + 从`mheap`获取内存页以用于mspan
 * 如果`mheap`为空或没有足够大的内存页
     + 从操作系统中分配一组新的页（至少1MB）
-    + 分配大量内存页将分摊与OS沟通的成本
+    + Go 会在操作系统分配超大的页（称作 arena），分配大量内存页将分摊与OS沟通的成本
 * small对象分配与Tiny对象类似，
 * 分配和释放大对象直接使用`mheap`，就像在TCMalloc中一样，管理了一组free list
 * 大对象被四舍五入为页大小（8K）的倍数，在free list中查找第k个free list，如果其为空，则继续查找更大的一个free list，直到第128个free list
@@ -148,3 +184,4 @@ type mspan struct {
 * [linux mmap/munmap](http://man7.org/linux/man-pages/man2/mmap.2.html)
 * [linux set_thread_area/get_thread_area](http://man7.org/linux/man-pages/man2/set_thread_area.2.html)
 * [TCMalloc : Thread-Caching Malloc](http://goog-perftools.sourceforge.net/doc/tcmalloc.html)
+* [GO MEMORY MANAGEMENT](https://povilasv.me/go-memory-management/#fn-1784-10)
