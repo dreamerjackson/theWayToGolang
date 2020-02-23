@@ -111,15 +111,21 @@ type mspan struct {
 
 ```
 
-* 简而言之，mspan是一个双向链接列表对象，其中包含页面的起始地址，它具有的页的数量以及其大小。
 ![image](../image/golang[5.3]-5.png)
 
-* Spans有三种类型，分别是：
+
+* 如上图，mspan是一个双向链接列表对象，其中包含页面的起始地址，它具有的页的数量以及其大小。
+
+* mspan有三种类型，分别是：
     + idle：没有对象，可以释放回操作系统；或重新用于堆内存；或重新用于栈内存
     + in use：至少具有一个堆对象，并且可能有更多空间
     + stack：用于协程栈。可以存在于栈中，也可以存在于堆中，但不能同时存在于两者中。
+
 #### mcache
 * Go 像 TCMalloc 一样为每一个 逻辑处理器（P）（Logical Processors） 提供一个本地线程缓存（Local Thread Cache）称作 mcache，所以如果 Goroutine 需要内存可以直接从 mcache 中获取，由于在同一时间只有一个 Goroutine 运行在 逻辑处理器（P）（Logical Processors） 上，所以中间不需要任何锁的参与。mcache 包含所有大小规格的 mspan 作为缓存。
+
+![image](../image/golang[5.3]-7.png)
+
 * 对于每一种大小规格都有两个类型：
     + scan -- 包含指针的对象。
     + noscan -- 不包含指针的对象。
@@ -130,6 +136,9 @@ type mspan struct {
 * mcentral 对象收集所有给定规格大小的 span。每一个 mcentral 都包含两个 mspan 的列表：
     + empty mspanList -- 没有空闲对象或 span 已经被 mcache 缓存的 span 列表
     + nonempty mspanList -- 有空闲对象的 span 列表
+
+![image](../image/golang[5.3]-8.png)
+
 * 每一个 mcentral 结构体都维护在 mheap 结构体内。
 
 #### mheap
@@ -138,7 +147,7 @@ type mspan struct {
 ```
 central [numSpanClasses]struct {
     mcentral mcentral
-        pad      [unsafe.Sizeof(mcentral{})%sys.CacheLineSize]byte
+    pad      [unsafe.Sizeof(mcentral{})%sys.CacheLineSize]byte
 }
 ```
 * 由于我们有各个规格的 span 的 mcentral，当一个 mcache 从 mcentral 申请 mspan 时，只需要在独立的 mcentral 级别中使用锁，所以其它任何 mcache 在同一时间申请不同大小规格的 mspan 将互不受影响可以正常申请。
@@ -176,6 +185,14 @@ central [numSpanClasses]struct {
 * 分配和释放大对象直接使用`mheap`，就像在TCMalloc中一样，管理了一组free list
 * 大对象被四舍五入为页大小（8K）的倍数，在free list中查找第k个free list，如果其为空，则继续查找更大的一个free list，直到第128个free list
 * 如果在第127个free list中找不到，我们在剩余的大内存页（`mspan.freelarge`字段）中查找跨度，如果失败，则从操作系统获取
+
+## 总结
+* Go 内存管理的一般思想是根据分配对象大小的不同，使用不同的内存结构构建不同的内存缓存级别。
+* 将一个从操作系统接收的连续虚拟内存地址分割为多级缓存来减少锁的使用，同时根据指定的大小分配内存减少内存碎片以提高内存分配的效率和在内存释放之后加快 `垃圾回收`  的速度
+* 下面是Go内存分配的直观表达
+![image](../image/golang[5.3]-8.png)
+
+
 ## 参考资料
 * [项目链接](https://github.com/dreamerjackson/theWayToGolang)
 * [作者知乎](https://www.zhihu.com/people/ke-ai-de-xiao-tu-ji-71)
