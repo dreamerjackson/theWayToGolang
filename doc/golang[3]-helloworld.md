@@ -1,8 +1,8 @@
 # golang快速入门[3]-go语言helloworld
 * 在之前,我们介绍了如何在windows、macos以及linux平台构建go语言的开发环境
-    + [golang快速入门[2.1]-go语言开发环境配置-windows](https://zhuanlan.zhihu.com/p/105462515)
-    + [golang快速入门[2.2]-go语言开发环境配置-macOS](https://zhuanlan.zhihu.com/p/105551487)
-    + [golang快速入门[2.3]-go语言开发环境配置-linux](https://zhuanlan.zhihu.com/p/105556890)
+    + [golang快速入门[2.1]-go语言开发环境配置-windows](https://zhuanlan.zhihu.com/p/107659334)
+    + [golang快速入门[2.2]-go语言开发环境配置-macOS](https://zhuanlan.zhihu.com/p/107661202)
+    + [golang快速入门[2.3]-go语言开发环境配置-linux](https://zhuanlan.zhihu.com/p/107662649)
 * 本文将介绍如何书写、编译、并运行第一个go语言程序
 * 同时详细介绍其内部机制
 

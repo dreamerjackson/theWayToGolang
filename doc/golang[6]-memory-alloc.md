@@ -1,12 +1,12 @@
 # golang快速入门[5.2]-go语言是如何运行的-内存概述
 
 ## 前文
-* [golang快速入门[2.1]-go语言开发环境配置-windows](https://zhuanlan.zhihu.com/p/105462515)
-* [golang快速入门[2.2]-go语言开发环境配置-macOS](https://zhuanlan.zhihu.com/p/105551487)
-* [golang快速入门[2.3]-go语言开发环境配置-linux](https://zhuanlan.zhihu.com/p/105556890)
-* [golang快速入门[3]-go语言helloworld](https://zhuanlan.zhihu.com/p/105776462)
-* [golang快速入门[4]-go语言如何编译为机器码](https://zhuanlan.zhihu.com/p/106128892)
-* [golang快速入门[5.1]-go语言是如何运行的-链接器](https://zhuanlan.zhihu.com/p/107495939)
+* [golang快速入门[2.1]-go语言开发环境配置-windows](https://zhuanlan.zhihu.com/p/107659334)
+* [golang快速入门[2.2]-go语言开发环境配置-macOS](https://zhuanlan.zhihu.com/p/107661202)
+* [golang快速入门[2.3]-go语言开发环境配置-linux](https://zhuanlan.zhihu.com/p/107662649)
+* [golang快速入门[3]-go语言helloworld](https://zhuanlan.zhihu.com/p/107664129)
+* [golang快速入门[4]-go语言如何编译为机器码](https://zhuanlan.zhihu.com/p/107665043)
+* [golang快速入门[5.1]-go语言是如何运行的-链接器](https://zhuanlan.zhihu.com/p/107665658)
 
 ## 前言
 * 总的来说一个程序的生命周期可以概括为: 编写代码 => 编译 => 链接 => 加载到内存 => 执行

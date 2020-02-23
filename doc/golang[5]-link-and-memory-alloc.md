@@ -1,11 +1,11 @@
 # golang快速入门[5.1]-go语言是如何运行的-链接器
 
 ## 前文
-* [golang快速入门[2.1]-go语言开发环境配置-windows](https://zhuanlan.zhihu.com/p/105462515)
-* [golang快速入门[2.2]-go语言开发环境配置-macOS](https://zhuanlan.zhihu.com/p/105551487)
-* [golang快速入门[2.3]-go语言开发环境配置-linux](https://zhuanlan.zhihu.com/p/105556890)
-* [golang快速入门[3]-go语言helloworld](https://zhuanlan.zhihu.com/p/105776462)
-* [golang快速入门[4]-go语言如何编译为机器码](https://zhuanlan.zhihu.com/p/106128892)
+* [golang快速入门[2.1]-go语言开发环境配置-windows](https://zhuanlan.zhihu.com/p/107659334)
+* [golang快速入门[2.2]-go语言开发环境配置-macOS](https://zhuanlan.zhihu.com/p/107661202)
+* [golang快速入门[2.3]-go语言开发环境配置-linux](https://zhuanlan.zhihu.com/p/107662649)
+* [golang快速入门[3]-go语言helloworld](https://zhuanlan.zhihu.com/p/107664129)
+* [golang快速入门[4]-go语言如何编译为机器码](https://zhuanlan.zhihu.com/p/107665043)
 
 ## 前言
 * 在上一篇文章中,我们详细介绍了go语言编译为机器码经历的：词法分析 => 语法分析 => 类型检查 => 中间代码 => 代码优化 => 生成机器码

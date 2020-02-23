@@ -1,10 +1,10 @@
 # golang快速入门[4]-go语言如何编译为机器码
 
 ## 前文
-* [golang快速入门[2.1]-go语言开发环境配置-windows](https://zhuanlan.zhihu.com/p/105462515)
-* [golang快速入门[2.2]-go语言开发环境配置-macOS](https://zhuanlan.zhihu.com/p/105551487)
-* [golang快速入门[2.3]-go语言开发环境配置-linux](https://zhuanlan.zhihu.com/p/105556890)
-* [golang快速入门[3]-go语言helloworld](https://zhuanlan.zhihu.com/p/105776462)
+* [golang快速入门[2.1]-go语言开发环境配置-windows](https://zhuanlan.zhihu.com/p/107659334)
+* [golang快速入门[2.2]-go语言开发环境配置-macOS](https://zhuanlan.zhihu.com/p/107661202)
+* [golang快速入门[2.3]-go语言开发环境配置-linux](https://zhuanlan.zhihu.com/p/107662649)
+* [golang快速入门[3]-go语言helloworld](https://zhuanlan.zhihu.com/p/107664129)
 
 * 在上文中,我们详细介绍了第一个helloworld程序
 ```go
