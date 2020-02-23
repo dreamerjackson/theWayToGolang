@@ -158,7 +158,7 @@ central [numSpanClasses]struct {
 * pad为格外增加的字节。对齐填充（Pad）用于确保 mcentrals 以 CacheLineSize 个字节数分隔，所以每一个 MCentral.lock 都可以获取自己的缓存行（cache line），以避免伪共享（false sharing）问题。
 
 
-* 图中对应的`free[_MaxMHeapList]mSpanList：一个 spanList 数组。每一个 spanList 中的 mspan 包含 1 ~ 127（_MaxMHeapList - 1）个页。例如，free[3] 是一个包含 3 个页的 mspan 链表。free 表示 free list，表示未分配。对应 busy list。
+* 图中对应的`free[_MaxMHeapList]mSpanList`：一个 spanList 数组。每一个 spanList 中的 mspan 包含 1 ~ 127（_MaxMHeapList - 1）个页。例如，free[3] 是一个包含 3 个页的 mspan 链表。free 表示 free list，表示未分配。对应 busy list。
 * freelarge mSpanList：一个 mspan 的列表，每一个元素(mspan)的页数大于 127，通过 mtreap 结构体管理。busylarge与之相对应。
 
 
