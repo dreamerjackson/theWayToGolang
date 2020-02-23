@@ -142,6 +142,10 @@ type mspan struct {
 * 每一个 mcentral 结构体都维护在 mheap 结构体内。
 
 #### mheap
+
+![image](../image/golang[5.3]-10.png)
+
+
 * Go 使用 mheap 对象管理堆，只有一个全局变量。持有虚拟地址空间。
 * 就上我们从上图看到的：mheap 存储了 mcentral 的数组。这个数组包含了各个的 span 的 mcentral。
 ```
@@ -190,7 +194,7 @@ central [numSpanClasses]struct {
 * Go 内存管理的一般思想是根据分配对象大小的不同，使用不同的内存结构构建不同的内存缓存级别。
 * 将一个从操作系统接收的连续虚拟内存地址分割为多级缓存来减少锁的使用，同时根据指定的大小分配内存减少内存碎片以提高内存分配的效率和在内存释放之后加快 `垃圾回收`  的速度
 * 下面是Go内存分配的直观表达
-![image](../image/golang[5.3]-8.png)
+![image](../image/golang[5.3]-9.png)
 
 
 ## 参考资料
