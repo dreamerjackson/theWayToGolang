@@ -475,7 +475,9 @@ Home ——> Fn + ←
 |<kbd>ESC</kbd>|从工具窗口进入代码文件窗口 `（必备）` |
 |<kbd>连按两次Shift</kbd>|弹出 `Search Everywhere` 弹出层|
 
-
+## 总结
+* 在本文中介绍了go语言集成开发环境goland的安装、配置、激活、以及基本的快捷键用法
+* 在下文中，我们将介绍编辑器之神`emacs`中如何集成开发go代码
 
 ## 参考资料
 * [项目链接](https://github.com/dreamerjackson/theWayToGolang)
