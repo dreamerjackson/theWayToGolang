@@ -1,6 +1,7 @@
 # golang快速入门[6.1]-集成开发环境-goland详解
 
 ## 前文
+* [golang快速入门[1]-go语言导论](https://zhuanlan.zhihu.com/p/107658283)
 * [golang快速入门[2.1]-go语言开发环境配置-windows](https://zhuanlan.zhihu.com/p/107659334)
 * [golang快速入门[2.2]-go语言开发环境配置-macOS](https://zhuanlan.zhihu.com/p/107661202)
 * [golang快速入门[2.3]-go语言开发环境配置-linux](https://zhuanlan.zhihu.com/p/107662649)
@@ -8,6 +9,7 @@
 * [golang快速入门[4]-go语言如何编译为机器码](https://zhuanlan.zhihu.com/p/107665043)
 * [golang快速入门[5.1]-go语言是如何运行的-链接器](https://zhuanlan.zhihu.com/p/107665658)
 * [golang快速入门[5.2]-go语言是如何运行的-内存概述](https://zhuanlan.zhihu.com/p/107807229)
+* [golang快速入门[5.3]-go语言是如何运行的-内存分配](https://zhuanlan.zhihu.com/p/108598942)
 
 ## 前言
 * 在之前的文章中,我们对go语言的基本原理做了阐述,本文将介绍go语言的集成开发环境`goland`的安装、配置、激活、以及基本的快捷键用法。
