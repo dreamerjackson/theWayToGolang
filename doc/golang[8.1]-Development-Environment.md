@@ -32,24 +32,24 @@
 ## 安装goland
 * goland支持windows、macOS与Ubuntu平台,下面我们以windows平台为例为大家介绍安装`goland 2019.3`，其他平台安装类似
 * 首先进入[goland官网](https://github.com/dreamerjackson/theWayToGolang)，点击下载,安装最新版goland
-![image](../image/golang[5.1]-1.png)
+![image](../image/golang[8.1]-1.png)
 * 点击下一步
-![image](../image/golang[5.1]-2.png)
+![image](../image/golang[8.1]-2.png)s
 * 选择安装路径、默认即可，选择下一步
-![image](../image/golang[5.1]-3.png)
+![image](../image/golang[8.1]-3.png)
 * 安装配置选项,勾选添加桌面图标以及与`.go`文件关联即可
-![image](../image/golang[5.1]-4.png)
+![image](../image/golang[8.1]-4.png)
 * 选择开始菜单文件夹,默认即可，点击`insall` 进行安装
 * 安装完成后，点击`finish`,运行goland
-![image](../image/golang[5.1]-5.png)
+![image](../image/golang[8.1]-5.png)
 
 ## 第一次打开goland
 * 在一开始打开goland时,由于没有任何已有配置，我们选择`don't import settings`
-![image](../image/golang[5.1]-6.png)
+![image](../image/golang[8.1]-6.png)
 * 确认接受同意协议，你懂的~
-![image](../image/golang[5.1]-7.png)
+![image](../image/golang[8.1]-7.png)
 * 发送反馈，选择`don't send`
-![image](../image/golang[5.1]-8.png)
+![image](../image/golang[8.1]-8.png)
 * 选择UI背景,程序员一般选择黑色，眼神不好可以选择白色，跳过其他设置
 
 ## goland的激活
@@ -62,14 +62,14 @@
 
 ## 第一次使用
 * 选择新建一个项目
-![image](../image/golang[5.1]-9.png)
+![image](../image/golang[8.1]-9.png)
 * 修改项目名，点击创建
-![image](../image/golang[5.1]-10.png)
+![image](../image/golang[8.1]-10.png)
 * 点击文件夹，右键，创建一个main.go文件
-![image](../image/golang[5.1]-11.png)
+![image](../image/golang[8.1]-11.png)
 
 ## goland 整体视图
-![image](../image/golang[5.1]-12.png)
+![image](../image/golang[8.1]-12.png)
 * 如上图，最上方为工具栏，可以修改,创建,搜索,删除,替换，修改视图,跳转,运行,调试等多种功能
 * 最左边为项目的目录树结构、依赖等
 * 右边为编辑代码的地方
@@ -78,7 +78,7 @@
 ## goland 配置
 * goland配置可以点击最上方"file->setiing",一开始配置得最多的是`goroot`,`gopath`,`字体大小与颜色`
 * `goroot`、`gopath`、`gomodule`等概念后面笔者会详细介绍，goland默认会使用环境变量中的`goroot`与`gopath`路径
-![image](../image/golang[5.1]-13.png)
+![image](../image/golang[8.1]-13.png)
 * 还有很多对数据库的支持，git的集成工具等，在本文中暂时不做介绍
 
 ## goland 书写第一个helloworld程序
@@ -199,7 +199,7 @@ Option + F8	计算表达式（可以更改变量值使其生效）
 Command + Option + R	恢复程序运行，如果该断点下面代码还有断点则停在下一个断点上
 Command + F8	切换断点（若光标当前行有断点则取消断点，没有则加上断点）
 Command + Shift + F8	查看断点信息
-Part 6：Navigation（导航）
+#### Part 6：Navigation（导航）
 快捷键	作用
 Command + O	查找类文件
 Command + Shift + O	查找所有类型文件、打开文件、打开目录，打开目录需要在输入的内容前面或后面加一个反斜杠/
