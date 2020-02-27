@@ -11,7 +11,7 @@
 
 ## 前言
 * 在之前的文章中,我们对go语言的基本原理做了阐述
-* 本章将介绍go语言开发的集成开发环境。对于一个成熟的开发人员来说，致力于用最便捷高效的开发工具来加速书写、调试go程序，
+* 本章将介绍go语言的集成开发环境。对于一个成熟的开发人员来说，致力于用最便捷高效的开发工具来加速书写、调试go程序
 * 集成开发环境（Integrated Development Environment，简称IDE）是一种辅助程序开发人员开发软件的应用软件，在开发工具内部就可以辅助编写源代码文本、并编译打包成为可用的程序，有些甚至可以设计图形接口。IDE通常包括编程语言编辑器、自动构建工具、通常还包括调试器。
 * 大部分的集成开发环境都针对一种特点的语言,goland是JetBrains开发的一款针对go语言的跨平台IDE。支持windows、macOS与Ubuntu平台。 因为专注，所以专业,goland为go程序提供了强大的支持。
 
@@ -34,8 +34,8 @@
 * 首先进入[goland官网](https://github.com/dreamerjackson/theWayToGolang)，点击下载,安装最新版goland
 ![image](../image/golang[8.1]-1.png)
 * 点击下一步
-![image](../image/golang[8.1]-2.png)s
-* 选择安装路径、默认即可，选择下一步
+![image](../image/golang[8.1]-2.png)
+* 择安装路径、默认即可，选择下一步
 ![image](../image/golang[8.1]-3.png)
 * 安装配置选项,勾选添加桌面图标以及与`.go`文件关联即可
 ![image](../image/golang[8.1]-4.png)
@@ -58,7 +58,7 @@
 * 第二种方式：对于学生可以免费申请。[申请地址](https://www.jetbrains.com/zh-cn/student/)
 * 第三种方式：安装破解版goland、这种方式不是很好，因为无法享受更新
 * 第四种方式：特殊渠道如淘宝购买，只需要几块钱
-* 第五种方式：后台留言获取激活码
+* 第五种方式：后台留言获取激活码~
 
 ## 第一次使用
 * 选择新建一个项目
@@ -83,11 +83,12 @@
 
 ## goland 书写第一个helloworld程序
 * 当我们书写一个最简单的helloworld程序时，当我们输入`fmt.`，会看到goland会智能的显示出fmt包中的函数。当完成函数编写时，会自动的导入fmt包，`import "fmt"`这是goland强大功能的一个体现。
+![image](../image/golang[8.1]-14.png)
 * 当代码写好之后，运行代码有多种方式
     + 第一种,点击上方选项卡`Run -> Run`
-    + 第二种，使用快捷键  mac下为`shift + option + R`，windows下为`Alt + shift + F10`
+    + 第二种，使用快捷键，mac下为`shift + option + R`，windows下为`Alt + shift + F10`
     + 第三种，点击`func main()` 左边的绿色箭头
-    + 第四种，在最下方点击到终端中，运行`go run main.go`
+    + 第四种，在最下方到终端中，书写`go run main.go` 并运行
 
 ## goland 快捷键
 * goland拥有很多快捷键，可以加速我们对于代码的书写.下面我们介绍goland分别在`windows`与`mac`下的快捷键使用
@@ -199,7 +200,9 @@ Option + F8	计算表达式（可以更改变量值使其生效）
 Command + Option + R	恢复程序运行，如果该断点下面代码还有断点则停在下一个断点上
 Command + F8	切换断点（若光标当前行有断点则取消断点，没有则加上断点）
 Command + Shift + F8	查看断点信息
+```
 #### Part 6：Navigation（导航）
+```
 快捷键	作用
 Command + O	查找类文件
 Command + Shift + O	查找所有类型文件、打开文件、打开目录，打开目录需要在输入的内容前面或后面加一个反斜杠/
