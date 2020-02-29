@@ -63,7 +63,7 @@
 * 首先登陆GNU镜像下载页面[blog](http://mirror-hk.koddos.net/gnu/emacs/windows/emacs-26/)，下载最新版本为`emacs-26.3-x86_64.zip`
 * 解压并重命名 emacs-26.3-x86_64.zip 到所需安装位置。如"D:\emacs-26.3"，后面均以此为例。
 * 解压之后，创建一个指向文件`bin/runemacs.exe`的桌面快捷方式，然后双击该快捷方式的图标来启动Emacs
-* 配置HOME目录:在注册表中添加"计算机\HKEY_LOCAL_MACHINE\SOFTWARE\GNU\Emacs"项,为Emacs项添加字符串值.`HOME -> D:\emacs-26.3`
+* 配置HOME目录:在注册表中添加`计算机`\HKEY_LOCAL_MACHINE\SOFTWARE\GNU\Emacs`项,为Emacs项添加字符串值.`HOME -> D:\emacs-26.3`
 * 添加系统环境变量`D:\emacs-26.3`
 #### linux用户
 ```
@@ -96,12 +96,14 @@
 * 运行
 直接在终端输入`emacs`
 #### mac用户
-可以使用[HomeBrew](https://brew.sh/)进行安装
+* 可以使用[HomeBrew](https://brew.sh/)进行安装
 ```
 brew cask install emacs
 ```
-或者通过如下网站直接下载：
+* 或者通过如下网站直接下载：
+```
 https://emacsformacosx.com/
+```
 * 运行
 直接在终端输入`emacs`
 
@@ -259,8 +261,8 @@ go get -u github.com/rogpeppe/godef
 go get -u golang.org/x/tools/cmd/goimports
 ```
 * 配置
-* M-n 查找函数应用，等价于（M-x lsp-find-ref）
-* M-. 查找函数实现
+* `M-n` 查找函数应用，等价于（`M-x lsp-find-ref`）
+* `M-.` 查找函数实现
 ```
 (use-package go-mode
   ;; :load-path "~/.emacs.d/vendor/go-mode"
@@ -350,8 +352,7 @@ go get -u github.com/kisielk/errcheck
               ("C-c C-e" . go-errcheck)))
 ```
 #### gtags 查找项目中的变量、函数等
-* 安装gtags
-* 安装GUN global though source code, 注意mac用户不要用brew安装，因为必须要配置sqlite3
+* 安装源代码`GUN global`, 注意mac用户不要用brew安装，因为必须要配置sqlite3
 ```
 wget http://tamacom.com/global/global-6.5.7.tar.gz
 tar xvf global-6.5.7.tar.gz
@@ -360,6 +361,7 @@ cd global-6.5.7
 make
 sudo make install
 ```
+* 安装`gtags`生成器
 ```
 go get github.com/juntaki/gogtags
 ```
@@ -411,7 +413,7 @@ M-x helm-gtags-mode
 ## 总结
 * 在本文中,我们介绍了神之编辑器`emacs`的安装、配置特别是对于go语言集成环境的配置。
 * 本文使用了use-package来管理emacs的软件包，并详细介绍了go语言集成环境的配置细节和使用方法。
-* 遗憾的是,这篇文章不会带领大家从一个初学者完全入门emacs,用好emacs是值得一生努力的话题。学会emacs需要耐心，练习，更需要交流与指导
+* 遗憾的是,本文不会带领大家从一个初学者完全入门emacs,用好emacs是值得一生努力的话题。学会emacs需要耐心，练习，更需要交流与指导
 * 如果你有更好的配置建议，或者你在使用emacs-go的过程中有任何疑问，欢迎在后台留言,see you~
 
 ## 参考资料
