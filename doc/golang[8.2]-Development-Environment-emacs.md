@@ -23,7 +23,33 @@
 * Emacs（/ˈiːmæks/，源自Editor MACroS，宏编辑器），是一个文本编辑器家族，具有强大的可扩展性，在程序员和其他以技术工作为主的计算机用户中广受欢迎。
 * Emacs在1970年代诞生于MIT人工智能实验室（MIT AI Lab）
 * Emacs是当前世界上最具可移植性的重要软件之一，能够在当前绝大多数操作系统上运行，包括各种类Unix系统（GNU/Linux、FreeBSD、NetBSD、OpenBSD、Solaris、AIX、OS X等）
-* 自诞生以来，Emacs演化出了众多分支，其中使用最广泛的两种分别是：1984年由理查·斯托曼发起并由他维护至2008年的GNU Emacs，以及1991年发起的XEmacs。XEmacs是GNU Emacs的分支，至今仍保持着相当的兼容性。它们都使用了Emacs Lisp这种有着极强扩展性的编程语言，从而实现了包括编程、编译乃至网络浏览等等功能的扩展。本文主要基于GNU Emacs进行讲解
+* Emacs不仅仅是一个编辑器，它是一个集成环境，或可称它为集成开发环境，这些功能如让用户置身于全功能的操作系统中。Emacs可以：
+    + 收发电子邮件、上新闻组（Gnus）
+    + 无缝直接编辑远程文件（Tramp）
+    + 通过Telnet登录远程主机
+    + 操作壳层（M-x EShell，Term）
+    + 结合git, mercurial等版本控制系统并直接操作（Magit，VC）
+    + 上Twitter（Twittering-mode）
+    + 登陆IRC和朋友交流（M-x ERC，rcirc）
+    + 电子数据表
+    + 模拟其他编辑器，如vi（Evil-mode）、WordStar、EDT、TPU等
+    + 编辑Wiki (Wikipedia-mode)
+    + 对多种编程语言的编辑，如C/C++、Perl、Python、Lisp等等
+    + 调试程序，结合GDB，EDebug等。
+    + 玩游戏
+    + 计算器
+    + 心理咨询（M-x doctor）
+    + 煮咖啡
+    + 记笔记、日记（Org-mode）
+    + 管理日程，Task，待办事项（ToDo），约会等GTD（Org-mode）
+    + 写作与出版（Org-mode，Muse-mode）
+    + 目录管理（Dired）
+    + 文件比较、合并（Ediff）
+    + 阅读info和man文档（M-x info，woman）
+    + 浏览网站（M-x eww）
+    + 为各种程序（TeX、LaTeX等）提供统一的操作界面
+    + ……
+* 所以有人说，你可以`住`在emacs里面。自诞生以来，Emacs演化出了众多分支，其中使用最广泛的两种分别是：1984年由理查·斯托曼发起并由他维护至2008年的GNU Emacs，以及1991年发起的XEmacs。XEmacs是GNU Emacs的分支，至今仍保持着相当的兼容性。它们都使用了Emacs Lisp这种有着极强扩展性的编程语言，从而实现了包括编程、编译乃至网络浏览等等功能的扩展。本文主要基于GNU Emacs进行讲解
 
 ## emacs 与 vim 的对比
 * 我相信熟悉linux基本操作的同学对于vim这一款编辑器不会陌生，针对vim与emacs谁更好常常会引发一场论战
@@ -43,7 +69,6 @@
 ```
 >> wget  http://mirror-hk.koddos.net/gnu/emacs/emacs-26.3.tar.gz
 ```
-
 * 使用tar 命令解压刚刚下载的Go语言开发包到/usr/local目录
 ```
 >> tar -C /usr/local -xzf emacs-26.3.tar.gz
@@ -82,7 +107,7 @@ https://emacsformacosx.com/
 
 ## emacs快捷键
 * emacs有一些基本的操作指令,是每一个`emacser`必备的
-* 在我们查看emacs的快捷键时，要注意,大写字母C 与 M 代表的含义。在windows与linux中，`C` 表示 Ctrl , `M`表示 Alt. 但是在mac下,`C` 代表的是`Ctrl，`M`表示的是meta键。此键是可以配置的。
+* 在我们查看emacs的快捷键时，要注意,大写字母C 与 M 代表的含义。在windows与linux中，`C` 表示 Ctrl , `M`表示 Alt. 但是在mac下,`C` 代表的是`Ctrl，`M`表示的是meta键。此键是可以在`系统偏好设置`中配置的。
 
 * 开启
 ```
@@ -166,12 +191,12 @@ C-x z 重复之前的操作 重复多次可以只按zzzz
 
 ## emacs 配置文件
 * emacs 配置文件默认位于`Home`目录下(~/)，可以通过变量`user-emacs-directory`修改
-* 配置文件夹可以是`Home`目录下` 的`.emacs.d`文件，通常会将所有配置放入其中
+* 配置文件夹可以是`Home`目录下的`.emacs.d`文件，通常会将所有配置放入其中
 * 当启动Emacs时，通常会尝试从初始化文件加载Lisp程序。该文件（如果存在）指定如何为您初始化Emacs。初始文件为 `~/.emacs, ~/.emacs.el, or  ~/.emacs.d/init.el`  中的一个。
-* 对于初学者，可以去查找网上一些有名的配置直接使用。如果想获取笔者对于emacs的配置，可以在后台留言。
+* 对于初学者，可以去查找网上一些有名的配置直接使用，大牛一般都是一个大的`.emacs.d`文件。如果想获取笔者对于emacs的配置，可以在后台留言。
 
 ## emacs 基本配置
-* 添加官方国内package的package源
+* 添加官方与国内package的源
 ```
 
 (setq package-archives '(("gnu"   . "http://elpa.emacs-china.org/gnu/")
@@ -189,7 +214,8 @@ C-x z 重复之前的操作 重复多次可以只按zzzz
   (package-refresh-contents)
   (package-install 'use-package))
 ```
-* 使用ivy-mode 拓展套件完成快速搜索、快速查找、智能补全功能
+
+* 使用`ivy-mode`拓展套件完成快速搜索、快速查找、智能补全功能
 ```
 ;;
 ;; ivy mode
@@ -286,10 +312,9 @@ ps -e | grep gocode
                                   (add-to-list  (make-local-variable 'company-backends)
                                                 '(company-elisp))))
 ```
-#### 语法检查
-
+#### flycheck 语法检查
 * 配置
-* `C-c ! l  , C-c ! v` flycheck查看是否有语法错误
+* `C-c ! l  , C-c ! v` 查看是否有语法错误
 ```
 (use-package flycheck
   :ensure t
@@ -297,7 +322,6 @@ ps -e | grep gocode
   (global-flycheck-mode t)
   )
 ```
-
 
 #### gotest 进行各种测试
 ```
@@ -325,7 +349,7 @@ go get -u github.com/kisielk/errcheck
   :bind (:map go-mode-map
               ("C-c C-e" . go-errcheck)))
 ```
-#### gtags 查看go程序中的变量、函数
+#### gtags 查找项目中的变量、函数等
 * 安装gtags
 * 安装GUN global though source code, 注意mac用户不要用brew安装，因为必须要配置sqlite3
 ```
@@ -369,6 +393,7 @@ M-x helm-gtags-mode
 ```
 
 #### projectile 在go项目中切换
+* 配置
 ```
 (use-package dumb-jump
   :bind (("M-g o" . dumb-jump-go-other-window)
