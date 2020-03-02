@@ -171,7 +171,7 @@
 ## Go语言吉祥物
 Go语言有一个吉祥物，在会议、文档页面和博文中，大多会包含下图所示的 Go Gopher，这是才华横溢的插画家 Renee French 设计的，她也是 Go 设计者之一 Rob Pike 的妻子。
 
-![image](../image/1.jpg)
+![image](image/1.jpg)
 
 ## 参考资料
 * [My Blog](https://dreamerjonson.com/)
@@ -184,7 +184,7 @@ Go语言有一个吉祥物，在会议、文档页面和博文中，大多会包
 * [Go FAQ](https://golang.org/doc/faq)
 * [Go at Google: Language Design in the Service of Software Engineering](https://talks.golang.org/2012/splash.article)
 
-```
-go语言qq交流3群：713385260
-emial:zhuimengshaonian04@gmail.com
-```
+
+* 微信公众号，关注我吧~
+![image](image/weixin.jpg)
+
