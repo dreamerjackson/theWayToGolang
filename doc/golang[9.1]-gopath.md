@@ -38,7 +38,9 @@ set GOPROXY=https://proxy.golang.org,direct
 set GOROOT=c:\go
 ...
 ```
-* 在go1.8之后,如果不指定gopath，则gopath是默认的。在mac,linux下为`$HOME/go`, windwos 下为`%USERPROFILE%\go`
+* 在go1.8之后,如果不指定gopath，则gopath是默认的。
+    + 在mac,linux下为`$HOME/go`
+    + windows 下为`%USERPROFILE%\go`
 * `gopath` 可以理解为go语言的工作空间,内部存储了`src`,`bin`,`pkg` 三个文件夹
 ```
 go/
@@ -49,7 +51,7 @@ go/
 
 * `$GOPATH/bin`目录存储了通过`go install` 安装的二进制文件。操作系统使用$PATH环境变量来查找无完整路径即可执行的二进制应用程序。建议将此目录添加到全局$PATH变量中
 * `$GOPATH/pkg`目录中,会存储预编译的obj文件(文件名根据操作系统的不同而不同,例如mac下为`darwin_amd64`)，以加快程序的后续编译。大多数开发人员不需要访问此目录。后面还会介绍，pkg下的mod文件还会存储`go module`的依赖。
-*  `$GOPATH/src`目录 存储我们项目的go代码。通常包含许多版本控制存储库（例如，由Git管理），每个存储库都包含了一个或多个package，每个package都在一个目录中包含一个或多个Go源文件。
+* `$GOPATH/src`目录 存储我们项目的go代码。通常包含许多版本控制存储库（例如，由Git管理），每个存储库都包含了一个或多个package，每个package都在一个目录中包含一个或多个Go源文件。
 
 * 因此,整个路径看起来像是：
 ```
@@ -95,7 +97,7 @@ import "github.com/gobuffalo/buffalo"
 实际引用的是`$GOPATH/src/github.com/gobuffalo/buffalo` 文件中的代码。
 
 ## 下面我们用一个例子来说明导入第三方包
-* 首先在$GOPATH/src中新建一个文件夹`mymath`，在文件夹中新建一个文件`add.go`
+* 首先在`$GOPATH/src`中新建一个文件夹`mymath`，在文件夹中新建一个文件`add.go`
 ```
 » mkdir mymath
 » cd mymath
@@ -110,7 +112,7 @@ func Add(a int, b int) int {
 }
 
 ```
-接着在$GOPATH/src中创建一个main.go文件，即可以完整的调用`mymath`包中的`add`函数。
+接着在`$GOPATH/src`中创建一个main.go文件，即可以完整的调用`mymath`包中的`add`函数。
 ```
 package main
 
@@ -124,6 +126,7 @@ func main() {
 	fmt.Println("result:", result)
 }
 ```
+* 通过`go run main.go` 即可运行输出`1+2`的结果`3`
 ## gopath的优劣
 * 相比于其他语言繁琐的配置,go语言中的工作空间`gopath`配置相对简单，容易理解
 * gopath使得在文件系统组织整个代码更加简洁、结构化，但是限制在单一的工作空间中。
