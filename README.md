@@ -185,6 +185,7 @@ Go语言有一个吉祥物，在会议、文档页面和博文中，大多会包
 * [Go at Google: Language Design in the Service of Software Engineering](https://talks.golang.org/2012/splash.article)
 
 
-* 微信公众号，关注我吧~
+## 微信公众号，关注我吧~
+
 ![image](image/weixin.jpg)
 
