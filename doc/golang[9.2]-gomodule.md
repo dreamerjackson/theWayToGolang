@@ -113,18 +113,22 @@ $ mkdir mathlib
 $ cd mathlib                                                                                                                                                                                 jackson@192
 $ touch main.go
 ```
-接着在当前目录中,执行如下指令初始化moudle。
+
+* 接着在当前目录中,执行如下指令初始化moudle。
 ```
 ~/mathlib » go mod init github.com/dreamerjackson/mathlib
 ```
+
 * `go mod init`指令的功能很简单,自动生成一个`go.mod`文件 后面紧跟的路径即是自定义的模块名。习惯上以托管代码仓库的URL为模块名（代码将会放置在`https://github.com/dreamerjackson/mathlib`下）
 * `go.mod`文件 位于项目的根目录下,内容如下所示，第一行即为模块名。
+
 ```
 module github.com/ardanlabs/service
 
 #### 引入第三方模块
 go 1.13
 ```
+
 * 接下来我们将书写初始化的代码片段
 ```
 package main
@@ -132,7 +136,6 @@ package main
 import "github.com/dreamerjackson/mydiv"
 
 func main(){
-
 
 }
 ```
