@@ -1,4 +1,4 @@
-# golang快速入门[7.2]-go module最佳指南
+# golang快速入门[7.2]-北冥神功—go module绝技
 
 ## 前文
 * [golang快速入门[1]-go语言导论](https://zhuanlan.zhihu.com/p/107658283)
@@ -13,6 +13,9 @@
 * [golang快速入门[6.1]-集成开发环境-goland详解](https://zhuanlan.zhihu.com/p/109564120)
 * [golang快速入门[6.2]-集成开发环境-emacs详解](https://zhuanlan.zhihu.com/p/110003756)
 * [golang快速入门[7.1]-项目与依赖管理-gopath](https://zhuanlan.zhihu.com/p/110526009)
+## 题记
+*《庄子》‘逍遥游’有云：且夫水之积也不厚，则其负大舟也无力。覆杯水于坳堂之上，则芥为之舟；置杯焉则胶，水浅而舟大也。
+* 我们今天要介绍的就是北冥神功—go module绝技，以吸收他人内力为己所用。而且别人的内力愈强 吸力愈大。极天下代码于一身，好不快活。
 
 ## 前言
 * 在上文中，我们介绍了`gopath`的含义、功能、优劣、以及如何通过GOPATH来组织项目
