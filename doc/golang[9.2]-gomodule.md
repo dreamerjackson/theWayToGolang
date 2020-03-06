@@ -1,4 +1,4 @@
-# golang快速入门[7.1]-项目与依赖管理-gomodule
+# golang快速入门[7.1]-项目与依赖管理-go module全面指南
 
 ## 前文
 * [golang快速入门[1]-go语言导论](https://zhuanlan.zhihu.com/p/107658283)
@@ -16,7 +16,14 @@
 
 ## 前言
 * 在上文中，我们介绍了`gopath`的含义、功能、优劣、以及如何通过GOPATH来组织项目
-* 在本文中，我们讲介绍`go module`的原理和用法
+* 在本文中，我们讲介绍`go module`的原理和用法以试图能够回答下面的几个问题
+    + `go module`是什么？
+    + `go module`诞生的背景？
+    + `go module`的基本使用方法是什么？
+    + `go module`如何管理版本与依赖？
+    + `go module`如何解决依赖的冲突问题？
+    + `go module` 环境变量的配置与使用方式？
+    +  如何搭建私有module镜像？
 ## `go module`诞生的背景 & 为什么需要`go module`
 在`go module`之前,有一些问题长期困扰go语言的开发人员
 * 能否将go工程代码脱离`gopath`之外
