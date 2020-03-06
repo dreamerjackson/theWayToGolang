@@ -106,7 +106,8 @@ $ go clean -modcache
 ```
 
 #### 开始一个新的项目
-* 我们从`GOPATH`外开始一个新的项目讲解,新建一个新建夹以及一个`main文件。
+* 我们从`GOPATH`外开始一个新的项目讲解,新建一个新建夹以及一个`main`文件
+
 ```
 $ cd $HOME
 $ mkdir mathlib
