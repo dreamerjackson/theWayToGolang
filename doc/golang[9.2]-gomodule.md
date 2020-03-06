@@ -491,7 +491,7 @@ INFO[7:39AM]: incoming request	http-method=GET http-path=/github.com/dreamerjack
 ```
 * 详细信息，查看参考资料中Athens的官方网站
 
-## go moudle 优势
+## go module 优势
 * 提供脱离`gopath`管理go代码的优势
 * 提供了代码捆绑、版本控制、依赖管理的功能
 * 供全球开发人员使用、构建，下载，授权、验证，获取，缓存和重用模块（可以通过搭建自己的代理服务器来实现这些功能）
