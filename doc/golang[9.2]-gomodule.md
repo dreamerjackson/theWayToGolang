@@ -1,4 +1,4 @@
-# golang快速入门[7.1]-项目与依赖管理-go module全面指南
+# golang快速入门[7.2]-go module最佳指南
 
 ## 前文
 * [golang快速入门[1]-go语言导论](https://zhuanlan.zhihu.com/p/107658283)
@@ -52,7 +52,8 @@ import "github.com/gobuffalo/buffalo"
 ![image](../image/golang[9.2]-3.png)
 * 使用VCS工具，开发人员可以通过引用特定标签将软件包的任何特定版本克隆到本地。
 * 当我们引用一个第三方包时,可能并不总是希望应用项目最新的代码，而是某一个特定与当前项目兼容的代码。对于某一个项目来说，可能并没有意识到有人在使用他们的代码,或者某种原因进行了巨大的不兼容更新。
-* 我们希望能够指明需要使用的第三方包的版本,并且go工具能够方便下载、管理。更棘手的是,一个第三方包A可能引用了其他的第三方包B，因此还必须把第三方包A的全部依赖下载。
+* 我们希望能够指明需要使用的第三方包的版本,并且go工具能够方便下载、管理
+* 更棘手的是,一个第三方包A可能引用了其他的第三方包B，因此还必须把第三方包A的全部依赖下载
     + 如何查找并把所有的依赖包下载下来？
     + 某一个包下载失败应该怎么办？
     + 所有项目之间如何进行依赖的传导？
@@ -61,11 +62,6 @@ import "github.com/gobuffalo/buffalo"
     + 如果希望在项目中同时引用第三方包的二个不同版本,需要如何处理？
 * 因此，只通过`gopath`维护单一的master包的方式是远远不够的，因为依赖包的最新代码不一定与项目兼容。尽管go社区已经针对以上问题提供了一些解决方案（例如dep，godep，glide等）但是go官方的`go moudle`提供了一种集成解决方案，通过在文件中维护直接和间接依赖项的版本列表来解决这一问题。通过将一个特定版本的依赖项看做是捆绑的不可变的依赖项，就叫做一个模块（moudle）
 
-## go moudle 优势
-* 提供脱离`gopath`管理go代码的优势
-* 提供了代码捆绑、版本控制、依赖管理的功能
-* 供全球开发人员使用、构建，下载，授权、验证，获取，缓存和重用模块（可以通过搭建自己的代理服务器来实现这些功能）
-* 可以验证模块（对于任何给定的版本）始终包含完全相同的代码，而不管它被构建了多少次，从何处获取以及由谁获取
 
 
 ## go moudle 使用
@@ -231,7 +227,7 @@ $ go mod tidy
 
 ## go module 最小版本选择原理
 * 每个依赖管理解决方案都必须解决选择依赖版本的问题,当今存在的许多版本选择算法都试图识别任何依赖的“最新最大”版本。如果您认为语义版本控制被正确应用并且将遵守约定，那么这是有道理的。在这些情况下，依赖项的“最新最大”版本应该是最稳定和安全的版本，并且应与较早版本具有向后兼容性。
-* Go决定采用其他方法,Russ Cox花费了大量时间和精力[撰写](https://research.swtch.com/vgo)和谈论 Go团队的版本选择方法，即最小版本选择(Minimal Version Selection,MVS)。从本质上讲，Go团队相信MVS可以为Go程序提供最佳的机会，以实现长期的持久性和可复制性。我建议阅读[这篇文章](https://dreamerjonson.com/)，以了解Go团队为什么相信这一点。
+* Go决定采用其他方法,Russ Cox花费了大量时间和精力[撰写](https://research.swtch.com/vgo)和谈论 Go团队的版本选择方法，即最小版本选择(Minimal Version Selection,MVS)。从本质上讲，Go团队相信MVS可以为Go程序提供最佳的机会，以实现兼容性和可重复性。我建议阅读[这篇文章](https://dreamerjonson.com/)，以了解Go团队为什么相信这一点。
 #### 什么是最小版本选择原理
 * go最小版本选择指的是选择项目中最合适的最小版本。并不是说MVS不能选择最新的版本，而是如果项目中任何依赖不需要最新的版本,则不需要它。
 * 举一个简单的例子，假设现在项目`github.com/dreamerjackson/mydiv`的最新版本为`v1.0.2`,可通过下面指令查看所有
@@ -374,6 +370,72 @@ $ go mod init <module name>
 $ go mod tidy
 ```
 
+## 语义版本控制（semantic version）
+* Go模块引入了一种新的导入路径语法，即语义导入版本控制。每个语义版本均采用vMAJOR.MINOR.PATCH的形式。
+    + MAJOR 主版本号，如果有大的版本更新，导致 API 和之前版本不兼容。我们遇到的就是这个问题。
+    + MINOR 次版本号，当你做了向下兼容的新 feature。
+    + PATCH 修订版本号，当你做了向下兼容的修复 bug fix。
+    + v 所有版本号都是 v 开头。
+* 如果两个版本具有相同的主编号，则预期更高版本（如果您愿意，更大版本）将与较早版本（较小版本）向后兼容。但是，如果两个版本的主要编号不同，则它们之间没有预期的兼容性关系。
+* 因此我们在上面的实例中可以看到，go预料到v1.0.3与v1.0.1是兼容的，因为他们有相同的主版本号`1`。但是一般我们将版本升级到了`v2.0.0`,即被认为是出现了重大的更新。
+![image](../image/golang[9.2]-4.png)
+* 如上图实例显示了go对于版本跟新的处理。`my/thing/v2`标识特定模块的语义主版本`2`。版本1是`my/thing`,模块路径中没有明确的版本。但是，当您引入主要版本2或更大版本时，必须在模块名称后添加版本，以区别于版本1和其他主要版本，因此版本2为my/thing/v2，版本3为my/thing/v3，依此类推。
+* 假设模块A引入了模块B和模块C，模块B引入了模块Dv1.0.0，模块C引入了模块Dv2.0.0。则看见来就像是
+```
+A --> 模块B --> 模块Dv1.0.0
+A --> 模块C --> 模块Dv2.0.0
+```
+* 由于v1 和v2 模块的路径不相同，因此他们之间会是互不干扰的两个模块。
+* 下面我们用实例来验证
+首先我们给mydiv打一个v2.0.0的tag，其代码如下，简单修改了错误文字`v2.0.0 b can't = 0`
+```
+package mydiv
+import "github.com/pkg/errors"
+
+func Div(a int,b int) (int,error){
+	if b==0{
+		return 0,errors.Errorf("v2.0.0 b can't = 0")
+	}
+	return a/b,nil
+}
+```
+同时需要修改其路径名为：
+```
+module github.com/dreamerjackson/mydiv/v2
+```
+接着在mathlib中,代码如下：
+```
+package main
+
+import (
+	"fmt"
+	div "github.com/dreamerjackson/minidiv"
+	mydiv "github.com/dreamerjackson/mydiv/v2"
+)
+
+func main(){
+	_,err1:= mydiv.Div(4,0)
+	_,err2 := div.Div(4,0)
+	fmt.Println(err1,err2)
+}
+```
+其依赖的路径为:
+```
+mathlib --> 直接引用mydiv v2
+mathlib --> 直接引用minidiv --> 间接引用mydiv v1
+```
+当我们运行代码之后,会发现两段代码是共存的
+```
+v2.0.0 b can't = 0 ：： v1.0.1 b can't = 0
+```
+接着执行`go list`,模块共存~
+```
+~/mathlib(master*) » go list -m all | grep mydiv
+github.com/dreamerjackson/mydiv v1.0.1
+github.com/dreamerjackson/mydiv/v2 v2.0.1
+
+```
+
 ##  模块镜像（Module Mirror）
 模块镜像于2019年八月推出，是go官方1.13版本的默认系统。模块镜像是一个代理服务器，以帮助加快构建本地应用程序所需的模块的获取。代理服务器实现了基于REST的API，并根据Go工具的需求进行了设计。
 模块镜像将会缓存已请求的模块及其特定版本，从而可以更快地检索将来的请求。一旦代码被获取并缓存在模块镜像中，就可以将其快速提供给世界各地的用户。
@@ -429,13 +491,29 @@ INFO[7:39AM]: incoming request	http-method=GET http-path=/github.com/dreamerjack
 ```
 * 详细信息，查看参考资料中Athens的官方网站
 
-## 总结
+## go moudle 优势
+* 提供脱离`gopath`管理go代码的优势
+* 提供了代码捆绑、版本控制、依赖管理的功能
+* 供全球开发人员使用、构建，下载，授权、验证，获取，缓存和重用模块（可以通过搭建自己的代理服务器来实现这些功能）
+* 可以验证模块（对于任何给定的版本）始终包含完全相同的代码，而不管它被构建了多少次，从何处获取以及由谁获取
 
+## 总结
+在本文中，使用详细的实例讲解了`go module` 的why（为什么需要），what（最佳实践）以及 how（其实现原理）。以希望读者在这篇文章之后，能够回答我们在开头提出的问题
+* `go module`是什么？
+* `go module`为什么需要？
+* `go module`的基本使用方法是什么？
+* `go module`如何管理版本与依赖？
+* `go module`如何解决依赖的冲突问题？
+* `go module` 环境变量的配置与使用方式？
+*  如何搭建私有`module`镜像？
+* see you~
 ## 参考资料
 * [项目链接](https://github.com/dreamerjackson/theWayToGolang)
 * [作者知乎](https://www.zhihu.com/people/ke-ai-de-xiao-tu-ji-71)
 * [blog](https://dreamerjonson.com/)
 * [Athens](https://docs.gomods.io/)
 * [talk youtube](https://www.youtube.com/watch?v=F8nrpe0XWRg)
-* [How to Write Go Code (with GOPATH)](https://golang.org/doc/gopath_code.html)
+* [Modules Part 03: Minimal Version Selection](https://www.ardanlabs.com/blog/2019/12/modules-03-minimal-version-selection.html)
 * [How to Write Go Code ](https://golang.org/doc/code.html#Organization)
+* [Go module 如何发布 v2 及以上版本？](https://blog.cyeam.com/go/2019/03/12/go-version)
+* [The Principles of Versioning in Go](https://research.swtch.com/vgo-principles#eng)
