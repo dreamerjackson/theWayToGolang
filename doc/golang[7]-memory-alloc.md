@@ -202,6 +202,7 @@ central [numSpanClasses]struct {
 * [作者知乎](https://www.zhihu.com/people/ke-ai-de-xiao-tu-ji-71)
 * [blog](https://dreamerjonson.com/)
 * [False sharing](https://en.wikipedia.org/wiki/False_sharing)
+* [Data_segment](https://en.wikipedia.org/wiki/Data_segment)
 * [linux brk/sbrk](http://man7.org/linux/man-pages/man2/brk.2.html)
 * [linux mmap/munmap](http://man7.org/linux/man-pages/man2/mmap.2.html)
 * [linux set_thread_area/get_thread_area](http://man7.org/linux/man-pages/man2/set_thread_area.2.html)
