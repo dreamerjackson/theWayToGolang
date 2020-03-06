@@ -382,12 +382,12 @@ $ go mod tidy
 * 如上图实例显示了go对于版本跟新的处理。`my/thing/v2`标识特定模块的语义主版本`2`。版本1是`my/thing`,模块路径中没有明确的版本。但是，当您引入主要版本2或更大版本时，必须在模块名称后添加版本，以区别于版本1和其他主要版本，因此版本2为my/thing/v2，版本3为my/thing/v3，依此类推。
 * 假设模块A引入了模块B和模块C，模块B引入了模块Dv1.0.0，模块C引入了模块Dv2.0.0。则看见来就像是
 ```
-A --> 模块B --> 模块Dv1.0.0
-A --> 模块C --> 模块Dv2.0.0
+A --> 模块B --> 模块D v1.0.0
+A --> 模块C --> 模块D v2.0.0
 ```
 * 由于v1 和v2 模块的路径不相同，因此他们之间会是互不干扰的两个模块。
 * 下面我们用实例来验证
-首先我们给mydiv打一个v2.0.0的tag，其代码如下，简单修改了错误文字`v2.0.0 b can't = 0`
+* 首先我们给mydiv打一个v2.0.0的tag，其代码如下，简单修改了错误文字`v2.0.0 b can't = 0`
 ```
 package mydiv
 import "github.com/pkg/errors"
@@ -399,11 +399,11 @@ func Div(a int,b int) (int,error){
 	return a/b,nil
 }
 ```
-同时需要修改其路径名为：
+* 同时需要修改v2模块路径名为：
 ```
 module github.com/dreamerjackson/mydiv/v2
 ```
-接着在mathlib中,代码如下：
+* 接着在mathlib中,代码如下：
 ```
 package main
 
@@ -419,7 +419,7 @@ func main(){
 	fmt.Println(err1,err2)
 }
 ```
-其依赖的路径为:
+* 现在的依赖路径可以表示为为:
 ```
 mathlib --> 直接引用mydiv v2
 mathlib --> 直接引用minidiv --> 间接引用mydiv v1
@@ -428,7 +428,7 @@ mathlib --> 直接引用minidiv --> 间接引用mydiv v1
 ```
 v2.0.0 b can't = 0 ：： v1.0.1 b can't = 0
 ```
-接着执行`go list`,模块共存~
+接着执行`go list`,模块共存，验证成功~
 ```
 ~/mathlib(master*) » go list -m all | grep mydiv
 github.com/dreamerjackson/mydiv v1.0.1
@@ -441,7 +441,7 @@ github.com/dreamerjackson/mydiv/v2 v2.0.1
 模块镜像将会缓存已请求的模块及其特定版本，从而可以更快地检索将来的请求。一旦代码被获取并缓存在模块镜像中，就可以将其快速提供给世界各地的用户。
 
 ## checksum数据库
-checksum数据库也于2019八月推出，是可以用来防止模块完整性、有效性的手段。它验证特定版本的任何给定模块的代码是相同的，而不管是谁，在哪里，在哪个时候以及是如何获取的。Google拥有唯一的校验和数据库，但是可以通过私有模块镜像对其进行缓存。
+checksum数据库也于2019八月推出，是可以用来防止模块完整性、有效性的手段。它验证特定版本的任何给定模块代码的正确性，而不管何人何时何地以及是如何获取的。Google拥有唯一的校验和数据库，但是可以通过私有模块镜像对其进行缓存。
 
 ## go module 环境变量
 有几个环境变量可以控制与模块镜像和checksum数据库有关的行为
@@ -498,7 +498,7 @@ INFO[7:39AM]: incoming request	http-method=GET http-path=/github.com/dreamerjack
 * 可以验证模块（对于任何给定的版本）始终包含完全相同的代码，而不管它被构建了多少次，从何处获取以及由谁获取
 
 ## 总结
-在本文中，使用详细的实例讲解了`go module` 的why（为什么需要），what（最佳实践）以及 how（其实现原理）。以希望读者在这篇文章之后，能够回答我们在开头提出的问题
+在本文中，使用详细的实例讲解了`go module` 是什么，为什么需要，其最佳实践以及其实现原理。希望读者在这篇文章之后，能够回答我们在开头提出的问题
 * `go module`是什么？
 * `go module`为什么需要？
 * `go module`的基本使用方法是什么？
