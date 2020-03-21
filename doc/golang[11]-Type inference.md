@@ -99,9 +99,6 @@ const (
 )
 ```
 
-
-
-
 * go语言源代码采用UTF-8的编码方式,在进行词法分析时当遇到需要赋值的常量操作时，会逐个的读取后面常量的UTF-8字符。字符串的首字符为`"`,数字的首字母为'0'-'9'。实现函数位于：
 ```
 // go/src/cmd/compile/internal/syntax
@@ -177,7 +174,7 @@ func (s *scanner) number(c rune) {
 ```
 * 其中`Op`代表操作符,在这里是赋值操作,Lhs与Rhs分别代表左右两个表达式,左边代表了`变量a`,右边代表了整数`333`，此时右边整数的类型为`intLit`
 #### 抽象语法树阶段
-* 接着生成在抽象语法树AST时, 会将赋值`AssignStmt`变为一个`Node`,`node`结构体是对于抽象语法树中节点的抽象。
+* 接着生成在抽象语法树AST时, 会将词法分析的`AssignStmt`解析变为一个`ode`,`Node`结构体是对于抽象语法树中节点的抽象。
 ```
 type Node struct {
 	// Tree structure.
@@ -191,8 +188,8 @@ type Node struct {
     E   interface{} // Opt or Val, see methods below
     ...
 ```
-* 仍然是左节点代表了左边的`变量a`,右节点代表了整数`333`。
-* 此时在E接口中，如果为整数会存储值，类型为mpint。mpint存储整数常量
+* 仍然是Left左节点代表了左边的`变量a`,Right右节点代表了整数`333`。
+* 此时在E接口中，Right右节点会存储值`333`，类型为mpint。mpint用于存储整数常量
 * 具体的代码如下,如果为IntLit类型，转换为Mpint类型,其他类型类似。
 * 但是注意，此时左边的节点还是没有任何类型的。
 ```
