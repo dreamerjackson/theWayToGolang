@@ -271,7 +271,7 @@ func (v Val) Ctype() Ctype {
 var Types [NTYPE]*Type
 ```
 
-* Type`是go语言中类型的存储结构,`types.Types[TINT]`最终代表的类型为`int`类型。其结构如下:
+* `Type`是go语言中类型的存储结构,`types.Types[TINT]`最终代表的类型为`int`类型。其结构如下:
 ```
 // A Type represents a Go type.
 type Type struct {
