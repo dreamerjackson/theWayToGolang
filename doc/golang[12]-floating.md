@@ -228,11 +228,15 @@ In computing, a normal number is a non-zero number in a floating-point represent
 * 并且精度是动态变化的，不同的范围可能有不同的精度。这里简单提示一下是由于 2的幂 与 10的幂之间的交错是不同的。
 
 ## 总结
-在本文中
+* 本文介绍了go语言使用的IEEE-754标准存储浮点数的具体存储方式。
+* 本文通过实际代码片段和一个脑筋急转弯帮助读者理解浮点数的存储方式。
+* 本文介绍了normal number 以及精度这两个重要概念。
 ## 参考资料
 * [项目链接](https://github.com/dreamerjackson/theWayToGolang)
 * [作者知乎](https://www.zhihu.com/people/ke-ai-de-xiao-tu-ji-71)
 * [blog](https://dreamerjonson.com/)
-* [Type inference](https://en.wikipedia.org/wiki/Type_inference)
-* [Rob Pike:Less is exponentially more](https://commandcenter.blogspot.com/2012/06/)
-* [Type inference for go](http://fileadmin.cs.lth.se/cs/Education/EDAN70/CompilerProjects/2015/Reports/GigovicMalmros.pdf)
+* [Why 0.1 Does Not Exist In Floating-Point](https://www.exploringbinary.com/why-0-point-1-does-not-exist-in-floating-point/)
+* [Normal number](https://en.wikipedia.org/wiki/Normal_number)
+* [7-bits-are-not-enough-for-2-digit-accuracy](https://www.exploringbinary.com/7-bits-are-not-enough-for-2-digit-accuracy/)
+* [Decimal Precision of Binary Floating-Point Numbers](https://www.exploringbinary.com/decimal-precision-of-binary-floating-point-numbers/)
+
