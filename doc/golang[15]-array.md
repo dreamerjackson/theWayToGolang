@@ -42,7 +42,6 @@ fmt.Printf("类型arr3: %T,类型arr4: %T\n",arr3,arr4)
 len(arr3)
 arr3[2]
 ```
-
 ## 编译时
 * 数组在编译时的数据类型为`TARRAY`,通过`NewArray`函数进行创建,AST节点的Op操作：`OARRAYLIT`
 ```
@@ -158,7 +157,7 @@ func fixedlit(ctxt initContext, kind initKind, n *Node, var_ *Node, init *Nodes)
  var a [3]int
  b := a[1]
 ```
-* 数组访问越界是非常严重的错误，Go 语言中对越界的判断是可以在编译期间由静态类型检查完成的，cmd/compile/internal/gc.typecheck1 函数会对访问数组的索引进行验证：
+* 数组访问越界是非常严重的错误，Go 语言中对越界的判断是可以在编译期间由静态类型检查完成的，`typecheck1` 函数会对访问数组的索引进行验证：
 ```
 func typecheck1(n *Node, top int) (res *Node) {
 	switch n.Op {
@@ -210,9 +209,9 @@ func goPanicIndex(x int, y int) {
 * 最后要提到的是,即便数组的索引是变量。在某些时候任然能够在编译时通过优化检测出越界并在运行时报错。
 * 例如对于一个简单的代码
 ```
-	a := [3]int{1,2,3}
-	b := 8
-    _ = a[b]
+a := [3]int{1,2,3}
+b := 8
+_ = a[b]
 ```
 * 我们可以通过如下命令生成ssa.html。显示整个编译时的执行过程。
 ```
@@ -325,3 +324,4 @@ b:0xc00001a180
 * [项目链接](https://github.com/dreamerjackson/theWayToGolang)
 * [作者知乎](https://www.zhihu.com/people/ke-ai-de-xiao-tu-ji-71)
 * [blog](https://dreamerjonson.com/)
+* [draveness slice](https://draveness.me/golang/docs/part2-foundation/ch03-datastructure/golang-array/)
