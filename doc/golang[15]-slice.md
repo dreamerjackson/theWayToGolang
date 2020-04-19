@@ -169,6 +169,7 @@ type Slice struct {
 当我们使用字面量 []int{1, 2, 3} 创建新的切片时，会创建一个array数组(`[3]int{1,2,3}`)存储于静态区中。同时会创建一个变量。
 * 核心逻辑位于slicelit函数
 ```
+// go/src/cmd/compile/internal/gc/sinit.go
 func slicelit(ctxt initContext, n *Node, var_ *Node, init *Nodes)
 ```
 其抽象的过程如下:
@@ -183,19 +184,19 @@ slice := vauto[:]
 ```
 * 源码中的注释如下：
 ```
-	// recipe for var = []t{...}
-	// 1. make a static array
-	//	var vstat [...]t
-	// 2. assign (data statements) the constant part
-	//	vstat = constpart{}
-	// 3. make an auto pointer to array and allocate heap to it
-	//	var vauto *[...]t = new([...]t)
-	// 4. copy the static array to the auto array
-	//	*vauto = vstat
-	// 5. for each dynamic part assign to the array
-	//	vauto[i] = dynamic part
-	// 6. assign slice of allocated heap to var
-	//	var = vauto[:]
+// recipe for var = []t{...}
+// 1. make a static array
+//	var vstat [...]t
+// 2. assign (data statements) the constant part
+//	vstat = constpart{}
+// 3. make an auto pointer to array and allocate heap to it
+//	var vauto *[...]t = new([...]t)
+// 4. copy the static array to the auto array
+//	*vauto = vstat
+// 5. for each dynamic part assign to the array
+//	vauto[i] = dynamic part
+// 6. assign slice of allocated heap to var
+//	var = vauto[:]
 ```
 
 ## 编译时：make 初始化
@@ -235,7 +236,8 @@ case TSLICE:
 ```
 
 * 下面来分析一下编译时内存的逃逸问题,如果make初始化了一个太大的切片，这个空间会逃逸到堆中,由运行时分配。如果一个空间比较小,会在栈中分配。
-此值定义在`/usr/local/go/src/cmd/compile/internal/gc`，可以被flag smallframes更新,默认为64KB。所以`make([]int64,1023)` 与`make([]int64,1024)`的效果是截然不同的，这是不是量变到质量，压倒骆驼的最后一根稻草？
+* 此临界值值定义在`/usr/local/go/src/cmd/compile/internal/gc`，可以被flag smallframes更新,默认为64KB。
+* 所以`make([]int64,1023)` 与`make([]int64,1024)`的效果是截然不同的，这是不是压倒骆驼的最后一根稻草？
 
 ```
 // maximum size of implicit variables that we will allocate on the stack.
@@ -251,17 +253,8 @@ case TSLICE:
 ```
 func walkexpr(n *Node, init *Nodes) *Node{
 case OMAKESLICE:
-    l := n.Left
-    r := n.Right
-    if r == nil {
-        r = safeexpr(l, init)
-        l = r
-    }
-    t := n.Type
+    ...
     if n.Esc == EscNone {
-        if !isSmallMakeSlice(n) {
-            Fatalf("non-small OMAKESLICE with EscNone: %v", n)
-        }
         // var arr [r]T
         // n = arr[:l]
         i := indexconst(r)
@@ -280,10 +273,6 @@ case OMAKESLICE:
         r = walkexpr(r, init)
         n = r
     } else {
-        // n escapes; set up a call to makeslice.
-        // When len and cap can fit into int, use makeslice instead of
-        // makeslice64, which is faster and shorter on 32 bit platforms.
-
         if t.Elem().NotInHeap() {
             yyerror("%v is go:notinheap; heap allocation disallowed", t.Elem())
         }
@@ -292,15 +281,6 @@ case OMAKESLICE:
 
         fnname := "makeslice64"
         argtype := types.Types[TINT64]
-
-        // Type checking guarantees that TIDEAL len/cap are positive and fit in an int.
-        // The case of len or cap overflow when converting TUINT or TUINTPTR to TINT
-        // will be handled by the negative range checks in makeslice during runtime.
-        if (len.Type.IsKind(TIDEAL) || maxintval[len.Type.Etype].Cmp(maxintval[TUINT]) <= 0) &&
-            (cap.Type.IsKind(TIDEAL) || maxintval[cap.Type.Etype].Cmp(maxintval[TUINT]) <= 0) {
-            fnname = "makeslice"
-            argtype = types.Types[TINT]
-        }
 
         m := nod(OSLICEHEADER, nil, nil)
         m.Type = t
@@ -362,13 +342,19 @@ func makeslice64(et *_type, len64, cap64 int64) unsafe.Pointer {
 ```
 
 ## 切片的扩容
+* Go 中切片append表示添加元素,但不是使用了append就需要扩容,如下代码不需要扩容
 ```
 a:= make([]int,3,4)
-_ = append(a,1)
+append(a,1)
+```
+* 当Go 中切片append当容量超过了现有容量,才需要进行扩容,例如：
+```
+a:= make([]int,3,3)
+append(a,1)
 ```
 
-* 核心逻辑位于`go/src/runtime/slice.go growslice函数`
 
+* 核心逻辑位于`go/src/runtime/slice.go growslice函数`
 ```
 func growslice(et *_type, old slice, cap int) slice {
     newcap := old.cap
@@ -392,13 +378,13 @@ func growslice(et *_type, old slice, cap int) slice {
 	...
 }
 ```
-* Go 中切片扩容的策略是这样的：
+* 上面的代码显示了扩容的核心逻辑,Go 中切片扩容的策略是这样的：
     + 首先判断，如果新申请容量（cap）大于2倍的旧容量（old.cap），最终容量（newcap）就是新申请的容量（cap）
     + 否则判断，如果旧切片的长度小于1024，则最终容量(newcap)就是旧容量(old.cap)的两倍，即（newcap=doublecap）
     + 否则判断，如果旧切片长度大于等于1024，则最终容量（newcap）从旧容量（old.cap）开始循环增加原来的1/4，即（newcap=old.cap,for {newcap += newcap/4}）直到最终容量（newcap）大于等于新申请的容量(cap)，即（newcap >= cap）
     + 如果最终容量（cap）计算值溢出，则最终容量（cap）就是新申请容量（cap）
 
-* 接着根据类型的大小,确定不同的分配大小。其主要是用作内存的对齐。因此，申请的内存可能会大于实际的`et.size * newcap`
+* 接着根据切片类型的大小,确定不同的内存分配大小。其主要是用作内存的对齐。因此，申请的内存可能会大于实际的`et.size * newcap`
 ```
 	switch {
 	case et.size == 1:
@@ -436,6 +422,7 @@ func growslice(et *_type, old slice, cap int) slice {
 
 ```
 * 最后核心是申请内存。要注意的是，新的切片不一定意味着新的地址。
+* 根据切片类型`et.ptrdata`是否为指针,需要执行不同的逻辑。
 ```
 	if et.ptrdata == 0 {
 		p = mallocgc(capmem, nil, false)
@@ -455,7 +442,7 @@ func growslice(et *_type, old slice, cap int) slice {
 
 	return slice{p, old.len, newcap}
 ```
-* 根据切片类型`et.ptrdata`是否为指针,需要执行不同的逻辑。
+
 * 当切片类型不是指针,分配内存后只需要将内存的后面的值清空,`memmove(p, old.array, lenmem)` 函数用于将old切片的值赋值给新的切片
 * 整个过程的抽象抽象表示如下
 ```
@@ -468,7 +455,7 @@ new[3] = old[3]
 * 当切片类型为指针,指针需要写入当前协程缓冲区中,这个地方涉及到GC 回收机制中的写屏障,后面介绍。
 
 ## 切片的截取
-* 对于数组下标对于切片的截取,如下所示，可以从多个维度证明,切片的截取生成了一个新的切片,但是底层数据源却是使用的同一个。
+* 对于数组下标的截取,如下所示，可以从多个维度证明,切片的截取生成了一个新的切片,但是底层数据源却是使用的同一个。
 ```
 	old := make([]int64,3,3)
 	new := old[1:3]
@@ -491,7 +478,7 @@ GOSSAFUNC=main GOOS=linux GOARCH=amd64 go tool compile main.go
 ![image](../image/golang[10.2]-2.png)
 
 ## 切片的复制
-由于切片的复制不会改变指向的底层数据源。但是我们有些时候希望建一个新的数组，连底层数据源也是全新的。这个时候可以使用`copy`函数
+* 由于切片的复制不会改变指向的底层数据源。但是我们有些时候希望建一个新的数组，连底层数据源也是全新的。这个时候可以使用`copy`函数
 * 切片进行值拷贝：copy
 ```
 // 创建目标切片
@@ -555,22 +542,10 @@ case OGO:
 
 ```
 
-* slicestringcopy 或 slicecopy 本质上仍然是调用了`memmove`只是进行了额外的冲突等判断。
+* slicestringcopy 或 slicecopy 本质上仍然是调用了`memmove`只是进行了额外的race冲突等判断。
 ```
 func slicecopy(to, fm slice, width uintptr) int {
-	if fm.len == 0 || to.len == 0 {
-		return 0
-	}
-
-	n := fm.len
-	if to.len < n {
-		n = to.len
-	}
-
-	if width == 0 {
-		return n
-	}
-
+    ...
 	if raceenabled {
 		callerpc := getcallerpc()
 		pc := funcPC(slicecopy)
@@ -589,29 +564,6 @@ func slicecopy(to, fm slice, width uintptr) int {
 	} else {
 		memmove(to.array, fm.array, size)
 	}
-	return n
-}
-
-func slicestringcopy(to []byte, fm string) int {
-	if len(fm) == 0 || len(to) == 0 {
-		return 0
-	}
-
-	n := len(fm)
-	if len(to) < n {
-		n = len(to)
-	}
-
-	if raceenabled {
-		callerpc := getcallerpc()
-		pc := funcPC(slicestringcopy)
-		racewriterangepc(unsafe.Pointer(&to[0]), uintptr(n), callerpc, pc)
-	}
-	if msanenabled {
-		msanwrite(unsafe.Pointer(&to[0]), uintptr(n))
-	}
-
-	memmove(unsafe.Pointer(&to[0]), stringStructOf(&fm).str, uintptr(n))
 	return n
 }
 
