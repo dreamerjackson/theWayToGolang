@@ -1,4 +1,4 @@
-# golang快速入门[9.1]-深入切片
+# golang快速入门[9.2]-精深奥妙的切片功夫
 
 ## 前言
 下面这段程序会输出什么？
@@ -486,6 +486,7 @@ numbers1 := make([]int, len(numbers), cap(numbers)*2)
 // 将numbers的元素拷贝到numbers1中
 count := copy(numbers1, numbers)
 ```
+
 * 切片转数组
 ```
 slice := []byte("abcdefgh")
@@ -568,7 +569,6 @@ func slicecopy(to, fm slice, width uintptr) int {
 }
 
 ```
-
 
 ## 总结
 * 切片是go语言中重要的数据结果,其和其他语言不同的是，其维护了底层的内存，以及长度和容量
