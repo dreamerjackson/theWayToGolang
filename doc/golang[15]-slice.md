@@ -481,8 +481,8 @@ new[3] = old[3]
 GOSSAFUNC=main GOOS=linux GOARCH=amd64 go tool compile main.go
 ```
 ![image](../image/golang[10.2]-1.png)
-在ssa的初始阶段`start`,make操作对应的是`SliceMake <[]int> v10 v15 v15`, 传递数组的指针、长度、容量。
-而 `SliceMake <[]int> v34 v28 v29` 传递的指针v34正好的原始的Ptr + 8个字节的大小
+在ssa的初始阶段`start`,`old := make([]int64,3,3)`对应的是`SliceMake <[]int> v10 v15 v15`, SliceMake操作￿需要传递数组的指针、长度、容量。
+而 `new := old[1:3]` 对应`SliceMake <[]int> v34 v28 v29` 传递的指针v34正好的原始的Ptr + 8个字节的大小
 
 下面列出一张图比较形象的表示切片引用相同数据源的图：
 ![image](../image/golang[10.2]-2.png)
