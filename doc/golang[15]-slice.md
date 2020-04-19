@@ -137,7 +137,15 @@ numbers = numbers[:len(numbers)-1]
 a := int(len(numbers) / 2)
 numbers = append(numbers[:a], numbers[a+1:]...)
 ```
-
+## 经典案例：切片反转
+```
+// reverse reverses a slice of ints in place.
+func reverse(s []int) {
+    for i, j := 0, len(s)-1; i < j; i, j = i+1, j-1 {
+        s[i], s[j] = s[j], s[i]
+    }
+}
+```
 ## 切片在编译时的特性
 * 编译时新建一个切片,切片内元素的类型是在编译期间确定的
 ```
@@ -352,6 +360,8 @@ append(a,1)
 a:= make([]int,3,3)
 append(a,1)
 ```
+
+
 
 
 * 核心逻辑位于`go/src/runtime/slice.go growslice函数`
