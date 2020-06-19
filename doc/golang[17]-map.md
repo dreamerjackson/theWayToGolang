@@ -1,19 +1,18 @@
 ## 哈希表
-Go语言中的Map,又称为Hash map(哈希表)是使用频率极高的一种数据结构，重要程度高到令人发指。
-哈希表的原理是将多个key/value对分散存储在buckets(桶)中。给定一个key，哈希算法会计算出键值对存储的位置。时常会通过两步完成,伪代码如图所示:
+* Go语言中的Map,又称为Hash map(哈希表)是使用频率极高的一种数据结构，重要程度高到令人发指。
+* 哈希表的原理是将多个key/value对分散存储在buckets(桶)中。给定一个key，哈希算法会计算出键值对存储的位置。时常会通过两步完成,伪代码如图所示:
 ```
 hash = hashfunc(key)
 index = hash % array_size
 ```
-
-在此伪代码中,hash结果与桶的数量无关。再通过执行取模运算得到0 - array_size − 1 之间的index序号。
+在此伪代码中,hash结果与桶的数量无关。再通过执行取模运算得到0 - array_size−1 之间的index序号。
 在实践中，我们时常将Map看做o(1)时间复杂度的操作,通过一个键key快速寻找其唯一对应的value。
 在本文中笔者试图解答如下的几个问题:
 Go语言中Map如何进行组织以及增删查改
 Go语言中Map为何设计为不支持并发读写的
 ## Map基本操作
 ### Map的声明与初始化
-首先，我们来看一看map的基本使用方式。map声明的第一种方式如下
+首先，来看一看map的基本使用方式。map声明的第一种方式如下
 ```
 var hash  map[T]T
 ```
@@ -50,25 +49,22 @@ map可以进行两种形式的访问:
 ```
  v,ok := map[key]
 ```
-不用惊讶于为什么同样的访问可以即返回一个值又返回两个值，这是在编译时做到的，后面会介绍。
 当返回2个参数时，第2个参数代表当前key在map中是否存在。
-
+不用惊讶于为什么同样的访问可以即返回一个值又返回两个值，这是在编译时做到的，后面会介绍。
 ### Map的赋值
 map的赋值语法相对简单
 ```
 hash[key] = value
 ```
 其代表将value与给map1哈希表中的key绑定在一起
-
 ### Map的删除
 map的删除需要用到delete，其是Go语言中的关键字，用于进行map的删除操作，形如:
 ```
 delete(hash,key)
 ```
 可以对相同的key进行多次的删除操作，而不会报错
-
 ### 关于map中的key
-很容易想到,如果map中的key都没有办法比较是否相同,那么就不能作为map的key。
+很容易理解,如果map中的key都没有办法比较是否相同,那么就不能作为map的key。
 关于Go语言中的可比较性，直接阅读官方文档即可:`https://golang.org/ref/spec#Comparison_operators`
 ```
 布尔值是可比较的。
@@ -112,15 +108,14 @@ type hmap struct {
 * oldbuckets 是在Map进行扩容的时候存储旧桶的.当所有的旧桶中的数据都已经转移到了新桶,则清空。
 * nevacuate 在扩容的时候使用。用于标记当前旧桶中小于nevacuate的桶都已经转移到了新桶.
 
-
-桶在运行时只列出了其首个字段: 即一个固定长度为8的数组。此字段顺序存储key的哈希值的前8位.
+代表桶的`bmap`结构在运行时只列出了其首个字段: 即一个固定长度为8的数组。此字段顺序存储key的哈希值的前8位.
 ```
 type bmap struct {
 	tophash [bucketCnt]uint8
 }
 ```
 可能会有疑问，桶中存储的key和value值哪里去了？ 这是因为Map在编译时即确定了map中key,value,桶的大小。因此在运行时仅仅通过指针操作即可找到特定位置的元素。
-本身在其之后在桶存储的tophash字段之后，会存储key数组以及value数组
+桶本身在存储的tophash字段之后，会存储key数组以及value数组
 ```
 type bmap struct {
 	tophash [bucketCnt]uint8
@@ -130,9 +125,9 @@ type bmap struct {
 }
 ```
 ![image](../image/golang[17]-1.png)
-Go语言选择将key与value分开存储而不是key/value/key/value的形式，是为了在字节对齐的时候能够压缩空间。这里不再展开。
+Go语言选择将key与value分开存储而不是key/value/key/value的形式，是为了在字节对齐的时候能够压缩空间。
 
-同时，在进行`hash[key]`此类的的Map访问操作时，会首先找到桶的位置，如下的伪代码操作.
+在进行`hash[key]`此类的的Map访问操作时，会首先找到桶的位置，如下为伪代码操作.
 ```
 hash = hashfunc(key)
 index = hash % array_size
@@ -141,12 +136,12 @@ index = hash % array_size
 ![image](../image/golang[17]-2.png)
 
 
-在Go语言中还有一个溢出桶的概念,在执行`hash[key] = value`赋值操作时,当指定桶中的数据超过了8个，并不会直接就新开辟一个新桶,而是会将数据放置到溢出桶中。每个桶的最后还存储了`overflow` 即溢出桶的指针
+* 在Go语言中还有一个溢出桶的概念,在执行`hash[key] = value`赋值操作时,当指定桶中的数据超过了8个，并不会直接就新开辟一个新桶,而是会将数据放置到溢出桶中每个桶的最后还存储了`overflow` 即溢出桶的指针
 
-在正常情况下，数据是很少会跑到溢出桶里面去的。同理，我们也可以知道，在Map的查找操作时，如果key的hash在指定桶的tophash数组中不存在，还会遍历溢出桶中的数据。
+* 在正常情况下，数据是很少会跑到溢出桶里面去的。同理，我们也可以知道，在Map的查找操作时，如果key的hash在指定桶的tophash数组中不存在，还会遍历溢出桶中的数据。
 ![image](../image/golang[17]-2.png)
 
-后面我们会看到，如果一开始初始化map的数量比较大。则map提前创建好一些溢出桶存储在`extra *mapextra` 字段.
+* 后面我们会看到，如果一开始初始化map的数量比较大。则map提前创建好一些溢出桶存储在`extra *mapextra` 字段.
 ```
 type mapextra struct {
 	overflow    *[]*bmap
@@ -167,20 +162,23 @@ type mapextra struct {
 负载因子 = 哈希表中元素数量 / 桶的数量
 ```
 
-因此随着负载因子的增大，意味着越多的元素会分配到同一个桶中。此时其效率会减慢。试想如果桶的数量只有1个，此时负载因子到达最大,此时的搜索效率就成了遍历数组。在Go语言中的负载因子为6.5。 当超过了其大小后，Mpa会进行扩容，增大两倍于旧表的大小。旧桶的数据会首先存到`oldbuckets` 字段，并想办法分散的转移到新桶中。
+* 因此随着负载因子的增大，意味着越多的元素会分配到同一个桶中。此时其效率会减慢。
+* 试想如果桶的数量只有1个，此时负载因子到达最大,此时的搜索效率就成了遍历数组。在Go语言中的负载因子为6.5。 
+* 当超过了其大小后，Mpa会进行扩容，增大两倍于旧表的大小。
+* 旧桶的数据会首先存到`oldbuckets` 字段，并想办法分散的转移到新桶中。
 
-![image](../image/golang[17]-6.png)
+![image](../image/golang[17]-4.png)
 
 
-当旧桶的数据全部转移到新桶之后,旧桶数据即会被清空。
+* 当旧桶的数据全部转移到新桶之后,旧桶数据即会被清空。
 
-map的重建还存在第二种情况，即溢出桶的数量太多。这时只会新建和原来的map具有相同大小的桶。进行这样`same size`的重建为了是防止溢出桶的数量可能缓慢增长导致的内存泄露.
+* map的重建还存在第二种情况，即溢出桶的数量太多。这时只会新建和原来的map具有相同大小的桶。进行这样`same size`的重建为了是防止溢出桶的数量可能缓慢增长导致的内存泄露.
 
-当进行map的delete操作时, 和赋值操作类似，会找到指定的桶，如果存在指定的key,那么就释放掉key与value引用的内存。同时tophash中指定位置会存储`emptyOne`,代表当前位置是空的。
+* 当进行map的delete操作时, 和赋值操作类似，会找到指定的桶，如果存在指定的key,那么就释放掉key与value引用的内存。同时tophash中指定位置会存储`emptyOne`,代表当前位置是空的。
 
-同时在删除操作时，会探测到是否当前要删除的元素之后都是空的。如果是，tophash会存储为`emptyRest`. 这样做的好处是在做查找操作时，遇到emptyRest 可以直接退出，因为后面的元素都是空的。
+* 同时在删除操作时，会探测到是否当前要删除的元素之后都是空的。如果是，tophash会存储为`emptyRest`. 这样做的好处是在做查找操作时，遇到emptyRest 可以直接退出，因为后面的元素都是空的。
 
-![image](../image/golang[17]-7.png)
+![image](../image/golang[17]-5.png)
 
 ## Map深入
 明白了Map的抽象原理，接下来我们看一下Map的具体实现。
@@ -226,7 +224,7 @@ func checkmake(t *types.Type, arg string, n *Node) bool {
 ```
 
 
-* 最后会指定在调用runtime.makemap*函数
+* 最后会指定在运行时调用runtime.makemap*函数
 ```go
 func walkexpr(n *Node, init *Nodes) *Node {
            fnname := "makemap64"
@@ -261,7 +259,8 @@ if int64(int(hint)) != hint {
 }
 ```
 
-* makemap函数会计算出需要的桶的数量,即log2(N),并调用`makeBucketArray`函数生成桶和溢出桶.如果初始化时生成了溢出桶,会放置到map的`extra`字段里去
+* makemap函数会计算出需要的桶的数量,即log2(N),并调用`makeBucketArray`函数生成桶和溢出桶
+* 如果初始化时生成了溢出桶,会放置到map的`extra`字段里去
 ```
 func makemap(t *maptype, hint int, h *hmap) *hmap {
     ...
@@ -284,7 +283,7 @@ func makemap(t *maptype, hint int, h *hmap) *hmap {
 }
 
 ```
-* makeBucketArray 会为分配Map申请内存大小，这里需要注意的是，如果map的数量大于了`2^4`，则会在初始化的时候生成溢出桶。溢出桶的大小为2^(b-4),b为桶的大小。
+* makeBucketArray 会为Map申请内存大小，这里需要注意的是，如果map的数量大于了`2^4`，则会在初始化的时候生成溢出桶。溢出桶的大小为2^(b-4),b为桶的大小。
 ```
 func makeBucketArray(t *maptype, b uint8, dirtyalloc unsafe.Pointer) (buckets unsafe.Pointer, nextOverflow *bmap) {
 	if b >= 4 {
@@ -350,7 +349,7 @@ if len(entries) > 25 {
 	// }
 }
 ```
-* 如果字面量的个数小于25个,会采取直接添加的方式
+* 如果字面量的个数小于25个,编译时会指定会采取直接添加的方式赋值
 ```
 for _, r := range entries {
     map[key] = value
@@ -366,10 +365,9 @@ v := hash[key]
 v, ok := hash[key]
 ```
 Go语言没有函数重载的概念，决定返回一个值还是两个值很明显只能够在编译时完成。
-对于 v:= rating["Go"]
+对于 `v:= rating["Go"]`
 rating["Go"]会在编译时解析为一个node，其中左边type为ONAME,存储名字:,右边type为OLITERAL,存储"Go",节点的op为"OINDEXMAP"
-
-根据`hash[key]` 位于赋值号的左边或右边，决定要执行访问还是赋值的操作,访问操作会在运行时调用运行mapaccess1_XXX函数,赋值操作会在运行时调用mapassign_XXX函数.
+根据`hash[key]` 位于赋值号的左边或右边，决定要执行访问还是赋值的操作。访问操作会在运行时调用运行mapaccess1_XXX函数,赋值操作会在运行时调用mapassign_XXX函数.
 
 ```
 if n.IndexMapLValue() {
@@ -440,18 +438,18 @@ func mkmapnames(base string, ptr string) mapnames {
 var mapaccess1 = mkmapnames("mapaccess1", "")
 
 ```
-最终会在运行时调用mapaccess1_XXXX的函数。
+最终会在运行时会调用mapaccess1_XXXX的函数。
 
 而对于`v, ok := hash[key]`类型的map访问则有所不同。在编译时的op操作为OAS2MAPR.会将其转换为在运行时调用的mapaccess2_XXXX前缀的函数。其伪代码如下:
 ```
 		//   var,b = mapaccess2*(t, m, i)
 		//   v = *var
 ```
-需要注意，如果采用`_, ok := hash[key]`形式，则不用对第一个参数进行赋值操作.
-在运行时,根据key值以及hash种子 计算hash值:`alg.hash(key, uintptr(h.hash0)).`
-bucketMask计算出当前桶的个数-1. `m := bucketMask(h.B)`
-Go语言采用了一种简单的方式`hash&m`计算出此key应该位于哪一个桶中.获取到桶的位置后，`tophash(hash)`即可计算出hash的前8位.
-接着此hash 挨个与存储在桶中的tophash进行对比。如果有hash值相同的话.会找到其对应的key值，查看key值是否相同。如果key值也相同，即说明查找到了结果，返回value哦。
+* 需要注意，如果采用`_, ok := hash[key]`形式，则不用对第一个参数进行赋值操作.
+* 在运行时,会根据key值以及hash种子 计算hash值:`alg.hash(key, uintptr(h.hash0)).`
+* 接着bucketMask计算出当前桶的个数-1. `m := bucketMask(h.B)`
+* Go语言采用了一种简单的方式`hash&m`计算出此key应该位于哪一个桶中.获取到桶的位置后，`tophash(hash)`即可计算出hash的前8位.
+* 接着此hash 挨个与存储在桶中的tophash进行对比。如果有hash值相同的话.会找到其对应的key值，查看key值是否相同。如果key值也相同，即说明查找到了结果，返回value哦。
 ```
 func mapaccess1(t *maptype, h *hmap, key unsafe.Pointer) unsafe.Pointer {
 	alg := t.key.alg
@@ -518,11 +516,6 @@ bucketloop:
 }
 ```
 
-
-* 旧桶在新桶中的位置
-```
-bucket&h.oldbucketmask()
-```
 ### Map深入: 赋值操作
 * 和访问的情况的比较类似, 最终会调用运行时mapassign*函数。
 * 赋值操作，map必须已经进行了初始化。
@@ -549,7 +542,7 @@ if h.flags&hashWriting != 0 {
 	h.flags ^= hashWriting
 ```
 
-* 如果当前没有桶，还会常见一个新桶。所以初始化的时候还是定一个长度吧，骚年。
+* 如果当前没有桶，还会常见一个新桶。所以初始化的时候还是定一个长度吧。
 ```
 if h.buckets == nil {
 	h.buckets = newobject(t.bucket) // newarray(t.bucket, 1)
@@ -575,15 +568,6 @@ if h.buckets == nil {
 ```
 
 * 开始寻找是否有对应的hash，如果找到了，判断key是否相同，如果相同，会找到对应的value的位置在后面进行赋值
-* 要注意的是,如果tophash没找到，还会去溢出桶里寻找是否存在指定的hash
-* 如果也不存在，会选择往第一个空元素中插入数据inserti、insertk会记录此空元素的位置，
-```
-				if isEmpty(b.tophash[i]) && inserti == nil {
-					inserti = &b.tophash[i]
-					insertk = add(unsafe.Pointer(b), dataOffset+i*uintptr(t.keysize))
-					elem = add(unsafe.Pointer(b), dataOffset+bucketCnt*uintptr(t.keysize)+i*uintptr(t.elemsize))
-				}
-```
 
 ```
 for i := uintptr(0); i < bucketCnt; i++ {
@@ -620,6 +604,15 @@ for i := uintptr(0); i < bucketCnt; i++ {
 	}
 
 ```
+* 要注意的是,如果tophash没找到，还会去溢出桶里寻找是否存在指定的hash
+* 如果也不存在，会选择往第一个空元素中插入数据inserti、insertk会记录此空元素的位置，
+```
+				if isEmpty(b.tophash[i]) && inserti == nil {
+					inserti = &b.tophash[i]
+					insertk = add(unsafe.Pointer(b), dataOffset+i*uintptr(t.keysize))
+					elem = add(unsafe.Pointer(b), dataOffset+bucketCnt*uintptr(t.keysize)+i*uintptr(t.elemsize))
+				}
+```
 * 在赋值之前，还需要判断Map是否需要重建
 ```
 if !h.growing() && (overLoadFactor(h.count+1, h.B) || tooManyOverflowBuckets(h.noverflow, h.B)) {
@@ -639,7 +632,7 @@ if !h.growing() && (overLoadFactor(h.count+1, h.B) || tooManyOverflowBuckets(h.n
 	}
 ```
 * 申请的新桶一开始是来自于map中`extra`字段初始化时存储的多余溢出桶。如果这些多余的溢出桶都用完了才会申请新的内存。一个桶的溢出桶可能会进行延展
-![image](../image/golang[17]-8.png)
+![image](../image/golang[17]-.png)
 
 ```
 func mapassign(t *maptype, h *hmap, key unsafe.Pointer) unsafe.Pointer {
@@ -688,8 +681,6 @@ done:
 	}
 	return elem
 }
-
-
 ```
 
 ### Map深入: Map重建
@@ -722,14 +713,6 @@ done:
 	}
 
 
-```
-
-* 要注意的是, 在这里并没有进行实际的将旧桶数据转移到新桶的过程。数据转移遵循了`copy on write`(写时复制)的规则。只有在真正赋值的时候，会选择是否需要进行数据转移。核心逻辑位于函数`growWork` and `evacuate`
-```
-	bucket := hash & bucketMask(h.B)
-	if h.growing() {
-		growWork(t, h, bucket)
-	}
 ```
 * hashGrow 代码一览
 ```
@@ -777,6 +760,14 @@ func hashGrow(t *maptype, h *hmap) {
 }
 ```
 
+* 要注意的是, 在这里并没有进行实际的将旧桶数据转移到新桶的过程。数据转移遵循了`copy on write`(写时复制)的规则。只有在真正赋值的时候，会选择是否需要进行数据转移。核心逻辑位于函数`growWork` and `evacuate`
+```
+	bucket := hash & bucketMask(h.B)
+	if h.growing() {
+		growWork(t, h, bucket)
+	}
+```
+
 * 在进行写时复制的时候，意味着并不是所有的数据都会一次性的进行转移，而只会转移当前需要的这个旧桶。
  `bucket := hash & bucketMask(h.B)`得到了当前新桶所在的位置，而要转移的旧桶的位置位于`bucket&h.oldbucketmask()`
 `xy [2]evacDst` 用于存储要转移到新桶的位置
@@ -791,105 +782,18 @@ func hashGrow(t *maptype, h *hmap) {
 * 解决了旧桶要转移哪一些新桶，我们还需要解决旧桶中的数据要转移到哪一些新桶. 
 * 其中有一个非常重要的原则是：如果此数据计算完hash后,`hash & bucketMask <= 旧桶的大小` 意味着这个数据必须转移到和旧桶位置完全对应的新桶中去.理由是现在当前key所在新桶的序号与旧桶是完全相同的。
 ```
-func evacuate(t *maptype, h *hmap, oldbucket uintptr) {
-	b := (*bmap)(add(h.oldbuckets, oldbucket*uintptr(t.bucketsize)))
-	newbit := h.noldbuckets()
-	if !evacuated(b) {
-		// TODO: reuse overflow buckets instead of using new ones, if there
-		// is no iterator using the old buckets.  (If !oldIterator.)
 
-		// xy contains the x and y (low and high) evacuation destinations.
-		var xy [2]evacDst
-		x := &xy[0]
-		x.b = (*bmap)(add(h.buckets, oldbucket*uintptr(t.bucketsize)))
-		x.k = add(unsafe.Pointer(x.b), dataOffset)
-		x.e = add(x.k, bucketCnt*uintptr(t.keysize))
-
-		if !h.sameSizeGrow() {
-			// Only calculate y pointers if we're growing bigger.
-			// Otherwise GC can see bad pointers.
-			y := &xy[1]
-			y.b = (*bmap)(add(h.buckets, (oldbucket+newbit)*uintptr(t.bucketsize)))
-			y.k = add(unsafe.Pointer(y.b), dataOffset)
-			y.e = add(y.k, bucketCnt*uintptr(t.keysize))
-		}
-
-		for ; b != nil; b = b.overflow(t) {
-			k := add(unsafe.Pointer(b), dataOffset)
-			e := add(k, bucketCnt*uintptr(t.keysize))
-			for i := 0; i < bucketCnt; i, k, e = i+1, add(k, uintptr(t.keysize)), add(e, uintptr(t.elemsize)) {
-				top := b.tophash[i]
-				if isEmpty(top) {
-					b.tophash[i] = evacuatedEmpty
-					continue
-				}
-				if top < minTopHash {
-					throw("bad map state")
-				}
-				k2 := k
-				if t.indirectkey() {
-					k2 = *((*unsafe.Pointer)(k2))
-				}
-				var useY uint8
-				if !h.sameSizeGrow() {
-					// Compute hash to make our evacuation decision (whether we need
-					// to send this key/elem to bucket x or bucket y).
-					hash := t.key.alg.hash(k2, uintptr(h.hash0))
-					if h.flags&iterator != 0 && !t.reflexivekey() && !t.key.alg.equal(k2, k2) {
-						// If key != key (NaNs), then the hash could be (and probably
-						// will be) entirely different from the old hash. Moreover,
-						// it isn't reproducible. Reproducibility is required in the
-						// presence of iterators, as our evacuation decision must
-						// match whatever decision the iterator made.
-						// Fortunately, we have the freedom to send these keys either
-						// way. Also, tophash is meaningless for these kinds of keys.
-						// We let the low bit of tophash drive the evacuation decision.
-						// We recompute a new random tophash for the next level so
-						// these keys will get evenly distributed across all buckets
-						// after multiple grows.
-						useY = top & 1
-						top = tophash(hash)
-					} else {
-						if hash&newbit != 0 {
+    newbit := h.noldbuckets()
+	if hash&newbit != 0 {
 							useY = 1
 						}
-					}
-				}
 
-				if evacuatedX+1 != evacuatedY || evacuatedX^1 != evacuatedY {
-					throw("bad evacuatedN")
-				}
+```
 
-				b.tophash[i] = evacuatedX + useY // evacuatedX + 1 == evacuatedY
-				dst := &xy[useY]                 // evacuation destination
-
-				if dst.i == bucketCnt {
-					dst.b = h.newoverflow(t, dst.b)
-					dst.i = 0
-					dst.k = add(unsafe.Pointer(dst.b), dataOffset)
-					dst.e = add(dst.k, bucketCnt*uintptr(t.keysize))
-				}
-				dst.b.tophash[dst.i&(bucketCnt-1)] = top // mask dst.i as an optimization, to avoid a bounds check
-				if t.indirectkey() {
-					*(*unsafe.Pointer)(dst.k) = k2 // copy pointer
-				} else {
-					typedmemmove(t.key, dst.k, k) // copy elem
-				}
-				if t.indirectelem() {
-					*(*unsafe.Pointer)(dst.e) = *(*unsafe.Pointer)(e)
-				} else {
-					typedmemmove(t.elem, dst.e, e)
-				}
-				dst.i++
-				// These updates might push these pointers past the end of the
-				// key or elem arrays.  That's ok, as we have the overflow pointer
-				// at the end of the bucket to protect against pointing past the
-				// end of the bucket.
-				dst.k = add(dst.k, uintptr(t.keysize))
-				dst.e = add(dst.e, uintptr(t.elemsize))
-			}
-		}
-		// Unlink the overflow buckets & clear key/elem to help GC.
+```
+func evacuate(t *maptype, h *hmap, oldbucket uintptr) {
+    ...
+    // Unlink the overflow buckets & clear key/elem to help GC.
 		if h.flags&oldIterator == 0 && t.bucket.ptrdata != 0 {
 			b := add(h.oldbuckets, oldbucket*uintptr(t.bucketsize))
 			// Preserve b.tophash because the evacuation
