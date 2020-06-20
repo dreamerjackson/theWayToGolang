@@ -180,7 +180,7 @@ index = hash % array_size
 * 在Go语言中还有一个溢出桶的概念,在执行`hash[key] = value`赋值操作时,当指定桶中的数据超过了8个，并不会直接就新开辟一个新桶,而是会将数据放置到溢出桶中每个桶的最后还存储了`overflow` 即溢出桶的指针
 
 * 在正常情况下，数据是很少会跑到溢出桶里面去的。同理，我们也可以知道，在Map的查找操作时，如果key的hash在指定桶的tophash数组中不存在，还会遍历溢出桶中的数据。
-![image](../image/golang[17]-2.png)
+![image](../image/golang[17]-3.png)
 
 * 后面我们会看到，如果一开始初始化map的数量比较大。则map提前创建好一些溢出桶存储在`extra *mapextra` 字段.
 ```
@@ -814,7 +814,7 @@ func hashGrow(t *maptype, h *hmap) {
 `xy [2]evacDst` 用于存储要转移到新桶的位置
 
 如果是双倍重建,那么旧桶转移到新桶的位置总是相距旧桶的数量. 
-![image](../image/golang[17]-8.png)
+![image](../image/golang[17]-7.png)
 
 如果是等量重建，则简单的直接转移即可
 ![image](../image/golang[17]-10.png)
