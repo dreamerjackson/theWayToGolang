@@ -1,3 +1,7 @@
+# 抽丝剥茧—Go哈希Map的鬼魅神功
+* Go语言中的哈希Map是江湖上极厉害的一门武功,其入门简单，即便是掌握到了2、3层也具有四两拨千斤的神奇功效.因此成为江湖人士竞相研习的技艺，风头一时无两.
+* 但即便是成名已久的高手,也鲜有能修炼到最高层的.
+* 本文不仅介绍了哈希Map基本的使用方式,还深入源码介绍了哈希Map的至高心法.希望本文有助于你对Go哈希Map的理解臻于化境.
 ## 哈希表
 * Go语言中的Map,又称为Hash map(哈希表)是使用频率极高的一种数据结构，重要程度高到令人发指。
 * 哈希表的原理是将多个key/value对分散存储在buckets(桶)中。给定一个key，哈希算法会计算出键值对存储的位置。时常会通过两步完成,伪代码如图所示:
@@ -5,11 +9,9 @@
 hash = hashfunc(key)
 index = hash % array_size
 ```
-在此伪代码中,hash结果与桶的数量无关。再通过执行取模运算得到0 - array_size−1 之间的index序号。
-在实践中，我们时常将Map看做o(1)时间复杂度的操作,通过一个键key快速寻找其唯一对应的value。
-在本文中笔者试图解答如下的几个问题:
-Go语言中Map如何进行组织以及增删查改
-Go语言中Map为何设计为不支持并发读写的
+* 在此伪代码中,第一步计算通过hash算法计算key的hash值,其结果与桶的数量无关。
+* 接着通过执行取模运算得到`0 - array_size−1` 之间的index序号。
+* 在实践中，我们时常将Map看做o(1)时间复杂度的操作,通过一个键key快速寻找其唯一对应的value。
 ## Map基本操作
 ### Map的声明与初始化
 首先，来看一看map的基本使用方式。map声明的第一种方式如下
@@ -63,7 +65,7 @@ map的删除需要用到delete，其是Go语言中的关键字，用于进行map
 delete(hash,key)
 ```
 可以对相同的key进行多次的删除操作，而不会报错
-### 关于map中的key
+## 关于map中的key
 很容易理解,如果map中的key都没有办法比较是否相同,那么就不能作为map的key。
 关于Go语言中的可比较性，直接阅读官方文档即可:`https://golang.org/ref/spec#Comparison_operators`
 ```
@@ -79,6 +81,45 @@ delete(hash,key)
 如果数组元素类型的值可比较，则数组值可比较。如果两个数组的对应元素相等，则它们相等。
 切片、函数、map是不可比较的。
 ```
+## 关于map并发冲突问题
+* 和其他语言有些不同的是，map并不支持并发的读写,因此下面的操作是错误的
+```
+	aa := make(map[int]int)
+	go func() {
+		for{
+			aa[0] = 5
+		}
+	}()
+	go func() {
+		for{
+			_ = aa[1]
+		}
+	}()
+```
+报错:
+```
+fatal error: concurrent map read and map write
+```
+* Go语言只支持并发的读取Map.因此下面的函数是没有问题的
+```
+	aa := make(map[int]int)
+	go func() {
+		for{
+			_ = aa[2]
+		}
+	}()
+	go func() {
+		for{
+			_ = aa[1]
+		}
+	}()
+```
+Go语言为什么不支持并发的读写，是一个频繁被提起的问题。我们可以在Go官方文档`Frequently Asked Questions`找到问题的答案（https://golang.org/doc/faq#atomic_maps）
+```
+Map被设计为不需要从多个goroutine安全访问，在实际情况下，Map可能是某些已经同步的较大数据结构或计算的一部分。
+因此，要求所有Map操作都互斥将减慢大多数程序的速度，而只会增加少数程序的安全性。
+```
+即这样做的目的是为了大多数情况下的效率。
 ## Map在运行时
 介绍了Map的基本操作,接下来介绍一下Map在运行时的行为。由于代码里面的逻辑关系关联比较复杂。首先用那个图片简单的梳理一下。
 Go语言Map的底层实现如下所示:
@@ -181,7 +222,7 @@ type mapextra struct {
 ![image](../image/golang[17]-5.png)
 
 ## Map深入
-明白了Map的抽象原理，接下来我们看一下Map的具体实现。
+明白了Map的抽象原理，接下来看一下Map的具体实现。
 ### Map深入: make初始化
 如果我们使用make关键字初始化Map,在typecheck1类型检查阶段,节点Node的op操作变为`OMAKEMAP`,如果指定了make map的长度,则会将长度常量值类型转换为TINT类型.如果未指定长度，则长度为0。`nodintconst(0)`
 ```
@@ -632,7 +673,7 @@ if !h.growing() && (overLoadFactor(h.count+1, h.B) || tooManyOverflowBuckets(h.n
 	}
 ```
 * 申请的新桶一开始是来自于map中`extra`字段初始化时存储的多余溢出桶。如果这些多余的溢出桶都用完了才会申请新的内存。一个桶的溢出桶可能会进行延展
-![image](../image/golang[17]-.png)
+![image](../image/golang[17]-6.png)
 
 ```
 func mapassign(t *maptype, h *hmap, key unsafe.Pointer) unsafe.Pointer {
@@ -773,7 +814,7 @@ func hashGrow(t *maptype, h *hmap) {
 `xy [2]evacDst` 用于存储要转移到新桶的位置
 
 如果是双倍重建,那么旧桶转移到新桶的位置总是相距旧桶的数量. 
-![image](../image/golang[17]-9.png)
+![image](../image/golang[17]-8.png)
 
 如果是等量重建，则简单的直接转移即可
 ![image](../image/golang[17]-10.png)
@@ -782,12 +823,10 @@ func hashGrow(t *maptype, h *hmap) {
 * 解决了旧桶要转移哪一些新桶，我们还需要解决旧桶中的数据要转移到哪一些新桶. 
 * 其中有一个非常重要的原则是：如果此数据计算完hash后,`hash & bucketMask <= 旧桶的大小` 意味着这个数据必须转移到和旧桶位置完全对应的新桶中去.理由是现在当前key所在新桶的序号与旧桶是完全相同的。
 ```
-
     newbit := h.noldbuckets()
 	if hash&newbit != 0 {
-							useY = 1
-						}
-
+	    useY = 1
+	}
 ```
 
 ```
@@ -811,11 +850,11 @@ func evacuate(t *maptype, h *hmap, oldbucket uintptr) {
 ```
 
 ### Map深入: delete
-删除的逻辑在之前介绍过，是比较简单的。
-核心逻辑位于`func mapdelete(t *maptype, h *hmap, key unsafe.Pointer) {`
-同样需要计算出hash的前8位、指定的桶等。
-同样会一直寻找是否有相同的key，如果找不到,会一直查找当前桶的溢出桶下去,知道到达末尾...
-如果查找到了指定的key,则会清空数据，hash位设置为`emptyOne`. 如果发现后面没有元素，则会设置为`emptyRest`,并循环向上检查前一个元素是否为空。
+* 删除的逻辑在之前介绍过，是比较简单的。
+* 核心逻辑位于`func mapdelete(t *maptype, h *hmap, key unsafe.Pointer) `
+* 同样需要计算出hash的前8位、指定的桶等。
+* 同样会一直寻找是否有相同的key，如果找不到,会一直查找当前桶的溢出桶下去,知道到达末尾...
+* 如果查找到了指定的key,则会清空数据，hash位设置为`emptyOne`. 如果发现后面没有元素，则会设置为`emptyRest`,并循环向上检查前一个元素是否为空。
 ```
 			for {
 				b.tophash[i] = emptyRest
@@ -841,9 +880,6 @@ func evacuate(t *maptype, h *hmap, oldbucket uintptr) {
 func mapdelete(t *maptype, h *hmap, key unsafe.Pointer) {
 	alg := t.key.alg
 	hash := alg.hash(key, uintptr(h.hash0))
-
-	// Set hashWriting after calling alg.hash, since alg.hash may panic,
-	// in which case we have not actually done a write (delete).
 	h.flags ^= hashWriting
 
 	bucket := hash & bucketMask(h.B)
@@ -870,8 +906,7 @@ search:
 			if !alg.equal(key, k2) {
 				continue
 			}
-			// Only clear key if there are pointers in it.
-			if t.indirectkey() {
+				if t.indirectkey() {
 				*(*unsafe.Pointer)(k) = nil
 			} else if t.key.ptrdata != 0 {
 				memclrHasPointers(k, t.key.size)
@@ -885,11 +920,7 @@ search:
 				memclrNoHeapPointers(e, t.elem.size)
 			}
 			b.tophash[i] = emptyOne
-			// If the bucket now ends in a bunch of emptyOne states,
-			// change those to emptyRest states.
-			// It would be nice to make this a separate function, but
-			// for loops are not currently inlineable.
-			if i == bucketCnt-1 {
+				if i == bucketCnt-1 {
 				if b.overflow(t) != nil && b.overflow(t).tophash[0] != emptyRest {
 					goto notLast
 				}
@@ -904,7 +935,6 @@ search:
 					if b == bOrig {
 						break // beginning of initial bucket, we're done.
 					}
-					// Find previous bucket, continue at its last entry.
 					c := b
 					for b = bOrig; b.overflow(t) != c; b = b.overflow(t) {
 					}
@@ -921,10 +951,15 @@ search:
 			break search
 		}
 	}
-
 	if h.flags&hashWriting == 0 {
 		throw("concurrent map writes")
 	}
 	h.flags &^= hashWriting
 }
 ```
+
+## 总结
+* 本文介绍了Go语言Map的基本操作
+* 介绍了Map使用中key的可比较性以及map并发冲突的设计原因
+* 介绍了map在编译和运行时在初始化、访问、赋值、重建、删除、数据转移、哈希冲突时的一些细节
+* see you~
