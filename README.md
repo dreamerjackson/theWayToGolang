@@ -10,7 +10,7 @@
 * 罗伯特·格瑞史莫(Robert Griesemer)，罗勃·派克（Rob Pike）及肯·汤普逊(Ken Thompson)于2007年9月开始设计Go，稍后Ian Lance Taylor、Russ Cox加入项目
 * Go是基于Inferno操作系统所开发的
 * Go于2009年11月正式宣布推出，成为开放源代码项目，支持Linux、macOS、Windows等操作系统
-* 在2016年，Go被软件评价公司TIOBE 选为“TIOBE 2016 年最佳语言”
+* 在2016年，Go被软件评价公司TIOBE 选为“TIOBE 2016 年最佳语言”  
 * 很多重要的开源项目都是使用Go语言开发的，其中包括 Docker、Go-Ethereum、Thrraform、Kubernetes、etcd、hyperledger、tidb
 
 ## 基本语言的历史
